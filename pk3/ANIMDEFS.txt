@@ -1,0 +1,3065 @@
+animateddoor DOOR2
+	opensound RottDoorOpen
+	closesound RottDoorClose
+	pic DOOR2A 
+	pic DOOR2B
+	pic DOOR2C
+	pic DOOR2D
+	pic DOOR2E
+	pic DOOR2F
+	pic DOOR2G
+	
+switch HSWITCH3 on pic HSWTICH4 tics 0
+switch ELEV7 on pic ELEV8 tics 0
+
+texture FPLACE1
+pic FPLACE1 tics 6
+pic FPLACE2 tics 6
+pic FPLACE3 tics 6
+pic FPLACE4 tics 6
+
+texture ANIMR1
+pic ANIMR1 tics 6
+pic ANIMR2 tics 6
+pic ANIMR3 tics 6
+pic ANIMR4 tics 6
+pic ANIMR5 tics 6
+pic ANIMR6 tics 6
+
+texture ANIMBP1
+pic ANIMBP1 tics 6
+pic ANIMBP2 tics 6
+pic ANIMBP3 tics 6
+pic ANIMBP4 tics 6
+pic ANIMBP5 tics 6
+pic ANIMBP6 tics 6
+
+TEXTURE M_SKULL1
+pic M_SKULL1 tics 4
+pic M_SKULL2 tics 4
+pic M_SKULL3 tics 4
+pic M_SKULL4 tics 4
+pic M_SKULL5 tics 4
+pic M_SKULL6 tics 4
+pic M_SKULL7 tics 4
+pic M_SKULL8 tics 4
+
+Texture CTEL
+pic CTEL1 tics 2
+pic CTEL2 tics 2
+pic CTEL3 tics 2
+pic CTEL4 tics 2
+pic CTEL5 tics 2
+pic CTEL6 tics 2
+pic CTEL7 tics 2
+pic CTEL8 tics 4
+
+Texture CTEL1
+pic CTEL1 tics 2
+pic CTEL2 tics 2
+pic CTEL3 tics 2
+pic CTEL4 tics 2
+pic CTEL5 tics 2
+pic CTEL6 tics 2
+pic CTEL7 tics 2
+pic CTEL8 tics 4
+
+Texture HTEL1
+pic HTEL1 tics 40
+pic HTEL2 tics 2
+pic HTEL3 tics 2
+pic HTEL4 tics 40
+pic HTEL3 tics 2
+pic HTEL2 tics 2
+
+Texture HTELA
+pic HTELA tics 40
+pic HTELB tics 2
+pic HTELC tics 2
+pic HTELD tics 40
+pic HTELC tics 2
+pic HTELB tics 2
+
+Texture SPORTA
+pic SPORT1 tics 4
+pic SPORT2 tics 2
+pic SPORT3 tics 2
+pic SPORT4 tics 2
+pic SPORT5 tics 2
+pic SPORT4 tics 2
+pic SPORT3 tics 2
+pic SPORT2 tics 2
+
+Texture SPORT1
+pic SPORT1 tics 4
+pic SPORT2 tics 2
+pic SPORT3 tics 2
+pic SPORT4 tics 2
+pic SPORT5 tics 2
+pic SPORT4 tics 2
+pic SPORT3 tics 2
+pic SPORT2 tics 2
+
+Texture GATE1
+pic CTEL1 tics 2
+pic CTEL2 tics 2
+pic CTEL3 tics 2
+pic CTEL4 tics 2
+pic CTEL5 tics 2
+pic CTEL6 tics 2
+pic CTEL7 tics 2
+pic CTEL8 tics 4
+
+Texture GATE2
+pic GTEL1 tics 2
+pic GTEL2 tics 2
+pic GTEL3 tics 2
+pic GTEL4 tics 2
+pic GTEL5 tics 2
+pic GTEL6 tics 2
+pic GTEL7 tics 2
+pic GTEL8 tics 4
+
+Texture GATE3
+pic HTEL1 tics 40
+pic HTEL2 tics 2
+pic HTEL3 tics 2
+pic HTEL4 tics 40
+pic HTEL3 tics 2
+pic HTEL2 tics 2
+
+Texture GATE4
+pic SPORT1 tics 4
+pic SPORT2 tics 2
+pic SPORT3 tics 2
+pic SPORT4 tics 2
+pic SPORT5 tics 2
+pic SPORT4 tics 2
+pic SPORT3 tics 2
+pic SPORT2 tics 2
+
+// Blood animation -------------------------------------------------------------
+
+flat Blood2
+  pic D64B2_01 tics 2
+  pic D64B2_02 tics 2
+  pic D64B2_03 tics 2
+  pic D64B2_04 tics 2
+  pic D64B2_05 tics 2
+  pic D64B2_06 tics 2
+  pic D64B2_07 tics 2
+  pic D64B2_08 tics 2
+  pic D64B2_09 tics 2
+  pic D64B2_10 tics 2
+  pic D64B2_11 tics 2
+  pic D64B2_12 tics 2
+  pic D64B2_13 tics 2
+  pic D64B2_14 tics 2
+  pic D64B2_15 tics 2
+  pic D64B2_16 tics 2
+  pic D64B2_17 tics 2
+  pic D64B2_18 tics 2
+  pic D64B2_19 tics 2
+  pic D64B2_20 tics 2
+  pic D64B2_21 tics 2
+  pic D64B2_22 tics 2
+  pic D64B2_23 tics 2
+  pic D64B2_24 tics 2
+  pic D64B2_25 tics 2
+  pic D64B2_26 tics 2
+  pic D64B2_27 tics 2
+  pic D64B2_28 tics 2
+  pic D64B2_29 tics 2
+  pic D64B2_30 tics 2
+  pic D64B2_31 tics 2
+  pic D64B2_32 tics 2
+  pic D64B2_33 tics 2
+  pic D64B2_34 tics 2
+  pic D64B2_35 tics 2
+  pic D64B2_36 tics 2
+  pic D64B2_37 tics 2
+  pic D64B2_38 tics 2
+  pic D64B2_39 tics 2
+  pic D64B2_40 tics 2
+  pic D64B2_41 tics 2
+  pic D64B2_42 tics 2
+  pic D64B2_43 tics 2
+  pic D64B2_44 tics 2
+  pic D64B2_45 tics 2
+  pic D64B2_46 tics 2
+  pic D64B2_47 tics 2
+  pic D64B2_48 tics 2
+  pic D64B2_49 tics 2
+  pic D64B2_50 tics 2
+  pic D64B2_51 tics 2
+  pic D64B2_52 tics 2
+  pic D64B2_53 tics 2
+  pic D64B2_54 tics 2
+  pic D64B2_55 tics 2
+  pic D64B2_56 tics 2
+  pic D64B2_57 tics 2
+  pic D64B2_58 tics 2
+  pic D64B2_59 tics 2
+  pic D64B2_60 tics 2
+  pic D64B2_61 tics 2
+  pic D64B2_62 tics 2
+  pic D64B2_63 tics 2
+  pic D64B2_64 tics 2
+
+flat Blood3
+  pic D64B2_01 tics 2
+  pic D64B2_02 tics 2
+  pic D64B2_03 tics 2
+  pic D64B2_04 tics 2
+  pic D64B2_05 tics 2
+  pic D64B2_06 tics 2
+  pic D64B2_07 tics 2
+  pic D64B2_08 tics 2
+  pic D64B2_09 tics 2
+  pic D64B2_10 tics 2
+  pic D64B2_11 tics 2
+  pic D64B2_12 tics 2
+  pic D64B2_13 tics 2
+  pic D64B2_14 tics 2
+  pic D64B2_15 tics 2
+  pic D64B2_16 tics 2
+  pic D64B2_17 tics 2
+  pic D64B2_18 tics 2
+  pic D64B2_19 tics 2
+  pic D64B2_20 tics 2
+  pic D64B2_21 tics 2
+  pic D64B2_22 tics 2
+  pic D64B2_23 tics 2
+  pic D64B2_24 tics 2
+  pic D64B2_25 tics 2
+  pic D64B2_26 tics 2
+  pic D64B2_27 tics 2
+  pic D64B2_28 tics 2
+  pic D64B2_29 tics 2
+  pic D64B2_30 tics 2
+  pic D64B2_31 tics 2
+  pic D64B2_32 tics 2
+  pic D64B2_33 tics 2
+  pic D64B2_34 tics 2
+  pic D64B2_35 tics 2
+  pic D64B2_36 tics 2
+  pic D64B2_37 tics 2
+  pic D64B2_38 tics 2
+  pic D64B2_39 tics 2
+  pic D64B2_40 tics 2
+  pic D64B2_41 tics 2
+  pic D64B2_42 tics 2
+  pic D64B2_43 tics 2
+  pic D64B2_44 tics 2
+  pic D64B2_45 tics 2
+  pic D64B2_46 tics 2
+  pic D64B2_47 tics 2
+  pic D64B2_48 tics 2
+  pic D64B2_49 tics 2
+  pic D64B2_50 tics 2
+  pic D64B2_51 tics 2
+  pic D64B2_52 tics 2
+  pic D64B2_53 tics 2
+  pic D64B2_54 tics 2
+  pic D64B2_55 tics 2
+  pic D64B2_56 tics 2
+  pic D64B2_57 tics 2
+  pic D64B2_58 tics 2
+  pic D64B2_59 tics 2
+  pic D64B2_60 tics 2
+  pic D64B2_61 tics 2
+  pic D64B2_62 tics 2
+  pic D64B2_63 tics 2
+  pic D64B2_64 tics 2
+
+flat Blood1
+  pic D64B2_01 tics 2
+  pic D64B2_02 tics 2
+  pic D64B2_03 tics 2
+  pic D64B2_04 tics 2
+  pic D64B2_05 tics 2
+  pic D64B2_06 tics 2
+  pic D64B2_07 tics 2
+  pic D64B2_08 tics 2
+  pic D64B2_09 tics 2
+  pic D64B2_10 tics 2
+  pic D64B2_11 tics 2
+  pic D64B2_12 tics 2
+  pic D64B2_13 tics 2
+  pic D64B2_14 tics 2
+  pic D64B2_15 tics 2
+  pic D64B2_16 tics 2
+  pic D64B2_17 tics 2
+  pic D64B2_18 tics 2
+  pic D64B2_19 tics 2
+  pic D64B2_20 tics 2
+  pic D64B2_21 tics 2
+  pic D64B2_22 tics 2
+  pic D64B2_23 tics 2
+  pic D64B2_24 tics 2
+  pic D64B2_25 tics 2
+  pic D64B2_26 tics 2
+  pic D64B2_27 tics 2
+  pic D64B2_28 tics 2
+  pic D64B2_29 tics 2
+  pic D64B2_30 tics 2
+  pic D64B2_31 tics 2
+  pic D64B2_32 tics 2
+  pic D64B2_33 tics 2
+  pic D64B2_34 tics 2
+  pic D64B2_35 tics 2
+  pic D64B2_36 tics 2
+  pic D64B2_37 tics 2
+  pic D64B2_38 tics 2
+  pic D64B2_39 tics 2
+  pic D64B2_40 tics 2
+  pic D64B2_41 tics 2
+  pic D64B2_42 tics 2
+  pic D64B2_43 tics 2
+  pic D64B2_44 tics 2
+  pic D64B2_45 tics 2
+  pic D64B2_46 tics 2
+  pic D64B2_47 tics 2
+  pic D64B2_48 tics 2
+  pic D64B2_49 tics 2
+  pic D64B2_50 tics 2
+  pic D64B2_51 tics 2
+  pic D64B2_52 tics 2
+  pic D64B2_53 tics 2
+  pic D64B2_54 tics 2
+  pic D64B2_55 tics 2
+  pic D64B2_56 tics 2
+  pic D64B2_57 tics 2
+  pic D64B2_58 tics 2
+  pic D64B2_59 tics 2
+  pic D64B2_60 tics 2
+  pic D64B2_61 tics 2
+  pic D64B2_62 tics 2
+  pic D64B2_63 tics 2
+  pic D64B2_64 tics 2
+
+// Nukage animation ------------------------------------------------------------
+
+flat Nukage1
+  pic D64N1_01 tics 2
+  pic D64N1_02 tics 2
+  pic D64N1_03 tics 2
+  pic D64N1_04 tics 2
+  pic D64N1_05 tics 2
+  pic D64N1_06 tics 2
+  pic D64N1_07 tics 2
+  pic D64N1_08 tics 2
+  pic D64N1_09 tics 2
+  pic D64N1_10 tics 2
+  pic D64N1_11 tics 2
+  pic D64N1_12 tics 2
+  pic D64N1_13 tics 2
+  pic D64N1_14 tics 2
+  pic D64N1_15 tics 2
+  pic D64N1_16 tics 2
+  pic D64N1_17 tics 2
+  pic D64N1_18 tics 2
+  pic D64N1_19 tics 2
+  pic D64N1_20 tics 2
+  pic D64N1_21 tics 2
+  pic D64N1_22 tics 2
+  pic D64N1_23 tics 2
+  pic D64N1_24 tics 2
+  pic D64N1_25 tics 2
+  pic D64N1_26 tics 2
+  pic D64N1_27 tics 2
+  pic D64N1_28 tics 2
+  pic D64N1_29 tics 2
+  pic D64N1_30 tics 2
+  pic D64N1_31 tics 2
+  pic D64N1_32 tics 2
+  pic D64N1_33 tics 2
+  pic D64N1_34 tics 2
+  pic D64N1_35 tics 2
+  pic D64N1_36 tics 2
+  pic D64N1_37 tics 2
+  pic D64N1_38 tics 2
+  pic D64N1_39 tics 2
+  pic D64N1_40 tics 2
+  pic D64N1_41 tics 2
+  pic D64N1_42 tics 2
+  pic D64N1_43 tics 2
+  pic D64N1_44 tics 2
+  pic D64N1_45 tics 2
+  pic D64N1_46 tics 2
+  pic D64N1_47 tics 2
+  pic D64N1_48 tics 2
+  pic D64N1_49 tics 2
+  pic D64N1_50 tics 2
+  pic D64N1_51 tics 2
+  pic D64N1_52 tics 2
+  pic D64N1_53 tics 2
+  pic D64N1_54 tics 2
+  pic D64N1_55 tics 2
+  pic D64N1_56 tics 2
+  pic D64N1_57 tics 2
+  pic D64N1_58 tics 2
+  pic D64N1_59 tics 2
+  pic D64N1_60 tics 2
+  pic D64N1_61 tics 2
+  pic D64N1_62 tics 2
+  pic D64N1_63 tics 2
+  pic D64N1_64 tics 2
+
+flat Nukage2
+  pic D64N2_01 tics 2
+  pic D64N2_02 tics 2
+  pic D64N2_03 tics 2
+  pic D64N2_04 tics 2
+  pic D64N2_05 tics 2
+  pic D64N2_06 tics 2
+  pic D64N2_07 tics 2
+  pic D64N2_08 tics 2
+  pic D64N2_09 tics 2
+  pic D64N2_10 tics 2
+  pic D64N2_11 tics 2
+  pic D64N2_12 tics 2
+  pic D64N2_13 tics 2
+  pic D64N2_14 tics 2
+  pic D64N2_15 tics 2
+  pic D64N2_16 tics 2
+  pic D64N2_17 tics 2
+  pic D64N2_18 tics 2
+  pic D64N2_19 tics 2
+  pic D64N2_20 tics 2
+  pic D64N2_21 tics 2
+  pic D64N2_22 tics 2
+  pic D64N2_23 tics 2
+  pic D64N2_24 tics 2
+  pic D64N2_25 tics 2
+  pic D64N2_26 tics 2
+  pic D64N2_27 tics 2
+  pic D64N2_28 tics 2
+  pic D64N2_29 tics 2
+  pic D64N2_30 tics 2
+  pic D64N2_31 tics 2
+  pic D64N2_32 tics 2
+  pic D64N2_33 tics 2
+  pic D64N2_34 tics 2
+  pic D64N2_35 tics 2
+  pic D64N2_36 tics 2
+  pic D64N2_37 tics 2
+  pic D64N2_38 tics 2
+  pic D64N2_39 tics 2
+  pic D64N2_40 tics 2
+  pic D64N2_41 tics 2
+  pic D64N2_42 tics 2
+  pic D64N2_43 tics 2
+  pic D64N2_44 tics 2
+  pic D64N2_45 tics 2
+  pic D64N2_46 tics 2
+  pic D64N2_47 tics 2
+  pic D64N2_48 tics 2
+  pic D64N2_49 tics 2
+  pic D64N2_50 tics 2
+  pic D64N2_51 tics 2
+  pic D64N2_52 tics 2
+  pic D64N2_53 tics 2
+  pic D64N2_54 tics 2
+  pic D64N2_55 tics 2
+  pic D64N2_56 tics 2
+  pic D64N2_57 tics 2
+  pic D64N2_58 tics 2
+  pic D64N2_59 tics 2
+  pic D64N2_60 tics 2
+  pic D64N2_61 tics 2
+  pic D64N2_62 tics 2
+  pic D64N2_63 tics 2
+  pic D64N2_64 tics 2
+
+flat Nukage3
+  pic D64N1_01 tics 2
+  pic D64N1_02 tics 2
+  pic D64N1_03 tics 2
+  pic D64N1_04 tics 2
+  pic D64N1_05 tics 2
+  pic D64N1_06 tics 2
+  pic D64N1_07 tics 2
+  pic D64N1_08 tics 2
+  pic D64N1_09 tics 2
+  pic D64N1_10 tics 2
+  pic D64N1_11 tics 2
+  pic D64N1_12 tics 2
+  pic D64N1_13 tics 2
+  pic D64N1_14 tics 2
+  pic D64N1_15 tics 2
+  pic D64N1_16 tics 2
+  pic D64N1_17 tics 2
+  pic D64N1_18 tics 2
+  pic D64N1_19 tics 2
+  pic D64N1_20 tics 2
+  pic D64N1_21 tics 2
+  pic D64N1_22 tics 2
+  pic D64N1_23 tics 2
+  pic D64N1_24 tics 2
+  pic D64N1_25 tics 2
+  pic D64N1_26 tics 2
+  pic D64N1_27 tics 2
+  pic D64N1_28 tics 2
+  pic D64N1_29 tics 2
+  pic D64N1_30 tics 2
+  pic D64N1_31 tics 2
+  pic D64N1_32 tics 2
+  pic D64N1_33 tics 2
+  pic D64N1_34 tics 2
+  pic D64N1_35 tics 2
+  pic D64N1_36 tics 2
+  pic D64N1_37 tics 2
+  pic D64N1_38 tics 2
+  pic D64N1_39 tics 2
+  pic D64N1_40 tics 2
+  pic D64N1_41 tics 2
+  pic D64N1_42 tics 2
+  pic D64N1_43 tics 2
+  pic D64N1_44 tics 2
+  pic D64N1_45 tics 2
+  pic D64N1_46 tics 2
+  pic D64N1_47 tics 2
+  pic D64N1_48 tics 2
+  pic D64N1_49 tics 2
+  pic D64N1_50 tics 2
+  pic D64N1_51 tics 2
+  pic D64N1_52 tics 2
+  pic D64N1_53 tics 2
+  pic D64N1_54 tics 2
+  pic D64N1_55 tics 2
+  pic D64N1_56 tics 2
+  pic D64N1_57 tics 2
+  pic D64N1_58 tics 2
+  pic D64N1_59 tics 2
+  pic D64N1_60 tics 2
+  pic D64N1_61 tics 2
+  pic D64N1_62 tics 2
+  pic D64N1_63 tics 2
+  pic D64N1_64 tics 2
+
+
+// Sludge animation ------------------------------------------------------------
+
+flat Slime01
+  pic D64S1_01 tics 2
+  pic D64S1_02 tics 2
+  pic D64S1_03 tics 2
+  pic D64S1_04 tics 2
+  pic D64S1_05 tics 2
+  pic D64S1_06 tics 2
+  pic D64S1_07 tics 2
+  pic D64S1_08 tics 2
+  pic D64S1_09 tics 2
+  pic D64S1_10 tics 2
+  pic D64S1_11 tics 2
+  pic D64S1_12 tics 2
+  pic D64S1_13 tics 2
+  pic D64S1_14 tics 2
+  pic D64S1_15 tics 2
+  pic D64S1_16 tics 2
+  pic D64S1_17 tics 2
+  pic D64S1_18 tics 2
+  pic D64S1_19 tics 2
+  pic D64S1_20 tics 2
+  pic D64S1_21 tics 2
+  pic D64S1_22 tics 2
+  pic D64S1_23 tics 2
+  pic D64S1_24 tics 2
+  pic D64S1_25 tics 2
+  pic D64S1_26 tics 2
+  pic D64S1_27 tics 2
+  pic D64S1_28 tics 2
+  pic D64S1_29 tics 2
+  pic D64S1_30 tics 2
+  pic D64S1_31 tics 2
+  pic D64S1_32 tics 2
+  pic D64S1_33 tics 2
+  pic D64S1_34 tics 2
+  pic D64S1_35 tics 2
+  pic D64S1_36 tics 2
+  pic D64S1_37 tics 2
+  pic D64S1_38 tics 2
+  pic D64S1_39 tics 2
+  pic D64S1_40 tics 2
+  pic D64S1_41 tics 2
+  pic D64S1_42 tics 2
+  pic D64S1_43 tics 2
+  pic D64S1_44 tics 2
+  pic D64S1_45 tics 2
+  pic D64S1_46 tics 2
+  pic D64S1_47 tics 2
+  pic D64S1_48 tics 2
+  pic D64S1_49 tics 2
+  pic D64S1_50 tics 2
+  pic D64S1_51 tics 2
+  pic D64S1_52 tics 2
+  pic D64S1_53 tics 2
+  pic D64S1_54 tics 2
+  pic D64S1_55 tics 2
+  pic D64S1_56 tics 2
+  pic D64S1_57 tics 2
+  pic D64S1_58 tics 2
+  pic D64S1_59 tics 2
+  pic D64S1_60 tics 2
+  pic D64S1_61 tics 2
+  pic D64S1_62 tics 2
+  pic D64S1_63 tics 2
+  pic D64S1_64 tics 2
+
+flat Slime02
+  pic D64S2_01 tics 2
+  pic D64S2_02 tics 2
+  pic D64S2_03 tics 2
+  pic D64S2_04 tics 2
+  pic D64S2_05 tics 2
+  pic D64S2_06 tics 2
+  pic D64S2_07 tics 2
+  pic D64S2_08 tics 2
+  pic D64S2_09 tics 2
+  pic D64S2_10 tics 2
+  pic D64S2_11 tics 2
+  pic D64S2_12 tics 2
+  pic D64S2_13 tics 2
+  pic D64S2_14 tics 2
+  pic D64S2_15 tics 2
+  pic D64S2_16 tics 2
+  pic D64S2_17 tics 2
+  pic D64S2_18 tics 2
+  pic D64S2_19 tics 2
+  pic D64S2_20 tics 2
+  pic D64S2_21 tics 2
+  pic D64S2_22 tics 2
+  pic D64S2_23 tics 2
+  pic D64S2_24 tics 2
+  pic D64S2_25 tics 2
+  pic D64S2_26 tics 2
+  pic D64S2_27 tics 2
+  pic D64S2_28 tics 2
+  pic D64S2_29 tics 2
+  pic D64S2_30 tics 2
+  pic D64S2_31 tics 2
+  pic D64S2_32 tics 2
+  pic D64S2_33 tics 2
+  pic D64S2_34 tics 2
+  pic D64S2_35 tics 2
+  pic D64S2_36 tics 2
+  pic D64S2_37 tics 2
+  pic D64S2_38 tics 2
+  pic D64S2_39 tics 2
+  pic D64S2_40 tics 2
+  pic D64S2_41 tics 2
+  pic D64S2_42 tics 2
+  pic D64S2_43 tics 2
+  pic D64S2_44 tics 2
+  pic D64S2_45 tics 2
+  pic D64S2_46 tics 2
+  pic D64S2_47 tics 2
+  pic D64S2_48 tics 2
+  pic D64S2_49 tics 2
+  pic D64S2_50 tics 2
+  pic D64S2_51 tics 2
+  pic D64S2_52 tics 2
+  pic D64S2_53 tics 2
+  pic D64S2_54 tics 2
+  pic D64S2_55 tics 2
+  pic D64S2_56 tics 2
+  pic D64S2_57 tics 2
+  pic D64S2_58 tics 2
+  pic D64S2_59 tics 2
+  pic D64S2_60 tics 2
+  pic D64S2_61 tics 2
+  pic D64S2_62 tics 2
+  pic D64S2_63 tics 2
+  pic D64S2_64 tics 2
+
+Flat slime03
+  pic D64S2_01 tics 2
+  pic D64S2_02 tics 2
+  pic D64S2_03 tics 2
+  pic D64S2_04 tics 2
+  pic D64S2_05 tics 2
+  pic D64S2_06 tics 2
+  pic D64S2_07 tics 2
+  pic D64S2_08 tics 2
+  pic D64S2_09 tics 2
+  pic D64S2_10 tics 2
+  pic D64S2_11 tics 2
+  pic D64S2_12 tics 2
+  pic D64S2_13 tics 2
+  pic D64S2_14 tics 2
+  pic D64S2_15 tics 2
+  pic D64S2_16 tics 2
+  pic D64S2_17 tics 2
+  pic D64S2_18 tics 2
+  pic D64S2_19 tics 2
+  pic D64S2_20 tics 2
+  pic D64S2_21 tics 2
+  pic D64S2_22 tics 2
+  pic D64S2_23 tics 2
+  pic D64S2_24 tics 2
+  pic D64S2_25 tics 2
+  pic D64S2_26 tics 2
+  pic D64S2_27 tics 2
+  pic D64S2_28 tics 2
+  pic D64S2_29 tics 2
+  pic D64S2_30 tics 2
+  pic D64S2_31 tics 2
+  pic D64S2_32 tics 2
+  pic D64S2_33 tics 2
+  pic D64S2_34 tics 2
+  pic D64S2_35 tics 2
+  pic D64S2_36 tics 2
+  pic D64S2_37 tics 2
+  pic D64S2_38 tics 2
+  pic D64S2_39 tics 2
+  pic D64S2_40 tics 2
+  pic D64S2_41 tics 2
+  pic D64S2_42 tics 2
+  pic D64S2_43 tics 2
+  pic D64S2_44 tics 2
+  pic D64S2_45 tics 2
+  pic D64S2_46 tics 2
+  pic D64S2_47 tics 2
+  pic D64S2_48 tics 2
+  pic D64S2_49 tics 2
+  pic D64S2_50 tics 2
+  pic D64S2_51 tics 2
+  pic D64S2_52 tics 2
+  pic D64S2_53 tics 2
+  pic D64S2_54 tics 2
+  pic D64S2_55 tics 2
+  pic D64S2_56 tics 2
+  pic D64S2_57 tics 2
+  pic D64S2_58 tics 2
+  pic D64S2_59 tics 2
+  pic D64S2_60 tics 2
+  pic D64S2_61 tics 2
+  pic D64S2_62 tics 2
+  pic D64S2_63 tics 2
+  pic D64S2_64 tics 2
+
+Flat slime04
+  pic D64S2_01 tics 2
+  pic D64S2_02 tics 2
+  pic D64S2_03 tics 2
+  pic D64S2_04 tics 2
+  pic D64S2_05 tics 2
+  pic D64S2_06 tics 2
+  pic D64S2_07 tics 2
+  pic D64S2_08 tics 2
+  pic D64S2_09 tics 2
+  pic D64S2_10 tics 2
+  pic D64S2_11 tics 2
+  pic D64S2_12 tics 2
+  pic D64S2_13 tics 2
+  pic D64S2_14 tics 2
+  pic D64S2_15 tics 2
+  pic D64S2_16 tics 2
+  pic D64S2_17 tics 2
+  pic D64S2_18 tics 2
+  pic D64S2_19 tics 2
+  pic D64S2_20 tics 2
+  pic D64S2_21 tics 2
+  pic D64S2_22 tics 2
+  pic D64S2_23 tics 2
+  pic D64S2_24 tics 2
+  pic D64S2_25 tics 2
+  pic D64S2_26 tics 2
+  pic D64S2_27 tics 2
+  pic D64S2_28 tics 2
+  pic D64S2_29 tics 2
+  pic D64S2_30 tics 2
+  pic D64S2_31 tics 2
+  pic D64S2_32 tics 2
+  pic D64S2_33 tics 2
+  pic D64S2_34 tics 2
+  pic D64S2_35 tics 2
+  pic D64S2_36 tics 2
+  pic D64S2_37 tics 2
+  pic D64S2_38 tics 2
+  pic D64S2_39 tics 2
+  pic D64S2_40 tics 2
+  pic D64S2_41 tics 2
+  pic D64S2_42 tics 2
+  pic D64S2_43 tics 2
+  pic D64S2_44 tics 2
+  pic D64S2_45 tics 2
+  pic D64S2_46 tics 2
+  pic D64S2_47 tics 2
+  pic D64S2_48 tics 2
+  pic D64S2_49 tics 2
+  pic D64S2_50 tics 2
+  pic D64S2_51 tics 2
+  pic D64S2_52 tics 2
+  pic D64S2_53 tics 2
+  pic D64S2_54 tics 2
+  pic D64S2_55 tics 2
+  pic D64S2_56 tics 2
+  pic D64S2_57 tics 2
+  pic D64S2_58 tics 2
+  pic D64S2_59 tics 2
+  pic D64S2_60 tics 2
+  pic D64S2_61 tics 2
+  pic D64S2_62 tics 2
+  pic D64S2_63 tics 2
+  pic D64S2_64 tics 2
+
+flat Slime05
+  pic D64S1_01 tics 2
+  pic D64S1_02 tics 2
+  pic D64S1_03 tics 2
+  pic D64S1_04 tics 2
+  pic D64S1_05 tics 2
+  pic D64S1_06 tics 2
+  pic D64S1_07 tics 2
+  pic D64S1_08 tics 2
+  pic D64S1_09 tics 2
+  pic D64S1_10 tics 2
+  pic D64S1_11 tics 2
+  pic D64S1_12 tics 2
+  pic D64S1_13 tics 2
+  pic D64S1_14 tics 2
+  pic D64S1_15 tics 2
+  pic D64S1_16 tics 2
+  pic D64S1_17 tics 2
+  pic D64S1_18 tics 2
+  pic D64S1_19 tics 2
+  pic D64S1_20 tics 2
+  pic D64S1_21 tics 2
+  pic D64S1_22 tics 2
+  pic D64S1_23 tics 2
+  pic D64S1_24 tics 2
+  pic D64S1_25 tics 2
+  pic D64S1_26 tics 2
+  pic D64S1_27 tics 2
+  pic D64S1_28 tics 2
+  pic D64S1_29 tics 2
+  pic D64S1_30 tics 2
+  pic D64S1_31 tics 2
+  pic D64S1_32 tics 2
+  pic D64S1_33 tics 2
+  pic D64S1_34 tics 2
+  pic D64S1_35 tics 2
+  pic D64S1_36 tics 2
+  pic D64S1_37 tics 2
+  pic D64S1_38 tics 2
+  pic D64S1_39 tics 2
+  pic D64S1_40 tics 2
+  pic D64S1_41 tics 2
+  pic D64S1_42 tics 2
+  pic D64S1_43 tics 2
+  pic D64S1_44 tics 2
+  pic D64S1_45 tics 2
+  pic D64S1_46 tics 2
+  pic D64S1_47 tics 2
+  pic D64S1_48 tics 2
+  pic D64S1_49 tics 2
+  pic D64S1_50 tics 2
+  pic D64S1_51 tics 2
+  pic D64S1_52 tics 2
+  pic D64S1_53 tics 2
+  pic D64S1_54 tics 2
+  pic D64S1_55 tics 2
+  pic D64S1_56 tics 2
+  pic D64S1_57 tics 2
+  pic D64S1_58 tics 2
+  pic D64S1_59 tics 2
+  pic D64S1_60 tics 2
+  pic D64S1_61 tics 2
+  pic D64S1_62 tics 2
+  pic D64S1_63 tics 2
+  pic D64S1_64 tics 2
+flat Slime06
+  pic D64S1_01 tics 2
+  pic D64S1_02 tics 2
+  pic D64S1_03 tics 2
+  pic D64S1_04 tics 2
+  pic D64S1_05 tics 2
+  pic D64S1_06 tics 2
+  pic D64S1_07 tics 2
+  pic D64S1_08 tics 2
+  pic D64S1_09 tics 2
+  pic D64S1_10 tics 2
+  pic D64S1_11 tics 2
+  pic D64S1_12 tics 2
+  pic D64S1_13 tics 2
+  pic D64S1_14 tics 2
+  pic D64S1_15 tics 2
+  pic D64S1_16 tics 2
+  pic D64S1_17 tics 2
+  pic D64S1_18 tics 2
+  pic D64S1_19 tics 2
+  pic D64S1_20 tics 2
+  pic D64S1_21 tics 2
+  pic D64S1_22 tics 2
+  pic D64S1_23 tics 2
+  pic D64S1_24 tics 2
+  pic D64S1_25 tics 2
+  pic D64S1_26 tics 2
+  pic D64S1_27 tics 2
+  pic D64S1_28 tics 2
+  pic D64S1_29 tics 2
+  pic D64S1_30 tics 2
+  pic D64S1_31 tics 2
+  pic D64S1_32 tics 2
+  pic D64S1_33 tics 2
+  pic D64S1_34 tics 2
+  pic D64S1_35 tics 2
+  pic D64S1_36 tics 2
+  pic D64S1_37 tics 2
+  pic D64S1_38 tics 2
+  pic D64S1_39 tics 2
+  pic D64S1_40 tics 2
+  pic D64S1_41 tics 2
+  pic D64S1_42 tics 2
+  pic D64S1_43 tics 2
+  pic D64S1_44 tics 2
+  pic D64S1_45 tics 2
+  pic D64S1_46 tics 2
+  pic D64S1_47 tics 2
+  pic D64S1_48 tics 2
+  pic D64S1_49 tics 2
+  pic D64S1_50 tics 2
+  pic D64S1_51 tics 2
+  pic D64S1_52 tics 2
+  pic D64S1_53 tics 2
+  pic D64S1_54 tics 2
+  pic D64S1_55 tics 2
+  pic D64S1_56 tics 2
+  pic D64S1_57 tics 2
+  pic D64S1_58 tics 2
+  pic D64S1_59 tics 2
+  pic D64S1_60 tics 2
+  pic D64S1_61 tics 2
+  pic D64S1_62 tics 2
+  pic D64S1_63 tics 2
+  pic D64S1_64 tics 2
+flat Slime07
+  pic D64S1_01 tics 2
+  pic D64S1_02 tics 2
+  pic D64S1_03 tics 2
+  pic D64S1_04 tics 2
+  pic D64S1_05 tics 2
+  pic D64S1_06 tics 2
+  pic D64S1_07 tics 2
+  pic D64S1_08 tics 2
+  pic D64S1_09 tics 2
+  pic D64S1_10 tics 2
+  pic D64S1_11 tics 2
+  pic D64S1_12 tics 2
+  pic D64S1_13 tics 2
+  pic D64S1_14 tics 2
+  pic D64S1_15 tics 2
+  pic D64S1_16 tics 2
+  pic D64S1_17 tics 2
+  pic D64S1_18 tics 2
+  pic D64S1_19 tics 2
+  pic D64S1_20 tics 2
+  pic D64S1_21 tics 2
+  pic D64S1_22 tics 2
+  pic D64S1_23 tics 2
+  pic D64S1_24 tics 2
+  pic D64S1_25 tics 2
+  pic D64S1_26 tics 2
+  pic D64S1_27 tics 2
+  pic D64S1_28 tics 2
+  pic D64S1_29 tics 2
+  pic D64S1_30 tics 2
+  pic D64S1_31 tics 2
+  pic D64S1_32 tics 2
+  pic D64S1_33 tics 2
+  pic D64S1_34 tics 2
+  pic D64S1_35 tics 2
+  pic D64S1_36 tics 2
+  pic D64S1_37 tics 2
+  pic D64S1_38 tics 2
+  pic D64S1_39 tics 2
+  pic D64S1_40 tics 2
+  pic D64S1_41 tics 2
+  pic D64S1_42 tics 2
+  pic D64S1_43 tics 2
+  pic D64S1_44 tics 2
+  pic D64S1_45 tics 2
+  pic D64S1_46 tics 2
+  pic D64S1_47 tics 2
+  pic D64S1_48 tics 2
+  pic D64S1_49 tics 2
+  pic D64S1_50 tics 2
+  pic D64S1_51 tics 2
+  pic D64S1_52 tics 2
+  pic D64S1_53 tics 2
+  pic D64S1_54 tics 2
+  pic D64S1_55 tics 2
+  pic D64S1_56 tics 2
+  pic D64S1_57 tics 2
+  pic D64S1_58 tics 2
+  pic D64S1_59 tics 2
+  pic D64S1_60 tics 2
+  pic D64S1_61 tics 2
+  pic D64S1_62 tics 2
+  pic D64S1_63 tics 2
+  pic D64S1_64 tics 2
+
+flat Slime08
+  pic D64S1_01 tics 2
+  pic D64S1_02 tics 2
+  pic D64S1_03 tics 2
+  pic D64S1_04 tics 2
+  pic D64S1_05 tics 2
+  pic D64S1_06 tics 2
+  pic D64S1_07 tics 2
+  pic D64S1_08 tics 2
+  pic D64S1_09 tics 2
+  pic D64S1_10 tics 2
+  pic D64S1_11 tics 2
+  pic D64S1_12 tics 2
+  pic D64S1_13 tics 2
+  pic D64S1_14 tics 2
+  pic D64S1_15 tics 2
+  pic D64S1_16 tics 2
+  pic D64S1_17 tics 2
+  pic D64S1_18 tics 2
+  pic D64S1_19 tics 2
+  pic D64S1_20 tics 2
+  pic D64S1_21 tics 2
+  pic D64S1_22 tics 2
+  pic D64S1_23 tics 2
+  pic D64S1_24 tics 2
+  pic D64S1_25 tics 2
+  pic D64S1_26 tics 2
+  pic D64S1_27 tics 2
+  pic D64S1_28 tics 2
+  pic D64S1_29 tics 2
+  pic D64S1_30 tics 2
+  pic D64S1_31 tics 2
+  pic D64S1_32 tics 2
+  pic D64S1_33 tics 2
+  pic D64S1_34 tics 2
+  pic D64S1_35 tics 2
+  pic D64S1_36 tics 2
+  pic D64S1_37 tics 2
+  pic D64S1_38 tics 2
+  pic D64S1_39 tics 2
+  pic D64S1_40 tics 2
+  pic D64S1_41 tics 2
+  pic D64S1_42 tics 2
+  pic D64S1_43 tics 2
+  pic D64S1_44 tics 2
+  pic D64S1_45 tics 2
+  pic D64S1_46 tics 2
+  pic D64S1_47 tics 2
+  pic D64S1_48 tics 2
+  pic D64S1_49 tics 2
+  pic D64S1_50 tics 2
+  pic D64S1_51 tics 2
+  pic D64S1_52 tics 2
+  pic D64S1_53 tics 2
+  pic D64S1_54 tics 2
+  pic D64S1_55 tics 2
+  pic D64S1_56 tics 2
+  pic D64S1_57 tics 2
+  pic D64S1_58 tics 2
+  pic D64S1_59 tics 2
+  pic D64S1_60 tics 2
+  pic D64S1_61 tics 2
+  pic D64S1_62 tics 2
+  pic D64S1_63 tics 2
+  pic D64S1_64 tics 2
+// Water animation -------------------------------------------------------------
+
+flat Fwater1
+  pic D64W1_01 tics 2
+  pic D64W1_02 tics 2
+  pic D64W1_03 tics 2
+  pic D64W1_04 tics 2
+  pic D64W1_05 tics 2
+  pic D64W1_06 tics 2
+  pic D64W1_07 tics 2
+  pic D64W1_08 tics 2
+  pic D64W1_09 tics 2
+  pic D64W1_10 tics 2
+  pic D64W1_11 tics 2
+  pic D64W1_12 tics 2
+  pic D64W1_13 tics 2
+  pic D64W1_14 tics 2
+  pic D64W1_15 tics 2
+  pic D64W1_16 tics 2
+  pic D64W1_17 tics 2
+  pic D64W1_18 tics 2
+  pic D64W1_19 tics 2
+  pic D64W1_20 tics 2
+  pic D64W1_21 tics 2
+  pic D64W1_22 tics 2
+  pic D64W1_23 tics 2
+  pic D64W1_24 tics 2
+  pic D64W1_25 tics 2
+  pic D64W1_26 tics 2
+  pic D64W1_27 tics 2
+  pic D64W1_28 tics 2
+  pic D64W1_29 tics 2
+  pic D64W1_30 tics 2
+  pic D64W1_31 tics 2
+  pic D64W1_32 tics 2
+  pic D64W1_33 tics 2
+  pic D64W1_34 tics 2
+  pic D64W1_35 tics 2
+  pic D64W1_36 tics 2
+  pic D64W1_37 tics 2
+  pic D64W1_38 tics 2
+  pic D64W1_39 tics 2
+  pic D64W1_40 tics 2
+  pic D64W1_41 tics 2
+  pic D64W1_42 tics 2
+  pic D64W1_43 tics 2
+  pic D64W1_44 tics 2
+  pic D64W1_45 tics 2
+  pic D64W1_46 tics 2
+  pic D64W1_47 tics 2
+  pic D64W1_48 tics 2
+  pic D64W1_49 tics 2
+  pic D64W1_50 tics 2
+  pic D64W1_51 tics 2
+  pic D64W1_52 tics 2
+  pic D64W1_53 tics 2
+  pic D64W1_54 tics 2
+  pic D64W1_55 tics 2
+  pic D64W1_56 tics 2
+  pic D64W1_57 tics 2
+  pic D64W1_58 tics 2
+  pic D64W1_59 tics 2
+  pic D64W1_60 tics 2
+  pic D64W1_61 tics 2
+  pic D64W1_62 tics 2
+  pic D64W1_63 tics 2
+  pic D64W1_64 tics 2
+
+flat Fwater2
+  pic D64W1_01 tics 2
+  pic D64W1_02 tics 2
+  pic D64W1_03 tics 2
+  pic D64W1_04 tics 2
+  pic D64W1_05 tics 2
+  pic D64W1_06 tics 2
+  pic D64W1_07 tics 2
+  pic D64W1_08 tics 2
+  pic D64W1_09 tics 2
+  pic D64W1_10 tics 2
+  pic D64W1_11 tics 2
+  pic D64W1_12 tics 2
+  pic D64W1_13 tics 2
+  pic D64W1_14 tics 2
+  pic D64W1_15 tics 2
+  pic D64W1_16 tics 2
+  pic D64W1_17 tics 2
+  pic D64W1_18 tics 2
+  pic D64W1_19 tics 2
+  pic D64W1_20 tics 2
+  pic D64W1_21 tics 2
+  pic D64W1_22 tics 2
+  pic D64W1_23 tics 2
+  pic D64W1_24 tics 2
+  pic D64W1_25 tics 2
+  pic D64W1_26 tics 2
+  pic D64W1_27 tics 2
+  pic D64W1_28 tics 2
+  pic D64W1_29 tics 2
+  pic D64W1_30 tics 2
+  pic D64W1_31 tics 2
+  pic D64W1_32 tics 2
+  pic D64W1_33 tics 2
+  pic D64W1_34 tics 2
+  pic D64W1_35 tics 2
+  pic D64W1_36 tics 2
+  pic D64W1_37 tics 2
+  pic D64W1_38 tics 2
+  pic D64W1_39 tics 2
+  pic D64W1_40 tics 2
+  pic D64W1_41 tics 2
+  pic D64W1_42 tics 2
+  pic D64W1_43 tics 2
+  pic D64W1_44 tics 2
+  pic D64W1_45 tics 2
+  pic D64W1_46 tics 2
+  pic D64W1_47 tics 2
+  pic D64W1_48 tics 2
+  pic D64W1_49 tics 2
+  pic D64W1_50 tics 2
+  pic D64W1_51 tics 2
+  pic D64W1_52 tics 2
+  pic D64W1_53 tics 2
+  pic D64W1_54 tics 2
+  pic D64W1_55 tics 2
+  pic D64W1_56 tics 2
+  pic D64W1_57 tics 2
+  pic D64W1_58 tics 2
+  pic D64W1_59 tics 2
+  pic D64W1_60 tics 2
+  pic D64W1_61 tics 2
+  pic D64W1_62 tics 2
+  pic D64W1_63 tics 2
+  pic D64W1_64 tics 2
+
+flat Fwater3
+  pic D64W1_01 tics 2
+  pic D64W1_02 tics 2
+  pic D64W1_03 tics 2
+  pic D64W1_04 tics 2
+  pic D64W1_05 tics 2
+  pic D64W1_06 tics 2
+  pic D64W1_07 tics 2
+  pic D64W1_08 tics 2
+  pic D64W1_09 tics 2
+  pic D64W1_10 tics 2
+  pic D64W1_11 tics 2
+  pic D64W1_12 tics 2
+  pic D64W1_13 tics 2
+  pic D64W1_14 tics 2
+  pic D64W1_15 tics 2
+  pic D64W1_16 tics 2
+  pic D64W1_17 tics 2
+  pic D64W1_18 tics 2
+  pic D64W1_19 tics 2
+  pic D64W1_20 tics 2
+  pic D64W1_21 tics 2
+  pic D64W1_22 tics 2
+  pic D64W1_23 tics 2
+  pic D64W1_24 tics 2
+  pic D64W1_25 tics 2
+  pic D64W1_26 tics 2
+  pic D64W1_27 tics 2
+  pic D64W1_28 tics 2
+  pic D64W1_29 tics 2
+  pic D64W1_30 tics 2
+  pic D64W1_31 tics 2
+  pic D64W1_32 tics 2
+  pic D64W1_33 tics 2
+  pic D64W1_34 tics 2
+  pic D64W1_35 tics 2
+  pic D64W1_36 tics 2
+  pic D64W1_37 tics 2
+  pic D64W1_38 tics 2
+  pic D64W1_39 tics 2
+  pic D64W1_40 tics 2
+  pic D64W1_41 tics 2
+  pic D64W1_42 tics 2
+  pic D64W1_43 tics 2
+  pic D64W1_44 tics 2
+  pic D64W1_45 tics 2
+  pic D64W1_46 tics 2
+  pic D64W1_47 tics 2
+  pic D64W1_48 tics 2
+  pic D64W1_49 tics 2
+  pic D64W1_50 tics 2
+  pic D64W1_51 tics 2
+  pic D64W1_52 tics 2
+  pic D64W1_53 tics 2
+  pic D64W1_54 tics 2
+  pic D64W1_55 tics 2
+  pic D64W1_56 tics 2
+  pic D64W1_57 tics 2
+  pic D64W1_58 tics 2
+  pic D64W1_59 tics 2
+  pic D64W1_60 tics 2
+  pic D64W1_61 tics 2
+  pic D64W1_62 tics 2
+  pic D64W1_63 tics 2
+  pic D64W1_64 tics 2
+
+flat Fwater4
+  pic D64W2_01 tics 2
+  pic D64W2_02 tics 2
+  pic D64W2_03 tics 2
+  pic D64W2_04 tics 2
+  pic D64W2_05 tics 2
+  pic D64W2_06 tics 2
+  pic D64W2_07 tics 2
+  pic D64W2_08 tics 2
+  pic D64W2_09 tics 2
+  pic D64W2_10 tics 2
+  pic D64W2_11 tics 2
+  pic D64W2_12 tics 2
+  pic D64W2_13 tics 2
+  pic D64W2_14 tics 2
+  pic D64W2_15 tics 2
+  pic D64W2_16 tics 2
+  pic D64W2_17 tics 2
+  pic D64W2_18 tics 2
+  pic D64W2_19 tics 2
+  pic D64W2_20 tics 2
+  pic D64W2_21 tics 2
+  pic D64W2_22 tics 2
+  pic D64W2_23 tics 2
+  pic D64W2_24 tics 2
+  pic D64W2_25 tics 2
+  pic D64W2_26 tics 2
+  pic D64W2_27 tics 2
+  pic D64W2_28 tics 2
+  pic D64W2_29 tics 2
+  pic D64W2_30 tics 2
+  pic D64W2_31 tics 2
+  pic D64W2_32 tics 2
+  pic D64W2_33 tics 2
+  pic D64W2_34 tics 2
+  pic D64W2_35 tics 2
+  pic D64W2_36 tics 2
+  pic D64W2_37 tics 2
+  pic D64W2_38 tics 2
+  pic D64W2_39 tics 2
+  pic D64W2_40 tics 2
+  pic D64W2_41 tics 2
+  pic D64W2_42 tics 2
+  pic D64W2_43 tics 2
+  pic D64W2_44 tics 2
+  pic D64W2_45 tics 2
+  pic D64W2_46 tics 2
+  pic D64W2_47 tics 2
+  pic D64W2_48 tics 2
+  pic D64W2_49 tics 2
+  pic D64W2_50 tics 2
+  pic D64W2_51 tics 2
+  pic D64W2_52 tics 2
+  pic D64W2_53 tics 2
+  pic D64W2_54 tics 2
+  pic D64W2_55 tics 2
+  pic D64W2_56 tics 2
+  pic D64W2_57 tics 2
+  pic D64W2_58 tics 2
+  pic D64W2_59 tics 2
+  pic D64W2_60 tics 2
+  pic D64W2_61 tics 2
+  pic D64W2_62 tics 2
+  pic D64W2_63 tics 2
+  pic D64W2_64 tics 2
+  
+// LAVA TEXTURE
+
+flat Lava1
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+flat Lava2
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+flat Lava3
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+flat Lava4
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+texture DBRAIN1
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+texture DBRAIN2
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+texture DBRAIN3
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+texture DBRAIN4
+  pic D64L1_01 tics 2
+  pic D64L1_02 tics 2
+  pic D64L1_03 tics 2
+  pic D64L1_04 tics 2
+  pic D64L1_05 tics 2
+  pic D64L1_06 tics 2
+  pic D64L1_07 tics 2
+  pic D64L1_08 tics 2
+  pic D64L1_09 tics 2
+  pic D64L1_10 tics 2
+  pic D64L1_11 tics 2
+  pic D64L1_12 tics 2
+  pic D64L1_13 tics 2
+  pic D64L1_14 tics 2
+  pic D64L1_15 tics 2
+  pic D64L1_16 tics 2
+  pic D64L1_17 tics 2
+  pic D64L1_18 tics 2
+  pic D64L1_19 tics 2
+  pic D64L1_20 tics 2
+  pic D64L1_21 tics 2
+  pic D64L1_22 tics 2
+  pic D64L1_23 tics 2
+  pic D64L1_24 tics 2
+  pic D64L1_25 tics 2
+  pic D64L1_26 tics 2
+  pic D64L1_27 tics 2
+  pic D64L1_28 tics 2
+  pic D64L1_29 tics 2
+  pic D64L1_30 tics 2
+  pic D64L1_31 tics 2
+  pic D64L1_32 tics 2
+  pic D64L1_33 tics 2
+  pic D64L1_34 tics 2
+  pic D64L1_35 tics 2
+  pic D64L1_36 tics 2
+  pic D64L1_37 tics 2
+  pic D64L1_38 tics 2
+  pic D64L1_39 tics 2
+  pic D64L1_40 tics 2
+  pic D64L1_41 tics 2
+  pic D64L1_42 tics 2
+  pic D64L1_43 tics 2
+  pic D64L1_44 tics 2
+  pic D64L1_45 tics 2
+  pic D64L1_46 tics 2
+  pic D64L1_47 tics 2
+  pic D64L1_48 tics 2
+  pic D64L1_49 tics 2
+  pic D64L1_50 tics 2
+  pic D64L1_51 tics 2
+  pic D64L1_52 tics 2
+  pic D64L1_53 tics 2
+  pic D64L1_54 tics 2
+  pic D64L1_55 tics 2
+  pic D64L1_56 tics 2
+  pic D64L1_57 tics 2
+  pic D64L1_58 tics 2
+  pic D64L1_59 tics 2
+  pic D64L1_60 tics 2
+  pic D64L1_61 tics 2
+  pic D64L1_62 tics 2
+  pic D64L1_63 tics 2
+  pic D64L1_64 tics 2
+  
+flat SLIMEA
+  pic D64N1_01 tics 2
+  pic D64N1_02 tics 2
+  pic D64N1_03 tics 2
+  pic D64N1_04 tics 2
+  pic D64N1_05 tics 2
+  pic D64N1_06 tics 2
+  pic D64N1_07 tics 2
+  pic D64N1_08 tics 2
+  pic D64N1_09 tics 2
+  pic D64N1_10 tics 2
+  pic D64N1_11 tics 2
+  pic D64N1_12 tics 2
+  pic D64N1_13 tics 2
+  pic D64N1_14 tics 2
+  pic D64N1_15 tics 2
+  pic D64N1_16 tics 2
+  pic D64N1_17 tics 2
+  pic D64N1_18 tics 2
+  pic D64N1_19 tics 2
+  pic D64N1_20 tics 2
+  pic D64N1_21 tics 2
+  pic D64N1_22 tics 2
+  pic D64N1_23 tics 2
+  pic D64N1_24 tics 2
+  pic D64N1_25 tics 2
+  pic D64N1_26 tics 2
+  pic D64N1_27 tics 2
+  pic D64N1_28 tics 2
+  pic D64N1_29 tics 2
+  pic D64N1_30 tics 2
+  pic D64N1_31 tics 2
+  pic D64N1_32 tics 2
+  pic D64N1_33 tics 2
+  pic D64N1_34 tics 2
+  pic D64N1_35 tics 2
+  pic D64N1_36 tics 2
+  pic D64N1_37 tics 2
+  pic D64N1_38 tics 2
+  pic D64N1_39 tics 2
+  pic D64N1_40 tics 2
+  pic D64N1_41 tics 2
+  pic D64N1_42 tics 2
+  pic D64N1_43 tics 2
+  pic D64N1_44 tics 2
+  pic D64N1_45 tics 2
+  pic D64N1_46 tics 2
+  pic D64N1_47 tics 2
+  pic D64N1_48 tics 2
+  pic D64N1_49 tics 2
+  pic D64N1_50 tics 2
+  pic D64N1_51 tics 2
+  pic D64N1_52 tics 2
+  pic D64N1_53 tics 2
+  pic D64N1_54 tics 2
+  pic D64N1_55 tics 2
+  pic D64N1_56 tics 2
+  pic D64N1_57 tics 2
+  pic D64N1_58 tics 2
+  pic D64N1_59 tics 2
+  pic D64N1_60 tics 2
+  pic D64N1_61 tics 2
+  pic D64N1_62 tics 2
+  pic D64N1_63 tics 2
+  pic D64N1_64 tics 2
+
+flat SLIMEB
+  pic D64N2_01 tics 2
+  pic D64N2_02 tics 2
+  pic D64N2_03 tics 2
+  pic D64N2_04 tics 2
+  pic D64N2_05 tics 2
+  pic D64N2_06 tics 2
+  pic D64N2_07 tics 2
+  pic D64N2_08 tics 2
+  pic D64N2_09 tics 2
+  pic D64N2_10 tics 2
+  pic D64N2_11 tics 2
+  pic D64N2_12 tics 2
+  pic D64N2_13 tics 2
+  pic D64N2_14 tics 2
+  pic D64N2_15 tics 2
+  pic D64N2_16 tics 2
+  pic D64N2_17 tics 2
+  pic D64N2_18 tics 2
+  pic D64N2_19 tics 2
+  pic D64N2_20 tics 2
+  pic D64N2_21 tics 2
+  pic D64N2_22 tics 2
+  pic D64N2_23 tics 2
+  pic D64N2_24 tics 2
+  pic D64N2_25 tics 2
+  pic D64N2_26 tics 2
+  pic D64N2_27 tics 2
+  pic D64N2_28 tics 2
+  pic D64N2_29 tics 2
+  pic D64N2_30 tics 2
+  pic D64N2_31 tics 2
+  pic D64N2_32 tics 2
+  pic D64N2_33 tics 2
+  pic D64N2_34 tics 2
+  pic D64N2_35 tics 2
+  pic D64N2_36 tics 2
+  pic D64N2_37 tics 2
+  pic D64N2_38 tics 2
+  pic D64N2_39 tics 2
+  pic D64N2_40 tics 2
+  pic D64N2_41 tics 2
+  pic D64N2_42 tics 2
+  pic D64N2_43 tics 2
+  pic D64N2_44 tics 2
+  pic D64N2_45 tics 2
+  pic D64N2_46 tics 2
+  pic D64N2_47 tics 2
+  pic D64N2_48 tics 2
+  pic D64N2_49 tics 2
+  pic D64N2_50 tics 2
+  pic D64N2_51 tics 2
+  pic D64N2_52 tics 2
+  pic D64N2_53 tics 2
+  pic D64N2_54 tics 2
+  pic D64N2_55 tics 2
+  pic D64N2_56 tics 2
+  pic D64N2_57 tics 2
+  pic D64N2_58 tics 2
+  pic D64N2_59 tics 2
+  pic D64N2_60 tics 2
+  pic D64N2_61 tics 2
+  pic D64N2_62 tics 2
+  pic D64N2_63 tics 2
+  pic D64N2_64 tics 2
+  
+texture WFALL1
+  pic WFALL01 tics 2
+  pic WFALL02 tics 2
+  pic WFALL03 tics 2
+  pic WFALL04 tics 2
+  pic WFALL05 tics 2
+  pic WFALL06 tics 2
+  pic WFALL07 tics 2
+  pic WFALL08 tics 2
+  pic WFALL09 tics 2
+  pic WFALL10 tics 2
+  pic WFALL11 tics 2
+  pic WFALL12 tics 2
+  pic WFALL13 tics 2
+  pic WFALL14 tics 2
+  pic WFALL15 tics 2
+  pic WFALL16 tics 2
+  pic WFALL17 tics 2
+  pic WFALL18 tics 2
+  pic WFALL19 tics 2
+  pic WFALL20 tics 2
+  pic WFALL21 tics 2
+  pic WFALL22 tics 2
+  pic WFALL23 tics 2
+  pic WFALL24 tics 2
+  pic WFALL25 tics 2
+  pic WFALL26 tics 2
+  pic WFALL27 tics 2
+  pic WFALL28 tics 2
+  pic WFALL29 tics 2
+  pic WFALL30 tics 2
+  pic WFALL31 tics 2
+  pic WFALL32 tics 2
+  pic WFALL33 tics 2
+  pic WFALL34 tics 2
+  pic WFALL35 tics 2
+  pic WFALL36 tics 2
+  pic WFALL37 tics 2
+  pic WFALL38 tics 2
+  pic WFALL39 tics 2
+  pic WFALL40 tics 2
+  pic WFALL41 tics 2
+  pic WFALL42 tics 2
+  pic WFALL43 tics 2
+  pic WFALL44 tics 2
+  pic WFALL45 tics 2
+  pic WFALL46 tics 2
+  pic WFALL47 tics 2
+  pic WFALL48 tics 2
+  pic WFALL49 tics 2
+  pic WFALL50 tics 2
+  pic WFALL51 tics 2
+  pic WFALL52 tics 2
+  pic WFALL53 tics 2
+  pic WFALL54 tics 2
+  pic WFALL55 tics 2
+  pic WFALL56 tics 2
+  pic WFALL57 tics 2
+  pic WFALL58 tics 2
+  pic WFALL59 tics 2
+  pic WFALL60 tics 2
+  pic WFALL61 tics 2
+  pic WFALL62 tics 2
+  pic WFALL63 tics 2
+  pic WFALL64 tics 2
+  
+texture WFALL2
+  pic WFALL01 tics 2
+  pic WFALL02 tics 2
+  pic WFALL03 tics 2
+  pic WFALL04 tics 2
+  pic WFALL05 tics 2
+  pic WFALL06 tics 2
+  pic WFALL07 tics 2
+  pic WFALL08 tics 2
+  pic WFALL09 tics 2
+  pic WFALL10 tics 2
+  pic WFALL11 tics 2
+  pic WFALL12 tics 2
+  pic WFALL13 tics 2
+  pic WFALL14 tics 2
+  pic WFALL15 tics 2
+  pic WFALL16 tics 2
+  pic WFALL17 tics 2
+  pic WFALL18 tics 2
+  pic WFALL19 tics 2
+  pic WFALL20 tics 2
+  pic WFALL21 tics 2
+  pic WFALL22 tics 2
+  pic WFALL23 tics 2
+  pic WFALL24 tics 2
+  pic WFALL25 tics 2
+  pic WFALL26 tics 2
+  pic WFALL27 tics 2
+  pic WFALL28 tics 2
+  pic WFALL29 tics 2
+  pic WFALL30 tics 2
+  pic WFALL31 tics 2
+  pic WFALL32 tics 2
+  pic WFALL33 tics 2
+  pic WFALL34 tics 2
+  pic WFALL35 tics 2
+  pic WFALL36 tics 2
+  pic WFALL37 tics 2
+  pic WFALL38 tics 2
+  pic WFALL39 tics 2
+  pic WFALL40 tics 2
+  pic WFALL41 tics 2
+  pic WFALL42 tics 2
+  pic WFALL43 tics 2
+  pic WFALL44 tics 2
+  pic WFALL45 tics 2
+  pic WFALL46 tics 2
+  pic WFALL47 tics 2
+  pic WFALL48 tics 2
+  pic WFALL49 tics 2
+  pic WFALL50 tics 2
+  pic WFALL51 tics 2
+  pic WFALL52 tics 2
+  pic WFALL53 tics 2
+  pic WFALL54 tics 2
+  pic WFALL55 tics 2
+  pic WFALL56 tics 2
+  pic WFALL57 tics 2
+  pic WFALL58 tics 2
+  pic WFALL59 tics 2
+  pic WFALL60 tics 2
+  pic WFALL61 tics 2
+  pic WFALL62 tics 2
+  pic WFALL63 tics 2
+  pic WFALL64 tics 2
+  
+texture WFALL3
+  pic WFALL01 tics 2
+  pic WFALL02 tics 2
+  pic WFALL03 tics 2
+  pic WFALL04 tics 2
+  pic WFALL05 tics 2
+  pic WFALL06 tics 2
+  pic WFALL07 tics 2
+  pic WFALL08 tics 2
+  pic WFALL09 tics 2
+  pic WFALL10 tics 2
+  pic WFALL11 tics 2
+  pic WFALL12 tics 2
+  pic WFALL13 tics 2
+  pic WFALL14 tics 2
+  pic WFALL15 tics 2
+  pic WFALL16 tics 2
+  pic WFALL17 tics 2
+  pic WFALL18 tics 2
+  pic WFALL19 tics 2
+  pic WFALL20 tics 2
+  pic WFALL21 tics 2
+  pic WFALL22 tics 2
+  pic WFALL23 tics 2
+  pic WFALL24 tics 2
+  pic WFALL25 tics 2
+  pic WFALL26 tics 2
+  pic WFALL27 tics 2
+  pic WFALL28 tics 2
+  pic WFALL29 tics 2
+  pic WFALL30 tics 2
+  pic WFALL31 tics 2
+  pic WFALL32 tics 2
+  pic WFALL33 tics 2
+  pic WFALL34 tics 2
+  pic WFALL35 tics 2
+  pic WFALL36 tics 2
+  pic WFALL37 tics 2
+  pic WFALL38 tics 2
+  pic WFALL39 tics 2
+  pic WFALL40 tics 2
+  pic WFALL41 tics 2
+  pic WFALL42 tics 2
+  pic WFALL43 tics 2
+  pic WFALL44 tics 2
+  pic WFALL45 tics 2
+  pic WFALL46 tics 2
+  pic WFALL47 tics 2
+  pic WFALL48 tics 2
+  pic WFALL49 tics 2
+  pic WFALL50 tics 2
+  pic WFALL51 tics 2
+  pic WFALL52 tics 2
+  pic WFALL53 tics 2
+  pic WFALL54 tics 2
+  pic WFALL55 tics 2
+  pic WFALL56 tics 2
+  pic WFALL57 tics 2
+  pic WFALL58 tics 2
+  pic WFALL59 tics 2
+  pic WFALL60 tics 2
+  pic WFALL61 tics 2
+  pic WFALL62 tics 2
+  pic WFALL63 tics 2
+  pic WFALL64 tics 2
+  
+texture WFALL4
+  pic WFALL01 tics 2
+  pic WFALL02 tics 2
+  pic WFALL03 tics 2
+  pic WFALL04 tics 2
+  pic WFALL05 tics 2
+  pic WFALL06 tics 2
+  pic WFALL07 tics 2
+  pic WFALL08 tics 2
+  pic WFALL09 tics 2
+  pic WFALL10 tics 2
+  pic WFALL11 tics 2
+  pic WFALL12 tics 2
+  pic WFALL13 tics 2
+  pic WFALL14 tics 2
+  pic WFALL15 tics 2
+  pic WFALL16 tics 2
+  pic WFALL17 tics 2
+  pic WFALL18 tics 2
+  pic WFALL19 tics 2
+  pic WFALL20 tics 2
+  pic WFALL21 tics 2
+  pic WFALL22 tics 2
+  pic WFALL23 tics 2
+  pic WFALL24 tics 2
+  pic WFALL25 tics 2
+  pic WFALL26 tics 2
+  pic WFALL27 tics 2
+  pic WFALL28 tics 2
+  pic WFALL29 tics 2
+  pic WFALL30 tics 2
+  pic WFALL31 tics 2
+  pic WFALL32 tics 2
+  pic WFALL33 tics 2
+  pic WFALL34 tics 2
+  pic WFALL35 tics 2
+  pic WFALL36 tics 2
+  pic WFALL37 tics 2
+  pic WFALL38 tics 2
+  pic WFALL39 tics 2
+  pic WFALL40 tics 2
+  pic WFALL41 tics 2
+  pic WFALL42 tics 2
+  pic WFALL43 tics 2
+  pic WFALL44 tics 2
+  pic WFALL45 tics 2
+  pic WFALL46 tics 2
+  pic WFALL47 tics 2
+  pic WFALL48 tics 2
+  pic WFALL49 tics 2
+  pic WFALL50 tics 2
+  pic WFALL51 tics 2
+  pic WFALL52 tics 2
+  pic WFALL53 tics 2
+  pic WFALL54 tics 2
+  pic WFALL55 tics 2
+  pic WFALL56 tics 2
+  pic WFALL57 tics 2
+  pic WFALL58 tics 2
+  pic WFALL59 tics 2
+  pic WFALL60 tics 2
+  pic WFALL61 tics 2
+  pic WFALL62 tics 2
+  pic WFALL63 tics 2
+  pic WFALL64 tics 2
+  
+texture SFALL1
+  pic SFALL01 tics 2
+  pic SFALL02 tics 2
+  pic SFALL03 tics 2
+  pic SFALL04 tics 2
+  pic SFALL05 tics 2
+  pic SFALL06 tics 2
+  pic SFALL07 tics 2
+  pic SFALL08 tics 2
+  pic SFALL09 tics 2
+  pic SFALL10 tics 2
+  pic SFALL11 tics 2
+  pic SFALL12 tics 2
+  pic SFALL13 tics 2
+  pic SFALL14 tics 2
+  pic SFALL15 tics 2
+  pic SFALL16 tics 2
+  pic SFALL17 tics 2
+  pic SFALL18 tics 2
+  pic SFALL19 tics 2
+  pic SFALL20 tics 2
+  pic SFALL21 tics 2
+  pic SFALL22 tics 2
+  pic SFALL23 tics 2
+  pic SFALL24 tics 2
+  pic SFALL25 tics 2
+  pic SFALL26 tics 2
+  pic SFALL27 tics 2
+  pic SFALL28 tics 2
+  pic SFALL29 tics 2
+  pic SFALL30 tics 2
+  pic SFALL31 tics 2
+  pic SFALL32 tics 2
+  pic SFALL33 tics 2
+  pic SFALL34 tics 2
+  pic SFALL35 tics 2
+  pic SFALL36 tics 2
+  pic SFALL37 tics 2
+  pic SFALL38 tics 2
+  pic SFALL39 tics 2
+  pic SFALL40 tics 2
+  pic SFALL41 tics 2
+  pic SFALL42 tics 2
+  pic SFALL43 tics 2
+  pic SFALL44 tics 2
+  pic SFALL45 tics 2
+  pic SFALL46 tics 2
+  pic SFALL47 tics 2
+  pic SFALL48 tics 2
+  pic SFALL49 tics 2
+  pic SFALL50 tics 2
+  pic SFALL51 tics 2
+  pic SFALL52 tics 2
+  pic SFALL53 tics 2
+  pic SFALL54 tics 2
+  pic SFALL55 tics 2
+  pic SFALL56 tics 2
+  pic SFALL57 tics 2
+  pic SFALL58 tics 2
+  pic SFALL59 tics 2
+  pic SFALL60 tics 2
+  pic SFALL61 tics 2
+  pic SFALL62 tics 2
+  pic SFALL63 tics 2
+  pic SFALL64 tics 2
+  
+texture SFALL2
+  pic SFALL01 tics 2
+  pic SFALL02 tics 2
+  pic SFALL03 tics 2
+  pic SFALL04 tics 2
+  pic SFALL05 tics 2
+  pic SFALL06 tics 2
+  pic SFALL07 tics 2
+  pic SFALL08 tics 2
+  pic SFALL09 tics 2
+  pic SFALL10 tics 2
+  pic SFALL11 tics 2
+  pic SFALL12 tics 2
+  pic SFALL13 tics 2
+  pic SFALL14 tics 2
+  pic SFALL15 tics 2
+  pic SFALL16 tics 2
+  pic SFALL17 tics 2
+  pic SFALL18 tics 2
+  pic SFALL19 tics 2
+  pic SFALL20 tics 2
+  pic SFALL21 tics 2
+  pic SFALL22 tics 2
+  pic SFALL23 tics 2
+  pic SFALL24 tics 2
+  pic SFALL25 tics 2
+  pic SFALL26 tics 2
+  pic SFALL27 tics 2
+  pic SFALL28 tics 2
+  pic SFALL29 tics 2
+  pic SFALL30 tics 2
+  pic SFALL31 tics 2
+  pic SFALL32 tics 2
+  pic SFALL33 tics 2
+  pic SFALL34 tics 2
+  pic SFALL35 tics 2
+  pic SFALL36 tics 2
+  pic SFALL37 tics 2
+  pic SFALL38 tics 2
+  pic SFALL39 tics 2
+  pic SFALL40 tics 2
+  pic SFALL41 tics 2
+  pic SFALL42 tics 2
+  pic SFALL43 tics 2
+  pic SFALL44 tics 2
+  pic SFALL45 tics 2
+  pic SFALL46 tics 2
+  pic SFALL47 tics 2
+  pic SFALL48 tics 2
+  pic SFALL49 tics 2
+  pic SFALL50 tics 2
+  pic SFALL51 tics 2
+  pic SFALL52 tics 2
+  pic SFALL53 tics 2
+  pic SFALL54 tics 2
+  pic SFALL55 tics 2
+  pic SFALL56 tics 2
+  pic SFALL57 tics 2
+  pic SFALL58 tics 2
+  pic SFALL59 tics 2
+  pic SFALL60 tics 2
+  pic SFALL61 tics 2
+  pic SFALL62 tics 2
+  pic SFALL63 tics 2
+  pic SFALL64 tics 2
+  
+texture SFALL3
+  pic SFALL01 tics 2
+  pic SFALL02 tics 2
+  pic SFALL03 tics 2
+  pic SFALL04 tics 2
+  pic SFALL05 tics 2
+  pic SFALL06 tics 2
+  pic SFALL07 tics 2
+  pic SFALL08 tics 2
+  pic SFALL09 tics 2
+  pic SFALL10 tics 2
+  pic SFALL11 tics 2
+  pic SFALL12 tics 2
+  pic SFALL13 tics 2
+  pic SFALL14 tics 2
+  pic SFALL15 tics 2
+  pic SFALL16 tics 2
+  pic SFALL17 tics 2
+  pic SFALL18 tics 2
+  pic SFALL19 tics 2
+  pic SFALL20 tics 2
+  pic SFALL21 tics 2
+  pic SFALL22 tics 2
+  pic SFALL23 tics 2
+  pic SFALL24 tics 2
+  pic SFALL25 tics 2
+  pic SFALL26 tics 2
+  pic SFALL27 tics 2
+  pic SFALL28 tics 2
+  pic SFALL29 tics 2
+  pic SFALL30 tics 2
+  pic SFALL31 tics 2
+  pic SFALL32 tics 2
+  pic SFALL33 tics 2
+  pic SFALL34 tics 2
+  pic SFALL35 tics 2
+  pic SFALL36 tics 2
+  pic SFALL37 tics 2
+  pic SFALL38 tics 2
+  pic SFALL39 tics 2
+  pic SFALL40 tics 2
+  pic SFALL41 tics 2
+  pic SFALL42 tics 2
+  pic SFALL43 tics 2
+  pic SFALL44 tics 2
+  pic SFALL45 tics 2
+  pic SFALL46 tics 2
+  pic SFALL47 tics 2
+  pic SFALL48 tics 2
+  pic SFALL49 tics 2
+  pic SFALL50 tics 2
+  pic SFALL51 tics 2
+  pic SFALL52 tics 2
+  pic SFALL53 tics 2
+  pic SFALL54 tics 2
+  pic SFALL55 tics 2
+  pic SFALL56 tics 2
+  pic SFALL57 tics 2
+  pic SFALL58 tics 2
+  pic SFALL59 tics 2
+  pic SFALL60 tics 2
+  pic SFALL61 tics 2
+  pic SFALL62 tics 2
+  pic SFALL63 tics 2
+  pic SFALL64 tics 2
+  
+texture SFALL4
+  pic SFALL01 tics 2
+  pic SFALL02 tics 2
+  pic SFALL03 tics 2
+  pic SFALL04 tics 2
+  pic SFALL05 tics 2
+  pic SFALL06 tics 2
+  pic SFALL07 tics 2
+  pic SFALL08 tics 2
+  pic SFALL09 tics 2
+  pic SFALL10 tics 2
+  pic SFALL11 tics 2
+  pic SFALL12 tics 2
+  pic SFALL13 tics 2
+  pic SFALL14 tics 2
+  pic SFALL15 tics 2
+  pic SFALL16 tics 2
+  pic SFALL17 tics 2
+  pic SFALL18 tics 2
+  pic SFALL19 tics 2
+  pic SFALL20 tics 2
+  pic SFALL21 tics 2
+  pic SFALL22 tics 2
+  pic SFALL23 tics 2
+  pic SFALL24 tics 2
+  pic SFALL25 tics 2
+  pic SFALL26 tics 2
+  pic SFALL27 tics 2
+  pic SFALL28 tics 2
+  pic SFALL29 tics 2
+  pic SFALL30 tics 2
+  pic SFALL31 tics 2
+  pic SFALL32 tics 2
+  pic SFALL33 tics 2
+  pic SFALL34 tics 2
+  pic SFALL35 tics 2
+  pic SFALL36 tics 2
+  pic SFALL37 tics 2
+  pic SFALL38 tics 2
+  pic SFALL39 tics 2
+  pic SFALL40 tics 2
+  pic SFALL41 tics 2
+  pic SFALL42 tics 2
+  pic SFALL43 tics 2
+  pic SFALL44 tics 2
+  pic SFALL45 tics 2
+  pic SFALL46 tics 2
+  pic SFALL47 tics 2
+  pic SFALL48 tics 2
+  pic SFALL49 tics 2
+  pic SFALL50 tics 2
+  pic SFALL51 tics 2
+  pic SFALL52 tics 2
+  pic SFALL53 tics 2
+  pic SFALL54 tics 2
+  pic SFALL55 tics 2
+  pic SFALL56 tics 2
+  pic SFALL57 tics 2
+  pic SFALL58 tics 2
+  pic SFALL59 tics 2
+  pic SFALL60 tics 2
+  pic SFALL61 tics 2
+  pic SFALL62 tics 2
+  pic SFALL63 tics 2
+  pic SFALL64 tics 2
+  
+texture SLIFALL
+  pic SFALL01 tics 2
+  pic SFALL02 tics 2
+  pic SFALL03 tics 2
+  pic SFALL04 tics 2
+  pic SFALL05 tics 2
+  pic SFALL06 tics 2
+  pic SFALL07 tics 2
+  pic SFALL08 tics 2
+  pic SFALL09 tics 2
+  pic SFALL10 tics 2
+  pic SFALL11 tics 2
+  pic SFALL12 tics 2
+  pic SFALL13 tics 2
+  pic SFALL14 tics 2
+  pic SFALL15 tics 2
+  pic SFALL16 tics 2
+  pic SFALL17 tics 2
+  pic SFALL18 tics 2
+  pic SFALL19 tics 2
+  pic SFALL20 tics 2
+  pic SFALL21 tics 2
+  pic SFALL22 tics 2
+  pic SFALL23 tics 2
+  pic SFALL24 tics 2
+  pic SFALL25 tics 2
+  pic SFALL26 tics 2
+  pic SFALL27 tics 2
+  pic SFALL28 tics 2
+  pic SFALL29 tics 2
+  pic SFALL30 tics 2
+  pic SFALL31 tics 2
+  pic SFALL32 tics 2
+  pic SFALL33 tics 2
+  pic SFALL34 tics 2
+  pic SFALL35 tics 2
+  pic SFALL36 tics 2
+  pic SFALL37 tics 2
+  pic SFALL38 tics 2
+  pic SFALL39 tics 2
+  pic SFALL40 tics 2
+  pic SFALL41 tics 2
+  pic SFALL42 tics 2
+  pic SFALL43 tics 2
+  pic SFALL44 tics 2
+  pic SFALL45 tics 2
+  pic SFALL46 tics 2
+  pic SFALL47 tics 2
+  pic SFALL48 tics 2
+  pic SFALL49 tics 2
+  pic SFALL50 tics 2
+  pic SFALL51 tics 2
+  pic SFALL52 tics 2
+  pic SFALL53 tics 2
+  pic SFALL54 tics 2
+  pic SFALL55 tics 2
+  pic SFALL56 tics 2
+  pic SFALL57 tics 2
+  pic SFALL58 tics 2
+  pic SFALL59 tics 2
+  pic SFALL60 tics 2
+  pic SFALL61 tics 2
+  pic SFALL62 tics 2
+  pic SFALL63 tics 2
+  pic SFALL64 tics 2
+  
+texture FIREBLU1
+	pic	FIREBL01 tics 2
+	pic	FIREBL02 tics 2
+	pic	FIREBL03 tics 2
+	pic	FIREBL04 tics 2
+	pic	FIREBL05 tics 2
+	pic	FIREBL06 tics 2
+	pic	FIREBL07 tics 2
+	pic	FIREBL08 tics 2
+	pic	FIREBL09 tics 2
+	pic	FIREBL10 tics 2
+	pic	FIREBL11 tics 2
+	pic	FIREBL12 tics 2
+	pic	FIREBL13 tics 2
+	pic	FIREBL14 tics 2
+	pic	FIREBL15 tics 2
+	pic	FIREBL16 tics 2
+	pic	FIREBL17 tics 2
+	pic	FIREBL18 tics 2
+	pic	FIREBL19 tics 2
+	pic	FIREBL20 tics 2
+	pic	FIREBL21 tics 2
+	pic	FIREBL22 tics 2
+	pic	FIREBL23 tics 2
+	pic	FIREBL24 tics 2
+	pic	FIREBL25 tics 2
+	pic	FIREBL26 tics 2
+	pic	FIREBL27 tics 2
+	pic	FIREBL28 tics 2
+	pic	FIREBL29 tics 2
+	pic	FIREBL30 tics 2
+	pic	FIREBL31 tics 2
+	pic	FIREBL32 tics 2
+	
+texture FIREBLU2
+	pic	FIREBL01 tics 2
+	pic	FIREBL02 tics 2
+	pic	FIREBL03 tics 2
+	pic	FIREBL04 tics 2
+	pic	FIREBL05 tics 2
+	pic	FIREBL06 tics 2
+	pic	FIREBL07 tics 2
+	pic	FIREBL08 tics 2
+	pic	FIREBL09 tics 2
+	pic	FIREBL10 tics 2
+	pic	FIREBL11 tics 2
+	pic	FIREBL12 tics 2
+	pic	FIREBL13 tics 2
+	pic	FIREBL14 tics 2
+	pic	FIREBL15 tics 2
+	pic	FIREBL16 tics 2
+	pic	FIREBL17 tics 2
+	pic	FIREBL18 tics 2
+	pic	FIREBL19 tics 2
+	pic	FIREBL20 tics 2
+	pic	FIREBL21 tics 2
+	pic	FIREBL22 tics 2
+	pic	FIREBL23 tics 2
+	pic	FIREBL24 tics 2
+	pic	FIREBL25 tics 2
+	pic	FIREBL26 tics 2
+	pic	FIREBL27 tics 2
+	pic	FIREBL28 tics 2
+	pic	FIREBL29 tics 2
+	pic	FIREBL30 tics 2
+	pic	FIREBL31 tics 2
+	pic	FIREBL32 tics 2
+  
+texture SKY-0052
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+pic 5 tics 2
+pic 6 tics 2
+pic 7 tics 2
+pic 8 tics 2
+pic 9 tics 2
+pic 10 tics 2
+pic 11 tics 2
+pic 12 tics 2
+pic 13 tics 2
+pic 14 tics 2
+pic 15 tics 2
+pic 16 tics 2
+pic 17 tics 2
+pic 18 tics 2
+pic 19 tics 2
+pic 20 tics 2
+pic 21 tics 2
+pic 22 tics 2
+pic 23 tics 2
+pic 24 tics 2
+pic 25 tics 2
+pic 26 tics 2
+pic 27 tics 2
+pic 28 tics 2
+pic 29 tics 2
+pic 30 tics 2
+pic 31 tics 2
+pic 32 tics 2
+pic 33 tics 2
+pic 34 tics 2
+pic 35 tics 2
+pic 36 tics 2
+pic 37 tics 2
+pic 38 tics 2
+pic 39 tics 2
+pic 40 tics 2
+pic 41 tics 2
+pic 42 tics 2
+pic 43 tics 2
+pic 44 tics 2
+pic 45 tics 2
+pic 46 tics 2
+pic 47 tics 2
+pic 48 tics 2
+pic 49 tics 2
+pic 50 tics 2
+pic 51 tics 2
+pic 52 tics 2
+pic 53 tics 2
+pic 54 tics 2
+pic 55 tics 2
+pic 56 tics 2
+pic 57 tics 2
+pic 58 tics 2
+pic 59 tics 2
+pic 60 tics 2
+pic 61 tics 2
+pic 62 tics 2
+pic 63 tics 2
+pic 64 tics 2
+pic 65 tics 2
+pic 66 tics 2
+pic 67 tics 2
+pic 68 tics 2
+pic 69 tics 2
+pic 70 tics 2
+pic 71 tics 2
+pic 72 tics 2
+pic 73 tics 2
+pic 74 tics 2
+pic 75 tics 2
+pic 76 tics 2
+pic 77 tics 2
+pic 78 tics 2
+pic 79 tics 2
+pic 80 tics 2
+pic 81 tics 2
+pic 82 tics 2
+pic 83 tics 2
+pic 84 tics 2
+pic 85 tics 2
+pic 86 tics 2
+pic 87 tics 2
+pic 88 tics 2
+pic 89 tics 2
+pic 90 tics 2
+pic 91 tics 2
+pic 92 tics 2
+pic 93 tics 2
+pic 94 tics 2
+pic 95 tics 2
+pic 96 tics 2
+pic 97 tics 2
+pic 98 tics 2
+pic 99 tics 2
+pic 100 tics 2
+
+texture SKY-B052
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+pic 5 tics 2
+pic 6 tics 2
+pic 7 tics 2
+pic 8 tics 2
+pic 9 tics 2
+pic 10 tics 2
+pic 11 tics 2
+pic 12 tics 2
+pic 13 tics 2
+pic 14 tics 2
+pic 15 tics 2
+pic 16 tics 2
+pic 17 tics 2
+pic 18 tics 2
+pic 19 tics 2
+pic 20 tics 2
+pic 21 tics 2
+pic 22 tics 2
+pic 23 tics 2
+pic 24 tics 2
+pic 25 tics 2
+pic 26 tics 2
+pic 27 tics 2
+pic 28 tics 2
+pic 29 tics 2
+pic 30 tics 2
+pic 31 tics 2
+pic 32 tics 2
+pic 33 tics 2
+pic 34 tics 2
+pic 35 tics 2
+pic 36 tics 2
+pic 37 tics 2
+pic 38 tics 2
+pic 39 tics 2
+pic 40 tics 2
+pic 41 tics 2
+pic 42 tics 2
+pic 43 tics 2
+pic 44 tics 2
+pic 45 tics 2
+pic 46 tics 2
+pic 47 tics 2
+pic 48 tics 2
+pic 49 tics 2
+pic 50 tics 2
+pic 51 tics 2
+pic 52 tics 2
+pic 53 tics 2
+pic 54 tics 2
+pic 55 tics 2
+pic 56 tics 2
+pic 57 tics 2
+pic 58 tics 2
+pic 59 tics 2
+pic 60 tics 2
+pic 61 tics 2
+pic 62 tics 2
+pic 63 tics 2
+pic 64 tics 2
+pic 65 tics 2
+pic 66 tics 2
+pic 67 tics 2
+pic 68 tics 2
+pic 69 tics 2
+pic 70 tics 2
+pic 71 tics 2
+pic 72 tics 2
+pic 73 tics 2
+pic 74 tics 2
+pic 75 tics 2
+pic 76 tics 2
+pic 77 tics 2
+pic 78 tics 2
+pic 79 tics 2
+pic 80 tics 2
+pic 81 tics 2
+pic 82 tics 2
+pic 83 tics 2
+pic 84 tics 2
+pic 85 tics 2
+pic 86 tics 2
+pic 87 tics 2
+pic 88 tics 2
+pic 89 tics 2
+pic 90 tics 2
+pic 91 tics 2
+pic 92 tics 2
+pic 93 tics 2
+pic 94 tics 2
+pic 95 tics 2
+pic 96 tics 2
+pic 97 tics 2
+pic 98 tics 2
+pic 99 tics 2
+pic 100 tics 2
+
+texture SKY-G052
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+pic 5 tics 2
+pic 6 tics 2
+pic 7 tics 2
+pic 8 tics 2
+pic 9 tics 2
+pic 10 tics 2
+pic 11 tics 2
+pic 12 tics 2
+pic 13 tics 2
+pic 14 tics 2
+pic 15 tics 2
+pic 16 tics 2
+pic 17 tics 2
+pic 18 tics 2
+pic 19 tics 2
+pic 20 tics 2
+pic 21 tics 2
+pic 22 tics 2
+pic 23 tics 2
+pic 24 tics 2
+pic 25 tics 2
+pic 26 tics 2
+pic 27 tics 2
+pic 28 tics 2
+pic 29 tics 2
+pic 30 tics 2
+pic 31 tics 2
+pic 32 tics 2
+pic 33 tics 2
+pic 34 tics 2
+pic 35 tics 2
+pic 36 tics 2
+pic 37 tics 2
+pic 38 tics 2
+pic 39 tics 2
+pic 40 tics 2
+pic 41 tics 2
+pic 42 tics 2
+pic 43 tics 2
+pic 44 tics 2
+pic 45 tics 2
+pic 46 tics 2
+pic 47 tics 2
+pic 48 tics 2
+pic 49 tics 2
+pic 50 tics 2
+pic 51 tics 2
+pic 52 tics 2
+pic 53 tics 2
+pic 54 tics 2
+pic 55 tics 2
+pic 56 tics 2
+pic 57 tics 2
+pic 58 tics 2
+pic 59 tics 2
+pic 60 tics 2
+pic 61 tics 2
+pic 62 tics 2
+pic 63 tics 2
+pic 64 tics 2
+pic 65 tics 2
+pic 66 tics 2
+pic 67 tics 2
+pic 68 tics 2
+pic 69 tics 2
+pic 70 tics 2
+pic 71 tics 2
+pic 72 tics 2
+pic 73 tics 2
+pic 74 tics 2
+pic 75 tics 2
+pic 76 tics 2
+pic 77 tics 2
+pic 78 tics 2
+pic 79 tics 2
+pic 80 tics 2
+pic 81 tics 2
+pic 82 tics 2
+pic 83 tics 2
+pic 84 tics 2
+pic 85 tics 2
+pic 86 tics 2
+pic 87 tics 2
+pic 88 tics 2
+pic 89 tics 2
+pic 90 tics 2
+pic 91 tics 2
+pic 92 tics 2
+pic 93 tics 2
+pic 94 tics 2
+pic 95 tics 2
+pic 96 tics 2
+pic 97 tics 2
+pic 98 tics 2
+pic 99 tics 2
+pic 100 tics 2
+
+texture SKY-R052
+pic 1 tics 2
+pic 2 tics 2
+pic 3 tics 2
+pic 4 tics 2
+pic 5 tics 2
+pic 6 tics 2
+pic 7 tics 2
+pic 8 tics 2
+pic 9 tics 2
+pic 10 tics 2
+pic 11 tics 2
+pic 12 tics 2
+pic 13 tics 2
+pic 14 tics 2
+pic 15 tics 2
+pic 16 tics 2
+pic 17 tics 2
+pic 18 tics 2
+pic 19 tics 2
+pic 20 tics 2
+pic 21 tics 2
+pic 22 tics 2
+pic 23 tics 2
+pic 24 tics 2
+pic 25 tics 2
+pic 26 tics 2
+pic 27 tics 2
+pic 28 tics 2
+pic 29 tics 2
+pic 30 tics 2
+pic 31 tics 2
+pic 32 tics 2
+pic 33 tics 2
+pic 34 tics 2
+pic 35 tics 2
+pic 36 tics 2
+pic 37 tics 2
+pic 38 tics 2
+pic 39 tics 2
+pic 40 tics 2
+pic 41 tics 2
+pic 42 tics 2
+pic 43 tics 2
+pic 44 tics 2
+pic 45 tics 2
+pic 46 tics 2
+pic 47 tics 2
+pic 48 tics 2
+pic 49 tics 2
+pic 50 tics 2
+pic 51 tics 2
+pic 52 tics 2
+pic 53 tics 2
+pic 54 tics 2
+pic 55 tics 2
+pic 56 tics 2
+pic 57 tics 2
+pic 58 tics 2
+pic 59 tics 2
+pic 60 tics 2
+pic 61 tics 2
+pic 62 tics 2
+pic 63 tics 2
+pic 64 tics 2
+pic 65 tics 2
+pic 66 tics 2
+pic 67 tics 2
+pic 68 tics 2
+pic 69 tics 2
+pic 70 tics 2
+pic 71 tics 2
+pic 72 tics 2
+pic 73 tics 2
+pic 74 tics 2
+pic 75 tics 2
+pic 76 tics 2
+pic 77 tics 2
+pic 78 tics 2
+pic 79 tics 2
+pic 80 tics 2
+pic 81 tics 2
+pic 82 tics 2
+pic 83 tics 2
+pic 84 tics 2
+pic 85 tics 2
+pic 86 tics 2
+pic 87 tics 2
+pic 88 tics 2
+pic 89 tics 2
+pic 90 tics 2
+pic 91 tics 2
+pic 92 tics 2
+pic 93 tics 2
+pic 94 tics 2
+pic 95 tics 2
+pic 96 tics 2
+pic 97 tics 2
+pic 98 tics 2
+pic 99 tics 2
+pic 100 tics 2

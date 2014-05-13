@@ -1,0 +1,285 @@
+ACTOR SD64Player : PlayerPawn replaces DoomPlayer
+{
+	+NOSKIN
+	+QUICKTORETALIATE
+	+LOOKALLAROUND
+	Speed 1
+	Health 100
+	Radius 16
+	Height 56
+	Mass 100
+	PainChance 255
+	DamageFactor "Chainsaw", 2.0
+	DamageFactor "BFG", 0.5
+	DamageFactor "BFGRed", 0.5
+	DamageFactor "BFGBlue", 0.5
+	DamageFactor "BFGGold", 0.5
+	Player.ViewHeight 48
+	Player.ColorRange 112, 127
+	Player.DisplayName "SD64 Player"
+	Player.CrouchSprite "PLYC"
+	Player.StartItem "SD64_Pistol"
+	Player.StartItem "SD64_Fist"
+	Player.StartItem "Clip", 50
+	Player.WeaponSlot 1, SD64_Fist, SD64_Chainsaw
+	Player.WeaponSlot 2, SD64_Pistol
+	Player.WeaponSlot 3, SD64_Shotgun, SD64_SuperShotgun
+	Player.WeaponSlot 4, SD64_Chaingun, SD64_ROTTMP40
+	Player.WeaponSlot 5, SD64_RocketLauncher
+	Player.WeaponSlot 6, SD64_PlasmaRifle
+	Player.WeaponSlot 7, SD64_BFG9000
+	Species "DMPlayer"
+	LimitedToTeam 4
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		PLAY A -1
+		Loop
+	See:
+		PLAY ABCD 4
+		Loop
+	Missile:
+		PLAY E 12
+		Goto Spawn
+	Melee:
+		PLAY F 6 BRIGHT
+		Goto Missile
+		
+	Pain:
+		PLAY G 4
+		PLAY G 4 A_Pain
+		Goto Spawn
+		
+	Pain.BFG:
+		PLAY G 4 A_SpawnItemEx("SD64_BFGExtra", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PLAY G 4 A_Pain
+		Goto Spawn
+		
+	Pain.BFGBlue:
+		PLAY G 4 A_SpawnItemEx("SD64_BFGExtra_Blue", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PLAY G 4 A_Pain
+		Goto Spawn
+		
+	Pain.BFGRed:
+		PLAY G 4 A_SpawnItemEx("SD64_BFGExtra_Red", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PLAY G 4 A_Pain
+		Goto Spawn
+		
+	Pain.BFGGold:
+		PLAY G 4 A_SpawnItemEx("SD64_BFGExtra_Gold", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PLAY G 4 A_Pain
+		Goto Spawn
+		
+	Death.Chainsaw:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		goto Split
+
+	Death.SSG:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY H 0 A_Jump(56, "Split")
+		goto Death2
+		
+	Death.BFG:
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY H 0 A_SpawnItemEx("SD64_BFGExtra", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		goto XSplatter
+		
+	Death.BFGBlue:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY H 0 A_SpawnItemEx("SD64_BFGExtra_Blue", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		goto XSplatter
+	
+	Death.BFGRed:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY H 0 A_SpawnItemEx("SD64_BFGExtra_Red", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		goto XSplatter	
+		
+	Death.BFGGold:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY H 0 A_SpawnItemEx("SD64_BFGExtra_Gold", 0, 0, 32, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		goto XSplatter
+		
+	Death:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY H 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY H 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY H 0 A_GiveToTarget("SpeakOneLiner", 1)
+		goto Death2
+	Death2:
+		PLAY H 0 A_Jump(64, "AltDeath1")
+		PLAY H 8
+		PLAY I 8 A_PlayerScream
+		PLAY J 8 A_NoBlocking
+		PLAY KL 8
+		PLAY M -1
+		Stop
+	AltDeath1:
+		PLA2 A 8
+		PLA2 B 8 A_PlayerScream
+		PLA2 C 8 A_NoBlocking
+		PLA2 D 8
+		PLA2 E -1
+		Stop
+	XDeath:
+		PLAY H 0 A_StopSoundEx("Weapon")
+		PLAY N 0 A_GiveInventory("AmmoDropper", 1)
+		PLAY N 0 A_GiveInventory("KillConfirmation", 1)
+		PLAY N 0 A_GiveToTarget("SpeakOneLiner", 1)
+		PLAY N 0 A_Jump(64, "XSplatter")
+		PLAY N 0 A_Jump(48, "XSplit")
+		PLAY N 0 A_Jump(8, "lolwut")
+		goto XDeath2
+	XDeath2:
+		PLAY NNNNNNNNNNNNNNNNNNN 0 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(5,10), 0, SXF_CLIENTSIDE, 0)
+		PLAY NNN 1 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(5,10), 0, SXF_CLIENTSIDE, 0)
+		PLAY O 0 A_XScream
+		PLAY OOO 1 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(5,10), 0, SXF_CLIENTSIDE, 0)
+		PLAY P 3 A_NoBlocking
+		PLAY QRSTU 3 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(5,10), 0, SXF_CLIENTSIDE, 0)
+		PLAY V -1
+		Stop
+	lolwut:
+		PLAY O 0
+		goto XDeath2
+	XSplatter:
+		POL5 A 1
+		PLYS AAAAAAAAA 0 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(5,15), 0, SXF_CLIENTSIDE, 0)
+		POL5 AAA 0 A_SpawnItemEx("Gibs1", random(-32,32), random(-32,32), random(0, 56), MOMX+random(-10, 10), MOMY+random(-10,10), MOMZ+random(5,15), random(-360,360), SXF_CLIENTSIDE | SXF_ABSOLUTEMOMENTUM | SXF_TRANSFERTRANSLATION, 0)
+		POL5 AAAAAA 0 A_SpawnItemEx("Gibs2", random(-32,32), random(-32,32), random(0, 56), MOMX+random(-10, 10), MOMY+random(-10,10), MOMZ+random(5,15), random(-360,360), SXF_CLIENTSIDE | SXF_ABSOLUTEMOMENTUM | SXF_TRANSFERTRANSLATION, 0)
+		POL5 AAAAAA 0 A_SpawnItemEx("Gibs3", random(-32,32), random(-32,32), random(0, 56), MOMX+random(-10, 10), MOMY+random(-10,10), MOMZ+random(5,15), random(-360,360), SXF_CLIENTSIDE | SXF_ABSOLUTEMOMENTUM | SXF_TRANSFERTRANSLATION, 0)
+		POL5 AAA 0 A_SpawnItemEx("Gibs4", random(-32,32), random(-32,32), random(0, 56), MOMX+random(-10, 10), MOMY+random(-10,10), MOMZ+random(5,15), random(-360,360), SXF_CLIENTSIDE | SXF_ABSOLUTEMOMENTUM | SXF_TRANSFERTRANSLATION, 0)
+		POL5 A 0 A_SpawnItemEx("Gibs5", random(-32,32), random(-32,32), random(0, 56), MOMX+random(-10, 10), MOMY+random(-10,10), MOMZ+random(5,15), random(-360,360), SXF_CLIENTSIDE | SXF_ABSOLUTEMOMENTUM | SXF_TRANSFERTRANSLATION, 0)
+		POL5 A 1 A_XScream
+		POL5 A 1 A_NoBlocking
+		POL5 A 1
+		POL5 A -1
+		Stop
+	XSplit:
+		PLYS AAAAAAAAAAAAAAAAAAA 0 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(8,10), 0, SXF_CLIENTSIDE, 0)
+		goto Split
+	Split:
+		PLYS AAAAAAAAAA 0 A_SpawnItemEx("OldBlood", random(-32,32), random(-32,32), random(0, 56), random(-10, 10), random(-10,10), random(8,10), 0, SXF_CLIENTSIDE, 0)
+		PLYS A 0 A_PlaySoundEx("misc/gibbed", "Auto")
+		PLYS A 0 A_PlaySoundEx("HorrificScream", "Auto")
+		PLYS A 3 A_NoBlocking
+		PLYS B 3
+		PLYS B 0 A_SpawnItemEx("PlayerLegs", 0, 0, 0, 0, 0, 0, 0, SXF_TRANSFERTRANSLATION | SXF_CLIENTSIDE, 0)
+		PLYS B 0 ThrustThingZ(0, random(40, 64), 0, 1)
+		goto Split2
+	Split2:
+		PTOR A 4
+		PTOR AA 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR B 4 A_CheckFloor("Hit")
+		PTOR BB 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR C 4 A_CheckFloor("Hit")
+		PTOR CC 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR B 4 A_CheckFloor("Hit")
+		PTOR BB 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR C 4 A_CheckFloor("Hit")
+		PTOR CC 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR B 4 A_CheckFloor("Hit")
+		PTOR BB 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		PTOR C 4 A_CheckFloor("Hit")
+		PTOR CC 0 A_SpawnItemEx("OldBlood", random(-16,16), random(-16,16), random(-8, 0), 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		goto Hit
+	Hit:
+		PTOR DE 3
+		PTOR F -1
+		stop
+	}
+}
+
+actor BlueMarine : SD64Player
+{
+	Player.DisplayName "Blue Marine"
+	Species "BlueTeam"
+	Limitedtoteam 0
+}
+
+actor RedMarine : BlueMarine
+{
+	Player.DisplayName "Red Marine"
+	Species "RedTeam"
+	Limitedtoteam 1
+}
+
+actor GreenMarine : BlueMarine
+{
+	Player.DisplayName "Green Marine"
+	Species "GreenTeam"
+	Limitedtoteam 2
+}
+
+actor GoldMarine : BlueMarine
+{
+	Player.DisplayName "Gold Marine"
+	Species "GoldTeam"
+	Limitedtoteam 3
+}
+
+ACTOR PlayerLegs
+{
+  Radius 8
+  Height 8
+  Yscale 0.70
+  XScale 0.75
+  +DROPOFF
+  +MOVEWITHSECTOR
+  States
+  {
+	Spawn:
+		PLYS CDEF 5
+		PLYS G -1 A_QueueCorpse
+		stop
+  }
+}
+
+actor 64GibbedMarine : GibbedMarine replaces GibbedMarine
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		PLAY V -1
+		Stop
+	}
+}
+
+actor 64GibbedMarineExtra : 64GibbedMarine replaces GibbedMarineExtra
+{
+	Game Doom
+}
+
+actor 64DeadMarine : DeadMarine replaces DeadMarine
+{
+	Yscale 0.70
+	XScale 0.75
+	Game Doom
+	+FLOORCLIP
+	States
+	{
+	Spawn:
+		PLAY M -1
+		Stop
+	}
+}

@@ -1,0 +1,753 @@
+// Plasma
+pointlight PLASMABALL
+{
+    color 0.0 0.25 1.0
+    size 56
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.2 0.25 1.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.2 0.25 0.8
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.1 0.2 0.5
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.0 0.1 0.2
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object SD64PlasmaBall_Blue
+{
+    frame PLSSA { light PLASMABALL }
+    frame PLSSB { light PLASMABALL }
+
+    frame PLSEA { light PLASMA_X1 }
+    frame PLSEB { light PLASMA_X2 }
+    frame PLSEC { light PLASMA_X2 }
+    frame PLSED { light PLASMA_X3 }
+    frame PLSEE { light PLASMA_X4 }
+}
+
+object SD64PlasmaBall_DM
+{
+    frame PLSSA { light PLASMABALL }
+    frame PLSSB { light PLASMABALL }
+
+    frame PLSSC { light PLASMA_X1 }
+    frame PLSSD { light PLASMA_X2 }
+    frame PLSSE { light PLASMA_X2 }
+    frame PLSSF { light PLASMA_X3 }
+    frame PLSSG { light PLASMA_X4 }
+	frame PLSSH { light PLASMA_X4 }
+}
+
+// Plasma
+pointlight RED_PLASMABALL
+{
+    color 1.0 0.25 0.0
+    size 56
+}
+
+flickerlight RED_PLASMA_X1
+{
+    color 1.0 0.25 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight RED_PLASMA_X2
+{
+    color 1.0 0.25 0.0
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight RED_PLASMA_X3
+{
+    color 1.0 0.25 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight RED_PLASMA_X4
+{
+    color 1.0 0.25 0.0
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object SD64PlasmaBall_Red
+{
+    frame RLSSA { light RED_PLASMABALL }
+    frame RLSSB { light RED_PLASMABALL }
+
+    frame RLSSC { light RED_PLASMA_X1 }
+    frame RLSSD { light RED_PLASMA_X2 }
+    frame RLSSE { light RED_PLASMA_X2 }
+    frame RLSSF { light RED_PLASMA_X3 }
+    frame RLSSG { light RED_PLASMA_X4 }
+	frame RLSSH { light RED_PLASMA_X4 }
+}
+
+// Plasma
+pointlight GREEN_PLASMABALL
+{
+    color 0.25 1.0 0.0
+    size 56
+}
+
+flickerlight GREEN_PLASMA_X1
+{
+    color 0.25 1.0 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight GREEN_PLASMA_X2
+{
+    color 0.25 1.0 0.0
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight GREEN_PLASMA_X3
+{
+    color 0.25 1.0 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight GREEN_PLASMA_X4
+{
+    color 0.25 1.0 0.0
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object SD64PlasmaBall_Green
+{
+    frame GRESA { light GREEN_PLASMABALL }
+    frame GRESB { light GREEN_PLASMABALL }
+
+    frame GRESC { light GREEN_PLASMA_X1 }
+    frame GRESD { light GREEN_PLASMA_X2 }
+    frame GRESE { light GREEN_PLASMA_X2 }
+    frame GRESF { light GREEN_PLASMA_X3 }
+    frame GRESG { light GREEN_PLASMA_X4 }
+	frame GRESH { light GREEN_PLASMA_X4 }
+}
+
+// Plasma
+pointlight YELLOW_PLASMABALL
+{
+    color 1.0 1.0 0.0
+    size 56
+}
+
+flickerlight YELLOW_PLASMA_X1
+{
+    color 1.0 1.0 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight YELLOW_PLASMA_X2
+{
+    color 1.0 1.0 0.0
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight YELLOW_PLASMA_X3
+{
+    color 1.0 1.0 0.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight YELLOW_PLASMA_X4
+{
+    color 1.0 1.0 0.0
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object SD64PlasmaBall_Yellow
+{
+    frame YLSSA { light YELLOW_PLASMABALL }
+    frame YLSSB { light YELLOW_PLASMABALL }
+
+    frame YLSSC { light YELLOW_PLASMA_X1 }
+    frame YLSSD { light YELLOW_PLASMA_X2 }
+    frame YLSSE { light YELLOW_PLASMA_X2 }
+    frame YLSSF { light YELLOW_PLASMA_X3 }
+    frame YLSSG { light YELLOW_PLASMA_X4 }
+	frame YLSSG { light YELLOW_PLASMA_X4 }
+}
+
+// Health Potion
+pulselight HEALTHPOTION
+{
+    color 0.1 0.0 0.8
+    size 16
+    secondarySize 18
+    interval 2.0
+}
+
+object HealthBonus2
+{
+    frame BON1 { light HEALTHPOTION }
+}
+
+// Armour Helmet
+pulselight ARMORBONUS
+{
+    color 0.0 0.6 0.0
+    size 16
+    secondarySize 14
+    interval 1.0
+	dontlightself 1
+}
+
+object ArmorBonus2
+{
+    frame BON2 { light ARMORBONUS }
+}
+
+// Short tech lamp
+pulselight SMALLLAMP
+{
+    color 1.0 0.8 0.5
+    size 56
+    secondarySize 58
+    interval 0.4
+    offset 0 44 0
+}
+
+object 64TechLamp2
+{
+    frame TLP2 { light SMALLLAMP }
+}
+
+// Tall tech lamp
+pulselight BIGLAMP
+{
+    color 1.0 0.8 0.5
+    size 64
+    secondarySize 66
+    interval 0.4
+    offset 0 72 0
+}
+
+object 64TechLamp
+{
+    frame TLMP { light BIGLAMP }
+}
+
+flickerlight2 BIGREDTORCH
+{
+    color 1.0 0.5 0.5
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+object ImprovedRedTorch
+{
+    frame TRED { light BIGREDTORCH }
+}
+
+flickerlight2 BIGGREENTORCH
+{
+    color 0.2 1.0 0.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+object ImprovedGreenTorch
+{
+    frame TRED { light BIGGREENTORCH }
+}
+
+flickerlight2 BIGBLUETORCH
+{
+    color 0.0 0.3 1.0
+    size 64
+    secondarySize 72
+    interval 0.1
+    offset 0 60 0
+}
+
+object ImprovedBlueTorch
+{
+    frame TRED { light BIGBLUETORCH }
+}
+
+flickerlight2 SMALLREDTORCH
+{
+    color 1.0 0.5 0.5
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+object ImprovedShortRedTorch
+{
+    frame SMRT { light SMALLREDTORCH }
+}
+
+flickerlight2 SMALLGREENTORCH
+{
+    color 0.2 1.0 0.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+object ImprovedShortGreenTorch
+{
+    frame SMRT { light SMALLGREENTORCH }
+}
+
+flickerlight2 SMALLBLUETORCH
+{
+    color 0.0 0.3 1.0
+    size 48
+    secondarySize 54
+    interval 0.1
+    offset 0 35 0
+}
+
+object ImprovedShortBlueTorch
+{
+    frame SMRT { light SMALLBLUETORCH }
+}
+
+// Hanging Tech Lamp
+pointlight HANGLAMP
+{
+    color 1.0 0.7 0.0
+    size 48
+    offset 0 0 0
+}
+
+object HangingTechLamp
+{
+    frame HGLM { light HANGLAMP }
+}
+
+pointlight HANGLAMP2
+{
+    color 0.0 0.5 1.0
+    size 48
+    offset 0 0 0
+}
+
+object HangingTechLamp2
+{
+    frame HGL2 { light HANGLAMP2 }
+}
+
+pointlight HANGLAMP3
+{
+    color 1.0 0.0 0.0
+    size 48
+    offset 0 0 0
+}
+
+object HangingTechLamp3
+{
+    frame HGL3 { light HANGLAMP3 }
+}
+
+pointlight HANGLAMP4
+{
+    color 0.0 1.0 0.0
+    size 48
+    offset 0 0 0
+}
+
+object HangingTechLamp4
+{
+    frame HGL4 { light HANGLAMP4 }
+}
+
+// Ceiling Light
+pointlight CEILINGLIGHT
+{
+    color 1.0 0.7 0.0
+    size 32
+    offset 0 0 0
+}
+
+object CeilingLight
+{
+    frame CEIL { light CEILINGLIGHT }
+}
+
+pointlight CEILINGLIGHT2
+{
+    color 0.0 0.2 1.0
+    size 32
+    offset 0 0 0
+}
+
+object CeilingLight2
+{
+    frame CEI2 { light CEILINGLIGHT2 }
+}
+
+pointlight CEILINGLIGHT3
+{
+    color 1.0 0.0 0.0
+    size 32
+    offset 0 0 0
+}
+
+object CeilingLight3
+{
+    frame CEI3 { light CEILINGLIGHT3 }
+}
+
+pointlight CEILINGLIGHT4
+{
+    color 0.0 1.0 0.0
+    size 32
+    offset 0 0 0
+}
+
+object CeilingLight4
+{
+    frame CEI4 { light CEILINGLIGHT4 }
+}
+
+// Soul Sphere
+pulselight SOULSPHERE
+{
+    color 0.0 0.0 1.0
+    size 40
+    secondarySize 42
+    interval 2.0
+    offset 0 16 0
+}
+
+object SoulSphere2
+{
+    frame SOUL { light SOULSPHERE }
+}
+
+// Invulnerability Sphere
+pulselight INVULN
+{
+    color 0.0 1.0 0.0
+    size 40
+    secondarySize 42
+    interval 2.0
+    offset 0 16 0
+}
+
+object InvulnerabilitySphere2
+{
+    frame PINV { light INVULN }
+}
+
+pulselight BLURSPHERE1
+{
+    color 1.0 0.0 0.0
+    size 40
+    secondarySize 42
+    interval 2.0
+    offset 0 16 0
+}
+
+object BlurSphere2
+{
+    frame PINS { light BLURSPHERE1 }
+}
+
+// Green armour
+pointlight GREENARMOR1
+{
+    color 0.0 0.6 0.0
+    size 48
+}
+
+pointlight GREENARMOR2
+{
+    color 0.0 0.6 0.0
+    size 32
+}
+
+object GreenArmor2
+{
+    frame ARM1A { light GREENARMOR1 }
+    frame ARM1B { light GREENARMOR2 }
+}
+
+// Blue armour
+pointlight BLUEARMOR1
+{
+    color 0.0 0.0 0.6
+    size 48
+}
+
+pointlight BLUEARMOR2
+{
+    color 0.0 0.0 0.6
+    size 32
+}
+
+object BlueArmor2
+{
+    frame ARM2A { light BLUEARMOR1 }
+    frame ARM2B { light BLUEARMOR2 }
+}
+
+Glow
+{
+	Flats
+	{
+		NUKAGE1
+		NUKAGE2
+		NUKAGE3
+		LAVA1
+		LAVA2
+		LAVA3
+		LAVA4
+	}
+	Walls
+	{
+		D64N1_01
+		D64N1_02
+		D64N1_03
+		D64N1_04
+		D64N1_05
+		D64N1_06
+		D64N1_07
+		D64N1_08
+		D64N1_09
+		D64N1_10
+		D64N1_11
+		D64N1_12
+		D64N1_13
+		D64N1_14
+		D64N1_15
+		D64N1_16
+		D64N1_17
+		D64N1_18
+		D64N1_19
+		D64N1_20
+		D64N1_21
+		D64N1_22
+		D64N1_23
+		D64N1_24
+		D64N1_25
+		D64N1_26
+		D64N1_27
+		D64N1_28
+		D64N1_29
+		D64N1_30
+		D64N1_31
+		D64N1_32
+		D64N1_33
+		D64N1_34
+		D64N1_35
+		D64N1_36
+		D64N1_37
+		D64N1_38
+		D64N1_39
+		D64N1_40
+		D64N1_41
+		D64N1_42
+		D64N1_43
+		D64N1_44
+		D64N1_45
+		D64N1_46
+		D64N1_47
+		D64N1_48
+		D64N1_49
+		D64N1_50
+		D64N1_51
+		D64N1_52
+		D64N1_53
+		D64N1_54
+		D64N1_55
+		D64N1_56
+		D64N1_57
+		D64N1_58
+		D64N1_59
+		D64N1_60
+		D64N1_61
+		D64N1_62
+		D64N1_63
+		D64N1_64
+		
+		D64N2_01
+		D64N2_02
+		D64N2_03
+		D64N2_04
+		D64N2_05
+		D64N2_06
+		D64N2_07
+		D64N2_08
+		D64N2_09
+		D64N2_10
+		D64N2_11
+		D64N2_12
+		D64N2_13
+		D64N2_14
+		D64N2_15
+		D64N2_16
+		D64N2_17
+		D64N2_18
+		D64N2_19
+		D64N2_20
+		D64N2_21
+		D64N2_22
+		D64N2_23
+		D64N2_24
+		D64N2_25
+		D64N2_26
+		D64N2_27
+		D64N2_28
+		D64N2_29
+		D64N2_30
+		D64N2_31
+		D64N2_32
+		D64N2_33
+		D64N2_34
+		D64N2_35
+		D64N2_36
+		D64N2_37
+		D64N2_38
+		D64N2_39
+		D64N2_40
+		D64N2_41
+		D64N2_42
+		D64N2_43
+		D64N2_44
+		D64N2_45
+		D64N2_46
+		D64N2_47
+		D64N2_48
+		D64N2_49
+		D64N2_50
+		D64N2_51
+		D64N2_52
+		D64N2_53
+		D64N2_54
+		D64N2_55
+		D64N2_56
+		D64N2_57
+		D64N2_58
+		D64N2_59
+		D64N2_60
+		D64N2_61
+		D64N2_62
+		D64N2_63
+		D64N2_64
+		
+		D64L1_01
+		D64L1_02
+		D64L1_03
+		D64L1_04
+		D64L1_05
+		D64L1_06
+		D64L1_07
+		D64L1_08
+		D64L1_09
+		D64L1_10
+		D64L1_11
+		D64L1_12
+		D64L1_13
+		D64L1_14
+		D64L1_15
+		D64L1_16
+		D64L1_17
+		D64L1_18
+		D64L1_19
+		D64L1_20
+		D64L1_21
+		D64L1_22
+		D64L1_23
+		D64L1_24
+		D64L1_25
+		D64L1_26
+		D64L1_27
+		D64L1_28
+		D64L1_29
+		D64L1_30
+		D64L1_31
+		D64L1_32
+		D64L1_33
+		D64L1_34
+		D64L1_35
+		D64L1_36
+		D64L1_37
+		D64L1_38
+		D64L1_39
+		D64L1_40
+		D64L1_41
+		D64L1_42
+		D64L1_43
+		D64L1_44
+		D64L1_45
+		D64L1_46
+		D64L1_47
+		D64L1_48
+		D64L1_49
+		D64L1_50
+		D64L1_51
+		D64L1_52
+		D64L1_53
+		D64L1_54
+		D64L1_55
+		D64L1_56
+		D64L1_57
+		D64L1_58
+		D64L1_59
+		D64L1_60
+		D64L1_61
+		D64L1_62
+		D64L1_63
+		D64L1_64
+	}
+}

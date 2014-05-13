@@ -1,0 +1,2155 @@
+#include "actors/PLAYER.TXT"
+#include "actors/PROJECTILES.TXT"
+#include "actors/WEAPONS.TXT"
+#include "actors/PROPS.TXT"
+#include "actors/MONSTERS.TXT"
+
+actor SpeakOneLiner : CustomInventory
+{
+ 	inventory.maxamount 1
+ 	-INVENTORY.INVBAR
+ 	+INVENTORY.AUTOACTIVATE
+ 	+INVENTORY.ALWAYSPICKUP
+ 	States
+ 	{
+ 	Spawn:
+ 		TNT1 A -1
+ 		stop
+ 	Use:
+ 		TNT1 A 0
+ 		TNT1 A 1 A_JumpIfInventory("BlueTeam", 1, "IsBlue")
+		TNT1 A 1 A_JumpIfInventory("RedTeam", 1, "IsRed")
+		TNT1 A 1 A_JumpIfInventory("GreenTeam", 1, "IsGreen")
+		TNT1 A 1 A_JumpIfInventory("GoldTeam", 1, "IsGold")
+ 		goto Cancel
+
+ 	IsBlue:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_Jump(64, "SpeakBlue")
+ 		goto Cancel
+	IsRed:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_Jump(64, "SpeakRed")
+ 		goto Cancel
+	IsGreen:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_Jump(64, "SpeakGreen")
+ 		goto Cancel
+	IsGold:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_Jump(64, "SpeakGold")
+ 		goto Cancel
+
+ 	SpeakBlue:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_PlaySoundEx("blue/kill", "SoundSlot5", 0, 0.3)
+ 		stop
+	SpeakRed:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_PlaySoundEx("red/kill", "SoundSlot5", 0, 0.3)
+ 		stop
+	SpeakGreen:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_PlaySoundEx("green/kill", "SoundSlot5", 0, 0.3)
+ 		stop
+	SpeakGold:
+ 		TNT1 A 0
+ 		TNT1 A 0 A_JumpIfHealthLower(1, "Cancel")
+ 		TNT1 A 1 A_PlaySoundEx("gold/kill", "SoundSlot5", 0, 0.3)
+ 		stop
+
+ 	Cancel:
+ 		TNT1 A 0
+ 		TNT1 A 1 A_TakeInventory("SpeakOneLiner", 1)
+ 		TNT1 A 0
+ 		stop
+ 	}
+}
+
+actor OldBlood : Blood
+{
+	States
+	{
+		Spawn:
+			BLUD ABCD 6
+			Stop
+	}
+}
+
+actor 64Blood2 : Blood
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+		Spawn:
+			BLUD ABCD 6
+			Stop
+	}
+}
+
+actor 64Blood3 : Blood
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+		Spawn:
+			BLUD D 24
+			Stop
+	}
+}
+
+actor 64Blood : Blood replaces Blood
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+		Spawn:
+			BLUD A 0
+			BLUD A 0 A_Jump(256, "Spawn1", "Spawn2", "Spawn3")
+			goto Spawn1
+		Spawn1:
+			BLUD AA 0 A_SpawnItemEx("64Blood2", random(-6,6), random(-6,6), random(-6,6), 0, 0, 0, 0, SXF_CLIENTSIDE | SXF_TRANSFERTRANSLATION, 0)
+			BLUD ABCD 6
+			Stop
+		Spawn2:
+			BLUD DD 0 A_SpawnItemEx("64Blood3", random(-6,6), random(-6,6), random(-6,6), 0, 0, 0, 0, SXF_CLIENTSIDE | SXF_TRANSFERTRANSLATION, 0)
+			BLUD D 24
+			Stop
+		Spawn3:
+			BLUD AAA 0 A_SpawnItemEx("64Blood2", random(-6,6), random(-6,6), random(-6,6), random(-3,3), random(-3,3), random(1,8), random(-180,180), SXF_CLIENTSIDE | SXF_TRANSFERTRANSLATION, 0)
+			BLUD ABCD 6
+			Stop
+	}
+}
+
+ACTOR Gibs1
+{
+	Projectile
+	Radius 8
+	Height 8
+	Speed 0
+	Damage 0
+	Gravity 0.75
+	BounceType "Doom"
+	BounceFactor 0.7
+	XScale 0.75
+	YScale 0.70
+	+MOVEWITHSECTOR
+	+SKYEXPLODE
+	-NOGRAVITY
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+	Spawn:
+		GIBS A 5 A_SpawnItemEx("OldBlood", 0, 0, 0,  random(-3,3), random(-3,3), 0, random(-360,360), SXF_CLIENTSIDE, 0)
+		loop
+	Death:
+		GIBS A 1500
+		Stop
+	}
+}
+
+ACTOR Gibs2 : Gibs1
+{
+	States
+	{
+	Spawn:
+		GIBS B 5 A_SpawnItemEx("OldBlood", 0, 0, 0,  random(-3,3), random(-3,3), 0, random(-360,360), SXF_CLIENTSIDE, 0)
+		loop
+	Death:
+		GIBS B 1500
+		Stop
+	}
+}
+
+ACTOR Gibs3 : Gibs1
+{
+	States
+	{
+	Spawn:
+		GIBS C 5 A_SpawnItemEx("OldBlood", 0, 0, 0,  random(-3,3), random(-3,3), 0, random(-360,360), SXF_CLIENTSIDE, 0)
+		loop
+	Death:
+		GIBS C 1500
+		Stop
+	}
+}
+
+ACTOR Gibs4 : Gibs1
+{
+	States
+	{
+	Spawn:
+		GIBS D 5 A_SpawnItemEx("OldBlood", 0, 0, 0,  random(-3,3), random(-3,3), 0, random(-360,360), SXF_CLIENTSIDE, 0)
+		loop
+	Death:
+		GIBS D 1500
+		Stop
+	}
+}
+
+ACTOR Gibs5 : Gibs1
+{
+	States
+	{
+	Spawn:
+		GIBS E 5 A_SpawnItemEx("OldBlood", 0, 0, 0,  random(-3,3), random(-3,3), 0, random(-360,360), SXF_CLIENTSIDE, 0)
+		loop
+	Death:
+		GIBS E 1500
+		Stop
+	}
+}
+
+ACTOR Snow
+{
+	Radius 2
+	Height 1
+	Speed 0
+	Damage 0
+	Alpha 0.9
+	Gravity 0.1
+	Scale 0.25
+	RenderStyle Translucent
+	+NOBLOCKMAP
+	+DROPOFF
+	+MISSILE
+	+NOTELEPORT
+	+CLIENTSIDEONLY
+	+DONTSPLASH
+	+FORCEXYBILLBOARD
+	+FLOATBOB
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+	Spawn:
+		SNOW A 0
+		SNOW A 0 A_Jump(127, "Snow2")
+		goto Snow1
+	Snow1:
+		SNOW AAAAAABBBBBBCCCCCCDDDDDDEEEEEE 1 A_CStaffMissileSlither
+		loop
+	Snow2:
+		SNOW AAAAAABBBBBBCCCCCCDDDDDDEEEEEE 1 A_BishopMissileWeave
+		loop
+	Death:
+		TNT1 AA 1
+		Stop
+	}
+}
+
+actor Snowing64 18217
+{
+	Radius 32
+	Height 4
+	Speed 0
+	Mass 9999999
+	+SPAWNCEILING
+	+NOGRAVITY
+	+CORPSE
+	States
+	{
+	Spawn:
+		TNT1 A 6 A_SpawnItemEX("Snow", Random(-32,32), Random(-32,32), 0, 0, 0, 0, random(-360,360), 128, 128)
+		Loop
+	}
+}
+
+actor Snowing128 18218
+{
+	Radius 64
+	Height 4
+	Speed 0
+	Mass 9999999
+	+SPAWNCEILING
+	+NOGRAVITY
+	+CORPSE
+	States
+	{
+	Spawn:
+		TNT1 A 6 A_SpawnItemEX("Snow", Random(-64,64), Random(-64,64), 0, 0, 0, 0, random(-360,360), 128, 128)
+		Loop
+	}
+}
+
+actor Spring 18219
+{
+	Radius 32
+	Height 4
+	XScale 0.75
+	YScale 0.5
+	-SOLID
+	States
+	{
+	Spawn:
+		SPRN A -1
+		loop
+	Bounce:
+		SPRN A 0 A_PlaySoundEx("Spring", "Auto")
+		SPRN BCDEFGHI 1
+		goto Spawn
+	}
+}
+
+actor SpinningBlades 18220
+{
+	Radius 16
+	Height 56
+	Scale 0.75
+	+NODAMAGETHRUST
+	+EXTREMEDEATH
+	+SOLID
+	States
+	{
+	Spawn:
+		BLAD A 0 A_PlaySoundEx("SpinningBlade", "Auto")
+		BLAD ABCDEFGHI 2 A_Explode(128, 32)
+		loop
+	}
+}
+
+actor KillConfirmation : CustomInventory
+{
+ 	inventory.maxamount 1
+ 	-INVENTORY.INVBAR
+ 	+INVENTORY.AUTOACTIVATE
+ 	+INVENTORY.ALWAYSPICKUP
+ 	States
+ 	{
+ 	Spawn:
+ 		TNT1 A -1
+ 		stop
+ 	Use:
+ 		TNT1 A 0
+ 		TNT1 A 1 A_JumpIfInventory("BlueTeam", 1, "IsBlue")
+		TNT1 A 1 A_JumpIfInventory("RedTeam", 1, "IsRed")
+		TNT1 A 1 A_JumpIfInventory("GreenTeam", 1, "IsGreen")
+		TNT1 A 1 A_JumpIfInventory("GoldTeam", 1, "IsGold")
+ 		goto IsRed
+
+ 	IsBlue:
+ 		TNT1 A 1 A_GiveToTarget("KillConfirmation_Blue", 1)
+ 		goto Cancel
+	IsRed:
+ 		TNT1 A 1 A_GiveToTarget("KillConfirmation_Red", 1)
+ 		goto Cancel
+	IsGreen:
+ 		TNT1 A 1 A_GiveToTarget("KillConfirmation_Green", 1)
+ 		goto Cancel
+	IsGold:
+ 		TNT1 A 1 A_GiveToTarget("KillConfirmation_Gold", 1)
+ 		goto Cancel
+ 	Cancel:
+ 		TNT1 A 0
+ 		TNT1 A 1 A_TakeInventory("SpeakOneLiner", 1)
+ 		TNT1 A 0
+ 		stop
+ 	}
+}
+
+actor AmmoDropper : CustomInventory
+{
+ inventory.maxamount 1
+ -INVENTORY.INVBAR
+ +INVENTORY.AUTOACTIVATE
+ +INVENTORY.ALWAYSPICKUP
+ States
+ {
+ 	Spawn:
+ 		TNT1 A -1
+ 		stop
+ 	Use:
+ 		TNT1 A 1
+ 		goto Check1
+	Check1:
+		TNT1 A 1 A_JumpIfInventory("Shell", 20, "Drop1")
+		goto Check2
+	Check2:
+		TNT1 A 1 A_JumpIfInventory("Clip", 50, "Drop2")
+		goto Check3
+	Check3:
+		TNT1 A 1 A_JumpIfInventory("RocketAmmo", 4, "Drop3")
+		stop
+	Drop1:
+		PLAY H 0 A_SpawnItemEx("Shell", 0, 0, 32, random(-2,2), random(-2,2), random(0, 4), 0, 0, 0)
+		goto Check2
+	Drop2:
+		PLAY H 0 A_SpawnItemEx("Clip", 0, 0, 32, random(-2,2), random(-2,2), random(0, 4), 0, 0, 0)
+		goto Check3
+	Drop3:
+		PLAY H 0 A_SpawnItemEx("RocketAmmo", 0, 0, 32, random(-2,2), random(-2,2), random(0, 4), 0, 0, 0)
+		stop
+ }
+}
+
+actor HitConfirmation : CustomInventory
+{
+ inventory.maxamount 1
+ -INVENTORY.INVBAR
+ +INVENTORY.AUTOACTIVATE
+ +INVENTORY.ALWAYSPICKUP
+ States
+ {
+ 	Spawn:
+ 		TNT1 A -1
+ 		stop
+ 	Use:
+ 		TNT1 A 1 ACS_ExecuteAlways(4, 0)
+ 		stop
+ }
+}
+
+actor KillConfirmation_Red : HitConfirmation
+{
+ States
+ {
+ 	Use:
+ 		TNT1 A 1 ACS_ExecuteAlways(5, 0)
+ 		stop
+ }
+}
+
+actor KillConfirmation_Blue : HitConfirmation
+{
+ States
+ {
+ 	Use:
+ 		TNT1 A 1 ACS_ExecuteAlways(6, 0)
+ 		stop
+ }
+}
+
+actor KillConfirmation_Green : HitConfirmation
+{
+ States
+ {
+ 	Use:
+ 		TNT1 A 1 ACS_ExecuteAlways(7, 0)
+ 		stop
+ }
+}
+
+actor KillConfirmation_Gold : HitConfirmation
+{
+ States
+ {
+ 	Use:
+ 		TNT1 A 1 ACS_ExecuteAlways(8, 0)
+ 		stop
+ }
+}
+
+ACTOR SD64TeleportFog : TeleportFog replaces TeleportFog
+{
+  +LOOKALLAROUND
+  +FORCEXYBILLBOARD
+  Yscale 0.70
+  XScale 0.75
+  States
+  {
+  Spawn:
+	TFOG HGFEDCBABCDEFGH 3 Bright
+    Stop
+  }
+}
+
+actor RedTeam : Inventory
+{
+  inventory.amount 1
+  inventory.maxamount 1
+  -INVBAR
+  -INTERHUBSTRIP
+  +INVENTORY.UNDROPPABLE
+  +INVENTORY.HUBPOWER
+  states
+  {
+  Spawn:
+	TNT1 A 1
+	loop
+  }
+}
+
+actor BlueTeam : RedTeam
+{
+}
+
+actor GreenTeam : RedTeam
+{
+}
+
+actor GoldTeam : RedTeam
+{
+}
+
+actor RedSpark
+{
+	Radius 1
+	Height 1
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.2
+	-SOLID
+	+NOTELEPORT
+	+NOCLIP
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	+DONTSPLASH
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			SPKO AABBCC 1 Bright A_FadeOut(0.08)
+			stop
+	}
+}
+
+actor BlueSpark : RedSpark
+{
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			SPKB AABBCC 1 Bright A_FadeOut(0.08)
+			stop
+	}
+}
+
+actor GreenSpark : RedSpark
+{
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			SPKG AABBCC 1 Bright A_FadeOut(0.08)
+			stop
+	}
+}
+
+actor YellowSpark : RedSpark
+{
+	States
+	{
+		Spawn:
+			TNT1 A 3
+			SPKY AABBCC 1 Bright A_FadeOut(0.08)
+			stop
+	}
+}
+
+actor SmallRedSpark : RedSpark
+{
+	Scale 0.032
+	-NOGRAVITY
+	-NOINTERACTION
+	+LOWGRAVITY
+	States
+	{
+		Spawn:
+			SPKO ABC 1 Bright A_FadeOut(0.08)
+			loop
+	}
+}
+
+actor SD64BulletPuff : BulletPuff Replaces BulletPuff
+{
+	Decal Bulletchip
+	Alpha 0.50
+	RenderStyle Add
+	Yscale 0.70
+	XScale 0.75
+	+FORCEXYBILLBOARD
+	+PUFFGETSOWNER
+	+PUFFONACTORS
+	-ALLOWPARTICLES
+	-RANDOMIZE
+	states
+	{
+	Spawn:
+		TNT1 AA 1 A_GiveToTarget("HitConfirmation", 1)
+		stop
+	Crash:
+		PUFF AA 0 bright A_SpawnItemEx("SmallRedSpark", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), Random(-180, 180), SXF_CLIENTSIDE, 64)
+		PUFF A 2 bright A_SpawnItemEx("SmallRedSpark", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), Random(-180, 180), SXF_CLIENTSIDE, 64)
+		PUFF B 2 bright
+		goto Melee
+	Melee:
+		PUFF C 0 A_SetTranslucent(0.75, 0)
+		PUFF CD 3
+		PUFF EEEFFF 1 A_FadeOut(0.05)
+		stop
+	}
+}
+
+actor ChainsawPuff : SD64BulletPuff
+{
+	DamageType "Chainsaw"
+}
+
+actor SSGBulletPuff : SD64BulletPuff
+{
+	DamageType "SSG"
+}
+
+ACTOR SD64_PlasmaRifle : PlasmaRifle replaces PlasmaRifle
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Select:
+		PLSB A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedSelect")
+		PLSB A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenSelect")
+		PLSB A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowSelect")
+		goto BlueSelect
+	Deselect:
+		PLSB A 0 A_StopSoundEx("Weapon")
+		PLSB A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedDeselect")
+		PLSB A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenDeselect")
+		PLSB A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowDeselect")
+		goto BlueDeselect
+	BlueSelect:
+		PLSB A 1 A_Raise
+		loop
+	BlueDeselect:
+		PLSB A 1 A_Lower
+		loop
+	RedSelect:
+		PLSR A 1 A_Raise
+		loop
+	RedDeselect:
+		PLSR A 1 A_Lower
+		loop
+	GreenSelect:
+		PLSG A 1 A_Raise
+		loop
+	GreenDeselect:
+		PLSG A 1 A_Lower
+		loop
+	YellowSelect:
+		PLSY A 1 A_Raise
+		loop
+	YellowDeselect:
+		PLSY A 1 A_Lower
+		loop
+	Ready:
+		PLSB A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedReady")
+		PLSB A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenReady")
+		PLSB A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowReady")
+		goto BlueReady
+	BlueReady:
+		PLSB A 0 A_PlaySoundEx("PlasmaIdle", "Weapon", 1)
+		PLSB BBCCDD 1 A_WeaponReady
+		loop
+	RedReady:
+		PLSR A 0 A_PlaySoundEx("PlasmaIdle", "Weapon", 1)
+		PLSR BBCCDD 1 A_WeaponReady
+		loop
+	GreenReady:
+		PLSG A 0 A_PlaySoundEx("PlasmaIdle", "Weapon", 1)
+		PLSG BBCCDD 1 A_WeaponReady
+		loop
+	YellowReady:
+		PLSY A 0 A_PlaySoundEx("PlasmaIdle", "Weapon", 1)
+		PLSY BBCCDD 1 A_WeaponReady
+		loop
+	Hold:
+		TNT1 A 0
+		goto Fire
+	Fire:
+		PLSB A 0 A_StopSoundEx("Weapon")
+		PLSB A 0 Bright A_JumpIfInventory("BlueTeam", 1, "BlueFire")
+		PLSB A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedFire")
+		PLSB A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenFire")
+		PLSB A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowFire")
+		PLSB E 2 Bright A_FireCustomMissile("SD64PlasmaBall_DM")
+		PLSB A 2 Bright
+		PLSB A 0 A_ReFire
+		Goto BlueReady
+	BlueFire:
+		PLSB E 2 Bright A_FireCustomMissile("SD64PlasmaBall_Blue")
+		PLSB A 2 Bright
+		PLSB A 0 A_ReFire
+		Goto BlueReady
+	RedFire:
+		PLSR E 2 Bright A_FireCustomMissile("SD64PlasmaBall_Red")
+		PLSR A 2 Bright
+		PLSR A 0 A_ReFire
+		Goto RedReady
+	GreenFire:
+		PLSG E 2 Bright A_FireCustomMissile("SD64PlasmaBall_Green")
+		PLSG A 2 Bright
+		PLSG A 0 A_ReFire
+		Goto GreenReady
+	YellowFire:
+		PLSY E 2 Bright A_FireCustomMissile("SD64PlasmaBall_Yellow")
+		PLSY A 2 Bright
+		PLSY A 0 A_ReFire
+		Goto YellowReady
+	Flash:
+		TNT1 AA 1
+		stop
+	}
+}
+
+ACTOR SD64_BFGExtra : BFGExtra replaces BFGExtra
+{
+	+EXTREMEDEATH
+	DamageType "BFG"
+	States
+	{
+	Spawn:
+		BFE2 A 0
+		BFE2 A 0 A_PlaySoundEx("BFGArc", "Auto")
+		BFE2 AA 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFE2 AAAAAA 0 A_SpawnItemEx("GreenSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFE2 ABCDEF 5 Bright A_SpawnItemEx("GreenSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64_BFGExtra_Red : SD64_BFGExtra
+{
+	States
+	{
+	Spawn:
+		BFR2 A 0
+		BFR2 A 0 A_PlaySoundEx("BFGArc", "Auto")
+		BFR2 AA 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFR2 AAAAAA 0 A_SpawnItemEx("RedSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFR2 ABCDEF 5 Bright A_SpawnItemEx("RedSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64_BFGExtra_Blue : SD64_BFGExtra
+{
+	States
+	{
+	Spawn:
+		BFB2 A 0
+		BFB2 A 0 A_PlaySoundEx("BFGArc", "Auto")
+		BFB2 AA 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFB2 AAAAAA 0 A_SpawnItemEx("BlueSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFB2 ABCDEF 5 Bright A_SpawnItemEx("BlueSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64_BFGExtra_Gold : SD64_BFGExtra
+{
+	States
+	{
+	Spawn:
+		BFY2 A 0
+		BFY2 A 0 A_PlaySoundEx("BFGArc", "Auto")
+		BFY2 AA 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFY2 AAAAAA 0 A_SpawnItemEx("YellowSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFY2 ABCDEF 5 Bright A_SpawnItemEx("YellowSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+actor BFGEnergy : RedSpark
+{
+	Scale 1.0
+	Alpha 0.75
+	States
+	{
+		Spawn:
+			BFE2 ABCDEF 2
+			stop
+	}
+}
+
+actor BFGEnergy_Red : BFGEnergy
+{
+	States
+	{
+		Spawn:
+			BFR2 ABCDEF 2
+			stop
+	}
+}
+
+actor BFGEnergy_Blue : BFGEnergy
+{
+	States
+	{
+		Spawn:
+			BFB2 ABCDEF 2
+			stop
+	}
+}
+
+actor BFGEnergy_Gold : BFGEnergy
+{
+	States
+	{
+		Spawn:
+			BFY2 ABCDEF 2
+			stop
+	}
+}
+
+actor BFGTrail : RedSpark
+{
+	Scale 1.0
+	Alpha 0.5
+	States
+	{
+		Spawn:
+			BFS1 AABB 1 Bright A_FadeOut(0.1)
+			loop
+	}
+}
+
+actor BFGTrail_Red : BFGTrail
+{
+	States
+	{
+		Spawn:
+			BFSR AABB 1 Bright A_FadeOut(0.1)
+			loop
+	}
+}
+
+actor BFGTrail_Blue : BFGTrail
+{
+	States
+	{
+		Spawn:
+			BFSB AABB 1 Bright A_FadeOut(0.1)
+			loop
+	}
+}
+
+actor BFGTrail_Gold : BFGTrail
+{
+	States
+	{
+		Spawn:
+			BFSY AABB 1 Bright A_FadeOut(0.1)
+			loop
+	}
+}
+
+actor BFGSpark : RedSpark
+{
+	-NOCLIP
+	-NOINTERACTION
+	+MISSILE
+	+HEXENBOUNCE
+	BounceFactor 0.75
+	Scale 0.1
+	States
+	{
+		Spawn:
+			SPKG AB 1 Bright A_FadeOut(0.02)
+			loop
+		Death:
+			TNT1 A 0
+			TNT1 A 1
+			stop
+	}
+}
+
+actor BFGSpark_Red : BFGSpark
+{
+	States
+	{
+		Spawn:
+			SPKO AB 1 Bright A_FadeOut(0.02)
+			loop
+	}
+}
+
+actor BFGSpark_Blue : BFGSpark
+{
+	States
+	{
+		Spawn:
+			SPKB AB 1 Bright A_FadeOut(0.02)
+			loop
+	}
+}
+
+actor BFGSpark_Gold : BFGSpark
+{
+	States
+	{
+		Spawn:
+			SPKY AB 1 Bright A_FadeOut(0.02)
+			loop
+	}
+}
+
+ACTOR SD64BFGBall : BFGBall replaces BFGBall
+{
+	Decal "BFGLightning"
+	DamageType "BFG"
+	SeeSound "BFGFire"
+	Alpha 1.0
+	Speed 40
+	+FORCERADIUSDMG
+	+FORCEXYBILLBOARD
+	//+NODAMAGETHRUST
+	States
+	{
+	Spawn:
+		BFS1 AABB 1 Bright A_SpawnItemEx("BFGTrail", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		BFS1 AAAAAAAAAA 0 Bright A_SpawnItemEx("BFGSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), random(-180, 180), SXF_CLIENTSIDE, 0)
+		BFS1 AAAAAAAAAA 0 Bright A_SpawnItemEx("GreenSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFS1 AAAAAA 0 Bright A_SpawnItemEx("BFGEnergy", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFS1 AAAAAAAAAA 0 Bright A_SpawnItemEx("ElectricArc_Green", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFS1 A 0 Radius_Quake(9, 35, 0, 6, 0)
+		BFS1 A 0 A_Explode(512, 384, 1)
+		BFS1 C 9 bright
+		BFS1 D 7 bright A_FadeOut (0.1667)
+		BFS1 E 0 bright A_FadeOut (0.1667)
+		BFS1 E 4 bright
+		BFS1 F 4 bright A_FadeOut (0.1667)
+		BFS1 GH 3 bright A_FadeOut (0.1667)
+		stop
+	}
+}
+
+ACTOR SD64BFGBall_Green : SD64BFGBall
+{
+	Decal "BFGLightning"
+	+MTHRUSPECIES
+}
+
+actor SD64BFGBall_Red : SD64BFGBall
+{
+	Decal "RedBFGLightning"
+	DamageType "BFGRed"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		BFSR AABB 1 Bright A_SpawnItemEx("BFGTrail_Red", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		BFSR AAAAAAAAAA 0 Bright A_SpawnItemEx("BFGSpark_Red", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), random(-180, 180), SXF_CLIENTSIDE, 0)
+		BFSR AAAAAAAAAA 0 Bright A_SpawnItemEx("RedSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSR AAAAAA 0 Bright A_SpawnItemEx("BFGEnergy_Red", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSR AAAAAAAAAA 0 Bright A_SpawnItemEx("ElectricArc_Red", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFSR A 0 Radius_Quake(9, 35, 0, 6, 0)
+		BFSR A 0 A_Explode(512, 384, 1)
+		BFSR C 9 bright
+		BFSR D 7 bright A_FadeOut (0.1667)
+		BFSR E 0 bright A_FadeOut (0.1667)
+		BFSR E 4 bright
+		BFSR F 4 bright A_FadeOut (0.1667)
+		BFSR GH 3 bright A_FadeOut (0.1667)
+		stop
+	}
+}
+
+actor SD64BFGBall_Blue : SD64BFGBall
+{
+	Decal "BlueBFGLightning"
+	DamageType "BFGBlue"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		BFSB AABB 1 Bright A_SpawnItemEx("BFGTrail_Blue", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		BFSB AAAAAAAAAA 0 Bright A_SpawnItemEx("BFGSpark_Blue", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), random(-180, 180), SXF_CLIENTSIDE, 0)
+		BFSB AAAAAAAAAA 0 Bright A_SpawnItemEx("BlueSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSB AAAAAA 0 Bright A_SpawnItemEx("BFGEnergy_Blue", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSB AAAAAAAAAA 0 Bright A_SpawnItemEx("ElectricArc_Blue", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFSB A 0 Radius_Quake(9, 35, 0, 6, 0)
+		BFSB A 0 A_Explode(512, 384, 1)
+		BFSB C 9 bright
+		BFSB D 7 bright A_FadeOut (0.1667)
+		BFSB E 0 bright A_FadeOut (0.1667)
+		BFSB E 4 bright
+		BFSB F 4 bright A_FadeOut (0.1667)
+		BFSB GH 3 bright A_FadeOut (0.1667)
+		stop
+	}
+}
+
+actor SD64BFGBall_Gold : SD64BFGBall
+{
+	Decal "GoldBFGLightning"
+	DamageType "BFGGold"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		BFSY AABB 1 Bright A_SpawnItemEx("BFGTrail_Gold", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		BFSY AAAAAAAAAA 0 Bright A_SpawnItemEx("BFGSpark_Gold", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), random(-180, 180), SXF_CLIENTSIDE, 0)
+		BFSY AAAAAAAAAA 0 Bright A_SpawnItemEx("YellowSpark", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSY AAAAAA 0 Bright A_SpawnItemEx("BFGEnergy_Gold", 0, 0, 8, random(-16,16), random(-16,16), random(-16,16), 0, SXF_CLIENTSIDE, 0)
+		BFSY AAAAAAAAAA 0 Bright A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 0, 0, 0, 0, random(-180,180), SXF_CLIENTSIDE, 0)
+		BFSY A 0 Radius_Quake(9, 35, 0, 6, 0)
+		BFSY A 0 A_Explode(512, 384, 1)
+		BFSY C 9 bright
+		BFSY D 7 bright A_FadeOut (0.1667)
+		BFSY E 0 bright A_FadeOut (0.1667)
+		BFSY E 4 bright
+		BFSY F 4 bright A_FadeOut (0.1667)
+		BFSY GH 3 bright A_FadeOut (0.1667)
+		stop
+	}
+}
+
+ACTOR SD64_BFG9000 : BFG9000 replaces BFG9000
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Fire:
+		BFGG A 0 Bright A_JumpIfInventory("BlueTeam", 1, "BlueFire")
+		BFGG A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedFire")
+		BFGG A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenFire")
+		BFGG A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowFire")
+		BFGG A 0 Radius_Quake(2, 30, 0, 1, 0)
+		BFGG A 25 A_BFGsound
+		BFGG A 5 A_GunFlash
+		BFGG B 0 Radius_Quake(9, 4, 0, 1, 0)
+		BFGG B 0 A_SetBlend("00FF00",0.75,14)
+		BFGG B 10 A_FireCustomMissile("SD64BFGBall")
+		BFGG B 20 A_ReFire
+		Goto Ready
+	RedFire:
+		BFGG A 0 Radius_Quake(2, 30, 0, 1, 0)
+		BFGG A 25 A_BFGsound
+		BFGG A 5 A_GunFlash
+		BFGG B 0 Radius_Quake(9, 4, 0, 1, 0)
+		BFGG B 0 A_SetBlend("FF5000",0.75,14)
+		BFGG B 10 A_FireCustomMissile("SD64BFGBall_Red")
+		BFGG B 20 A_ReFire
+		Goto Ready
+	BlueFire:
+		BFGG A 0 Radius_Quake(2, 30, 0, 1, 0)
+		BFGG A 25 A_BFGsound
+		BFGG A 5 A_GunFlash
+		BFGG B 0 Radius_Quake(9, 4, 0, 1, 0)
+		BFGG B 0 A_SetBlend("00AAFF",0.75,14)
+		BFGG B 10 A_FireCustomMissile("SD64BFGBall_Blue")
+		BFGG B 20 A_ReFire
+		Goto Ready
+	GreenFire:
+		BFGG A 0 Radius_Quake(2, 30, 0, 1, 0)
+		BFGG A 25 A_BFGsound
+		BFGG A 5 A_GunFlash
+		BFGG B 0 Radius_Quake(9, 4, 0, 1, 0)
+		BFGG B 0 A_SetBlend("00FF00",0.75,14)
+		BFGG B 10 A_FireCustomMissile("SD64BFGBall_Green")
+		BFGG B 20 A_ReFire
+		Goto Ready
+	YellowFire:
+		BFGG A 0 Radius_Quake(2, 30, 0, 1, 0)
+		BFGG A 25 A_BFGsound
+		BFGG A 5 A_GunFlash
+		BFGG B 0 Radius_Quake(9, 4, 0, 1, 0)
+		BFGG B 0 A_SetBlend("FFFF00",0.75,14)
+		BFGG B 10 A_FireCustomMissile("SD64BFGBall_Gold")
+		BFGG B 20 A_ReFire
+		Goto Ready
+	Flash:
+		BFGG B 0 Bright A_JumpIfInventory("BlueTeam", 1, "BlueFlash")
+		BFGG B 0 Bright A_JumpIfInventory("RedTeam", 1, "RedFlash")
+		BFGG B 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowFlash")
+		BFGG C 5 Bright A_Light1
+		BFGG D 5 Bright A_Light2
+		BFGG E 5 Bright
+		Goto LightDone
+	RedFlash:
+		BFGR C 5 Bright A_Light1
+		BFGR D 5 Bright A_Light2
+		BFGR E 5 Bright
+		Goto LightDone
+	BlueFlash:
+		BFGB C 5 Bright A_Light1
+		BFGB D 5 Bright A_Light2
+		BFGB E 5 Bright
+		Goto LightDone
+	YellowFlash:
+		BFGY C 5 Bright A_Light1
+		BFGY D 5 Bright A_Light2
+		BFGY E 5 Bright
+		Goto LightDone
+	}
+}
+
+ACTOR SD64_RocketLauncher : RocketLauncher replaces RocketLauncher
+{
+	Yscale 0.70
+	XScale 0.75
+	+WEAPON.NOAUTOAIM
+	States
+	{
+	Fire:
+		MISG A 0 Bright A_JumpIfInventory("BlueTeam", 1, "BlueFire")
+		MISG A 0 Bright A_JumpIfInventory("RedTeam", 1, "RedFire")
+		MISG A 0 Bright A_JumpIfInventory("GreenTeam", 1, "GreenFire")
+		MISG A 0 Bright A_JumpIfInventory("GoldTeam", 1, "YellowFire")
+		MISG B 8 A_GunFlash
+		MISG B 0 A_Recoil(2)
+		MISG B 0 A_FireCustomMissile("DMRocket")
+		MISG B 3 A_SetPitch (pitch-2)
+		MISG B 1 A_SetPitch (pitch+0.8)
+		MISG B 2 A_SetPitch (pitch+0.6)
+		MISG B 3 A_SetPitch (pitch+0.4)
+		MISG B 4 A_SetPitch (pitch+0.2)
+		MISG B 1
+		MISG B 0 A_ReFire
+		Goto Ready
+	BlueFire:
+		MISG B 8 A_GunFlash
+		MISG B 0 A_Recoil(2)
+		MISG B 0 A_FireCustomMissile("BlueRocket")
+		MISG B 3 A_SetPitch (pitch-2)
+		MISG B 1 A_SetPitch (pitch+0.8)
+		MISG B 2 A_SetPitch (pitch+0.6)
+		MISG B 3 A_SetPitch (pitch+0.4)
+		MISG B 4 A_SetPitch (pitch+0.2)
+		MISG B 1
+		MISG B 0 A_ReFire
+		Goto Ready
+	RedFire:
+		MISG B 8 A_GunFlash
+		MISG B 0 A_Recoil(2)
+		MISG B 0 A_FireCustomMissile("RedRocket")
+		MISG B 3 A_SetPitch (pitch-2)
+		MISG B 1 A_SetPitch (pitch+0.8)
+		MISG B 2 A_SetPitch (pitch+0.6)
+		MISG B 3 A_SetPitch (pitch+0.4)
+		MISG B 4 A_SetPitch (pitch+0.2)
+		MISG B 1
+		MISG B 0 A_ReFire
+		Goto Ready
+	GreenFire:
+		MISG B 8 A_GunFlash
+		MISG B 0 A_Recoil(2)
+		MISG B 0 A_FireCustomMissile("GreenRocket")
+		MISG B 3 A_SetPitch (pitch-2)
+		MISG B 1 A_SetPitch (pitch+0.8)
+		MISG B 2 A_SetPitch (pitch+0.6)
+		MISG B 3 A_SetPitch (pitch+0.4)
+		MISG B 4 A_SetPitch (pitch+0.2)
+		MISG B 1
+		MISG B 0 A_ReFire
+		Goto Ready
+	YellowFire:
+		MISG B 8 A_GunFlash
+		MISG B 0 A_Recoil(2)
+		MISG B 0 A_FireCustomMissile("GoldRocket")
+		MISG B 3 A_SetPitch (pitch-2)
+		MISG B 1 A_SetPitch (pitch+0.8)
+		MISG B 2 A_SetPitch (pitch+0.6)
+		MISG B 3 A_SetPitch (pitch+0.4)
+		MISG B 4 A_SetPitch (pitch+0.2)
+		MISG B 1
+		MISG B 0 A_ReFire
+		Goto Ready
+	Flash:
+		MISG C 4 Bright A_Light1
+		MISG D 4 Bright
+		MISG EF 4 Bright A_Light2
+		Goto LightDone
+	}
+}
+
+ACTOR SD64_Fist : Fist replaces Fist
+{
+	States
+	{
+	Ready:
+		PUNG A 1 A_WeaponReady
+		Loop
+	Deselect:
+		PUNG A 1 A_Lower
+		Loop
+	Select:
+		PUNG A 1 A_Raise
+		Loop
+	Fire:
+		PUNG B 2
+		PUNG C 2 
+		PUNG D 0 A_Punch
+		PUNG D 2 A_Punch
+		PUNG C 4
+		PUNG B 5
+		PUNG B 0 A_ReFire
+		Goto Ready
+	}
+}
+
+actor WaterSplashBaseSmall
+{
+  Radius 1
+  Height 1
+  Mass 1
+  alpha .6
+  Scale 0.5
+  +DONTSPLASH
+  +NOGRAVITY
+  +NOCLIP
+  States
+  {
+  Spawn:
+    SPSH E 3
+    SPSH F 3 A_SpawnDebris("WaterSplashDrop")
+    SPSH G 3
+    SPSH H 3
+    SPSH I 3
+    SPSH J 3
+    SPSH K 3
+    Stop
+  }
+}
+
+ACTOR WaterSplashDrop
+{
+	renderstyle add
+	Radius 1
+    Height 1
+	alpha .5
+	Health 5
+	Mass 9
+	Scale	.4
+	projectile
+	- nogravity
+	+DONTSPLASH
+	+CORPSE
+    +EXPLODEONWATER
+	+CLIENTSIDEONLY
+	States
+	{
+		SPSH A 6
+		SPSH B 7
+		SPSH C 7
+		SPSH D 6
+		SPSH A 7
+		Stop
+	}
+}
+
+actor BloodSplashBaseSmall
+{
+  Radius 1
+  Height 1
+  Mass 1
+  alpha .6
+  Scale 0.5
+  +NOCLIP
+  +DONTSPLASH
+  +NOGRAVITY
+  States
+  {
+  Spawn:
+    BSPH E 3
+    BSPH F 3 A_SpawnDebris("BloodSplashDrop")
+    BSPH G 3
+    BSPH H 3
+    BSPH I 3
+    BSPH J 3
+    BSPH K 3
+    Stop
+  }
+}
+
+ACTOR BloodSplashDrop
+{
+	renderstyle add
+	Radius 1
+	Height 1
+	alpha .5
+	Health 5
+	Mass 9
+	Scale	.4
+	projectile
+	- nogravity
+	+DONTSPLASH
+	+CORPSE
+    +EXPLODEONWATER
+	+CLIENTSIDEONLY
+	States
+	{
+		BSPH A 7
+		BSPH B 7
+		BSPH C 7
+		BSPH D 7
+		BSPH A 7
+		Stop
+	}
+}
+
+actor NukageSplashBaseSmall
+{
+  Radius 1
+  Height 1
+  Mass 1
+  alpha .6
+  Scale 0.5
+  +NOCLIP
+  +DONTSPLASH
+  +NOGRAVITY
+  Renderstyle Add
+  States
+  {
+  Spawn:
+    SLDG E 3
+    SLDG F 3
+    SLDG G 3
+    SLDG H 3
+    Stop
+  }
+}
+
+actor ArcTrail_Blue
+{
+	Radius 4
+	Height 4
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.08
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	States
+	{
+		Spawn:
+			SPKB A 1 A_FadeOut(0.08)
+			loop
+	}
+}
+
+actor ElectricArc_Blue
+{
+	projectile
+	Speed 1
+	radius 4
+	height 4
+	+BLOODLESSIMPACT
+	+RIPPER
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx("ArcTrail_Blue", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+			TNT1 A 0 A_Jump(128, "ArcInstant2", "ArcInstant3", "ArcInstant4", "ArcInstant5", "ArcInstant6", "ArcInstant7", "ArcInstant8", "ArcInstant9", "ArcInstant10", "ArcInstant11", "ArcInstant12", "ArcInstant13", "ArcInstant14", "ArcInstant15", "ArcInstant16", "ArcInstant17", "ArcInstant18", "ArcDelayed1", "ArcDelayed2")
+			goto ArcInstant1
+		ArcInstant1:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 2, 0, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant2:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 2, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant3:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant4:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant5:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant6:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant7:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 2, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant8:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 2, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant9:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, -2, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant10:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", -2, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant11:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant12:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant13:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant14:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant15:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant16:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant17:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant18:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed1:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed2:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Blue", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor ArcTrail_Green
+{
+	Radius 4
+	Height 4
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.08
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	States
+	{
+		Spawn:
+			SPKG A 1 A_FadeOut(0.08)
+			loop
+	}
+}
+
+actor ElectricArc_Green
+{
+	projectile
+	Speed 1
+	radius 4
+	height 4
+	+BLOODLESSIMPACT
+	+RIPPER
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx("ArcTrail_Green", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+			TNT1 A 0 A_Jump(128, "ArcInstant2", "ArcInstant3", "ArcInstant4", "ArcInstant5", "ArcInstant6", "ArcInstant7", "ArcInstant8", "ArcInstant9", "ArcInstant10", "ArcInstant11", "ArcInstant12", "ArcInstant13", "ArcInstant14", "ArcInstant15", "ArcInstant16", "ArcInstant17", "ArcInstant18", "ArcDelayed1", "ArcDelayed2")
+			goto ArcInstant1
+		ArcInstant1:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 2, 0, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant2:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 2, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant3:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant4:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant5:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant6:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant7:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 2, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant8:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 2, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant9:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, -2, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant10:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", -2, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant11:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant12:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant13:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant14:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant15:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant16:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant17:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant18:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed1:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed2:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Green", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor ArcTrail_Red
+{
+	Radius 4
+	Height 4
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.08
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	States
+	{
+		Spawn:
+			SPKO A 1 A_FadeOut(0.08)
+			loop
+	}
+}
+
+actor ElectricArc_Red
+{
+	projectile
+	Speed 1
+	radius 4
+	height 4
+	+BLOODLESSIMPACT
+	+RIPPER
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx("ArcTrail_Red", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+			TNT1 A 0 A_Jump(128, "ArcInstant2", "ArcInstant3", "ArcInstant4", "ArcInstant5", "ArcInstant6", "ArcInstant7", "ArcInstant8", "ArcInstant9", "ArcInstant10", "ArcInstant11", "ArcInstant12", "ArcInstant13", "ArcInstant14", "ArcInstant15", "ArcInstant16", "ArcInstant17", "ArcInstant18", "ArcDelayed1", "ArcDelayed2")
+			goto ArcInstant1
+		ArcInstant1:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 2, 0, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant2:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 2, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant3:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant4:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant5:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant6:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant7:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 2, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant8:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 2, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant9:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, -2, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant10:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", -2, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant11:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant12:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant13:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant14:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant15:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant16:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant17:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant18:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed1:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed2:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Red", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor ArcTrail_Yellow
+{
+	Radius 4
+	Height 4
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.08
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	States
+	{
+		Spawn:
+			SPKY A 1 A_FadeOut(0.08)
+			loop
+	}
+}
+
+actor ElectricArc_Yellow
+{
+	projectile
+	Speed 1
+	radius 4
+	height 4
+	+BLOODLESSIMPACT
+	+RIPPER
+	states
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 A_SpawnItemEx("ArcTrail_Yellow", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+			TNT1 A 0 A_Jump(128, "ArcInstant2", "ArcInstant3", "ArcInstant4", "ArcInstant5", "ArcInstant6", "ArcInstant7", "ArcInstant8", "ArcInstant9", "ArcInstant10", "ArcInstant11", "ArcInstant12", "ArcInstant13", "ArcInstant14", "ArcInstant15", "ArcInstant16", "ArcInstant17", "ArcInstant18", "ArcDelayed1", "ArcDelayed2")
+			goto ArcInstant1
+		ArcInstant1:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 2, 0, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant2:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 2, 0, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant3:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant4:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant5:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant6:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant7:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 2, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant8:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 2, 0, 2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant9:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, -2, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant10:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", -2, 0, -2, random(-1,1), random(-1,1), 0, random(-16, 16), SXF_CLIENTSIDE, 3)
+			stop
+		ArcInstant11:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant12:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-32, 32), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant13:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant14:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-64, 64), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant15:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant16:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant17:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcInstant18:
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -3, random(-1,1), random(-1,1), 0, random(-80, 80), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed1:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, 2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		ArcDelayed2:
+			TNT1 A 1
+			TNT1 A 0 A_SpawnItemEx("ElectricArc_Yellow", 0, 0, -2, random(-1,1), random(-1,1), 0, random(-72, 72), SXF_CLIENTSIDE, 2)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor Shell2 : Shell replaces Shell
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor ShellBox2 : ShellBox replaces ShellBox
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Clip2 : Clip replaces Clip
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor ClipBox2 : ClipBox replaces ClipBox
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Cell2 : Cell replaces Cell
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor CellPack2 : CellPack replaces CellPack
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor RocketAmmo2 : RocketAmmo replaces RocketAmmo
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor RocketBox2 : RocketBox replaces RocketBox
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Medikit2 : Medikit replaces Medikit
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Stimpack2 : Stimpack replaces Stimpack
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor GreenArmor2 : GreenArmor replaces GreenArmor
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor BlueArmor2 : BlueArmor replaces BlueArmor
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Backpack2 : Backpack replaces Backpack
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+actor Berserk2 : Berserk replaces Berserk
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+ACTOR HealthBonus2 : HealthBonus replaces HealthBonus
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		BON1 ABCD 6
+		Loop
+	}
+}
+
+Actor ArmorBonus2 : ArmorBonus replaces ArmorBonus
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		BON2 ABCD 6
+		loop
+	}
+}
+
+ACTOR InvulnerabilitySphere2 : InvulnerabilitySphere replaces InvulnerabilitySphere
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		PINV ABCDCB 6 Bright
+		Loop
+	}
+}
+
+ACTOR Soulsphere2 : Soulsphere replaces Soulsphere
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+ACTOR Megasphere2 : Megasphere replaces Megasphere
+{
+	YScale 0.70
+	XScale 0.75
+}
+
+ACTOR BlurSphere2 : BlurSphere replaces BlurSphere
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+ACTOR Allmap2 : Allmap replaces Allmap
+{
+	Yscale 0.70
+	XScale 0.75
+}
+
+ACTOR RadSuit2 : RadSuit replaces RadSuit
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		SUIT A 6 Bright
+		SUIT B 6
+		loop
+	}
+}
+
+ACTOR Infrared2 : Infrared replaces Infrared
+{
+	Yscale 0.70
+	XScale 0.75
+	States
+	{
+	Spawn:
+		PVIS A 6
+		PVIS B 6 Bright
+		Loop
+	}
+}
+
+actor MidRedFloatingFlame
+{
+  Radius 4
+  Height 4
+  RenderStyle Add
+  XScale 0.90
+  YScale 0.78
+  Alpha 0.8
+  -SOLID
+  +NOGRAVITY
+  +ALLOWCLIENTSPAWN
+  +CLIENTSIDEONLY
+  States
+  {
+  Spawn:
+  RFLM ABCDE 1 BRIGHT
+  RFLM ABCDE 1 BRIGHT
+  RFLM ABCDE 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+actor MidBlueFloatingFlame : MidRedFloatingFlame
+{
+  States
+  {
+  Spawn:
+  BFLM ABCDE 1 BRIGHT
+  BFLM ABCDE 1 BRIGHT
+  BFLM ABCDE 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+actor MidGreenFloatingFlame : MidRedFloatingFlame
+{
+  Alpha 0.6
+  States
+  {
+  Spawn:
+  GFLM ABCD 1 BRIGHT
+  GFLM ABCD 1 BRIGHT
+  GFLM ABCD 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+ACTOR ImprovedRedTorch : RedTorch Replaces RedTorch
+{
+	Game Doom
+	Radius 16
+	Height 68
+	XScale 0.88
+	YScale 0.78
+	+SOLID
+	+USESPECIAL
+	+FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TRED A 1 BRIGHT A_SpawnItemEx("MidRedFloatingFlame", Random(-2,2), Random(-2,2), Random(50, 52), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+ACTOR ImprovedBlueTorch : ImprovedRedTorch Replaces BlueTorch
+{
+	States
+	{
+	Spawn:
+		TRED A 1 BRIGHT A_SpawnItemEx("MidBlueFloatingFlame", Random(-2,2), Random(-2,2), Random(50, 52), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+ACTOR ImprovedGreenTorch : ImprovedRedTorch Replaces GreenTorch
+{
+	States
+	{
+	Spawn:
+		TRED A 1 BRIGHT A_SpawnItemEx("MidGreenFloatingFlame", Random(-2,2), Random(-2,2), Random(50, 52), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+actor SmallRedFloatingFlame
+{
+  Radius 4
+  Height 4
+  RenderStyle Add
+  XScale 0.88
+  YScale 0.64
+  Alpha 0.8
+  -SOLID
+  +NOGRAVITY
+  +NOINTERACTION
+  +CLIENTSIDEONLY
+  +ALLOWCLIENTSPAWN
+  States
+  {
+  Spawn:
+  RFLM ABCD 1 BRIGHT
+  RFLM ABCD 1 BRIGHT
+  RFLM ABCD 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+actor SmallBlueFloatingFlame : SmallRedFloatingFlame
+{
+  States
+  {
+  Spawn:
+  BFLM ABCD 1 BRIGHT
+  BFLM ABCD 1 BRIGHT
+  BFLM ABCD 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+actor SmallGreenFloatingFlame : SmallRedFloatingFlame
+{
+  Alpha 0.6
+  States
+  {
+  Spawn:
+  GFLM ABCD 1 BRIGHT
+  GFLM ABCD 1 BRIGHT
+  GFLM ABCD 1 A_Fadeout
+  goto Spawn+8
+  }
+}
+
+ACTOR ImprovedShortRedTorch : ShortRedTorch Replaces ShortRedTorch
+{
+	Game Doom
+	Radius 16
+	Height 68
+	XScale 0.88
+	YScale 0.78
+	+SOLID
+	+USESPECIAL
+	+FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		SMRT A 1 BRIGHT A_SpawnItemEx("SmallRedFloatingFlame", Random(-2,2), Random(-2,2), Random(38, 40), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+ACTOR ImprovedShortBlueTorch : ImprovedShortRedTorch Replaces ShortBlueTorch
+{
+	States
+	{
+	Spawn:
+		SMRT A 1 BRIGHT A_SpawnItemEx("SmallBlueFloatingFlame", Random(-2,2), Random(-2,2), Random(38, 40), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+ACTOR ImprovedShortGreenTorch : ImprovedShortRedTorch Replaces ShortGreenTorch
+{
+	States
+	{
+	Spawn:
+		SMRT A 1 BRIGHT A_SpawnItemEx("SmallGreenFloatingFlame", Random(-2,2), Random(-2,2), Random(38, 40), 0, 0, Random(1, 2), Random(-360, 360), 128, 64)
+		loop
+	}
+}
+
+
+ACTOR 64TechLamp2 : TechLamp2 replaces TechLamp2
+{
+	XScale 1.0
+	YScale 0.9
+	+FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TLP2 A 4 BRIGHT
+		Loop
+	}
+}
+
+ACTOR 64TechLamp : TechLamp replaces TechLamp
+{
+	XScale 1.0
+	YScale 0.9
+	+FORCEYBILLBOARD
+	States
+	{
+	Spawn:
+		TLMP A 4 BRIGHT
+		Loop
+	}
+}
+
+actor 64ItemFog : ItemFog Replaces ItemFog
+{
+  RenderStyle Add
+  Alpha 1.0
+  Yscale 0.70
+  XScale 0.75
+  +SHADOW
+  States
+  {
+  Spawn:
+    IFOG ABCDEDCBA 4 bright
+    stop
+  }
+}
+
+actor LightningTrail
+{
+	Radius 4
+	Height 4
+	RenderStyle Add
+	Alpha 1.0
+	Scale 0.08
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+NOCLIP
+	+NOINTERACTION
+	+FORCEXYBILLBOARD
+	States
+	{
+		Spawn:
+			SPKG A 1 A_FadeOut(0.08)
+			loop
+	}
+}

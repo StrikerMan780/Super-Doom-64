@@ -1,0 +1,7 @@
+Clan UniDoom - For making UDM3
+StrikerMan780 - Weapon/Teleport Sounds, Decorate/ACS Code, some Sprites
+Clan Shadow Mavericks - Playtesting, Assistance in gathering player sounds
+Jimmy - Font
+Cage - Doom 64 Reload Sprites
+ID Software - Player Split Sprites
+Midway - Doom 64 Sprites and Sounds

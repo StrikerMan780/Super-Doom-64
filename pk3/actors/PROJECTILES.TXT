@@ -1,0 +1,436 @@
+actor RedPlasmaSpark
+{
+	Projectile
+	Radius 2
+	Height 2
+	Damage 0
+	RenderStyle Add
+	BounceType "Hexen"
+	BounceFactor 0.75
+	Alpha 1.0
+	Scale 0.05
+	Gravity 0.75
+	+DONTSPLASH
+	+FORCEXYBILLBOARD
+	-NOGRAVITY
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+		Spawn:
+			SPKO A 1 Bright A_FadeOut(0.05)
+			loop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor BluePlasmaSpark : RedPlasmaSpark
+{
+	States
+	{
+		Spawn:
+			SPKB A 1 Bright A_FadeOut(0.05)
+			loop
+	}
+}
+
+actor GreenPlasmaSpark : RedPlasmaSpark
+{
+	States
+	{
+		Spawn:
+			SPKG A 1 Bright A_FadeOut(0.05)
+			loop
+	}
+}
+
+actor YellowPlasmaSpark : RedPlasmaSpark
+{
+	States
+	{
+		Spawn:
+			SPKY A 1 Bright A_FadeOut(0.05)
+			loop
+	}
+}
+
+ACTOR SD64PlasmaBall_DM : PlasmaBall replaces PlasmaBall
+{
+	Yscale 0.70
+	XScale 0.75
+	Speed 40
+	Decal "PlasmaScorch"
+	+FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		PLSS AABB 1 Bright
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		PLSS C 3 Bright A_SpawnItemEx("BluePlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		PLSS DEFGH 2 Bright A_SpawnItemEx("BluePlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64PlasmaBall_Blue : SD64PlasmaBall_DM
+{
+	Decal "PlasmaScorch"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		PLSS AABB 1 Bright
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		PLSS C 3 Bright A_SpawnItemEx("BluePlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		PLSS DEFGH 2 Bright A_SpawnItemEx("BluePlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64PlasmaBall_Red : SD64PlasmaBall_DM
+{
+	Decal "RedPlasmaScorch"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		RLSS AABB 1 Bright
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		RLSS C 3 Bright A_SpawnItemEx("RedPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		RLSS DEFGH 2 Bright A_SpawnItemEx("RedPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64PlasmaBall_Green : SD64PlasmaBall_DM
+{
+	Decal "GreenPlasmaScorch"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		GRES AABB 1 Bright
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		GRES C 3 Bright A_SpawnItemEx("GreenPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		GRES DEFGH 2 Bright A_SpawnItemEx("GreenPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+ACTOR SD64PlasmaBall_Yellow : SD64PlasmaBall_DM
+{
+	Decal "YellowPlasmaScorch"
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		YLSS AABB 1 Bright
+		Loop
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		YLSS C 3 Bright A_SpawnItemEx("YellowPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		YLSS DEFGH 2 Bright A_SpawnItemEx("YellowPlasmaSpark", 0, 0, 0, random(-6, 6), random(-6, 6), random(-3, 8), random(-360,360), SXF_CLIENTSIDE, 0)
+		Stop
+	}
+}
+
+actor RocketSmoke
+{
+	Projectile
+	Radius 2
+	Height 2
+	Renderstyle Translucent
+	Alpha 0.5
+	Yscale 0.70
+	XScale 0.75
+	+FORCEXYBILLBOARD
+	+CLIENTSIDEONLY
+	+MISSILE
+	+NOINTERACTION
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			PUF2 ABCDE 2
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor RedSmoke : RocketSmoke
+{
+	Projectile
+	Radius 2
+	Height 2
+	Renderstyle Add
+	Alpha 0.5
+	+FORCEXYBILLBOARD
+	+CLIENTSIDEONLY
+	+MISSILE
+	+NOINTERACTION
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			PUF4 ABCDE 1
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor GreenSmoke : RedSmoke
+{
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			PUF5 ABCDE 1
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor BlueSmoke : RedSmoke
+{
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			PUF6 ABCDE 1
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor YellowSmoke : RedSmoke
+{
+	States
+	{
+		Spawn:
+			TNT1 A 2
+			PUF7 ABCDE 1
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+actor RocketBlast
+{
+	Projectile
+	Radius 4
+	Height 4
+	XScale 0.75
+	YScale 0.70
+	Alpha 1.0
+	RenderStyle "Add"
+	BounceType "Hexen"
+	BounceFactor 1.0
+	+FORCEXYBILLBOARD
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+		Spawn:
+			MISL B 7 bright
+			MISL C 7 bright A_FadeOut (0.2)
+			MISL D 3 bright A_FadeOut (0.2)
+			MISL EF 3 bright A_FadeOut (0.2)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+ACTOR DMRocket : Rocket replaces Rocket
+{
+	Speed 30
+	Yscale 0.70
+	XScale 0.75
+	-ROCKETTRAIL
+	-NOTELEPORT
+	+EXTREMEDEATH
+	+FORCEXYBILLBOARD
+	States
+	{
+	Spawn:
+		MISL AA 1 Bright
+		MISL AA 0 Bright A_SpawnItemEx("RocketSmoke", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		loop	
+	XDeath:
+		TNT1 A 0
+		TNT1 A 0 A_GiveToTarget("HitConfirmation", 1)
+		goto Death
+	Death:
+		TNT1 A 0 A_SetTranslucent(1.0, 1)
+		TNT1 AAAAAA 0 A_SpawnItemEx("RocketBlast", 0, 0, 0, random(-2,2), random(-2,2), random(-2,2), random(-180,180), SXF_CLIENTSIDE, 0)
+		MISL B 7 bright A_Explode
+		MISL C 7 bright A_FadeOut (0.2)
+		MISL D 3 bright A_FadeOut (0.2)
+		MISL EF 3 bright A_FadeOut (0.2)
+		Stop
+	}
+}
+
+ACTOR RedRocket : DMRocket
+{
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		MISL AA 1 Bright A_SpawnItemEx("RedSmoke", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), 0, SXF_CLIENTSIDE, 0)
+		MISL AA 0 Bright A_SpawnItemEx("RocketSmoke", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		loop
+	}
+}
+
+ACTOR BlueRocket : DMRocket
+{
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		BLUM AA 1 Bright A_SpawnItemEx("BlueSmoke", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), 0, SXF_CLIENTSIDE, 0)
+		BLUM AA 0 Bright A_SpawnItemEx("RocketSmoke", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		loop
+	}
+}
+
+ACTOR GreenRocket : DMRocket
+{
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		GREM AA 1 Bright A_SpawnItemEx("GreenSmoke", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), 0, SXF_CLIENTSIDE, 0)
+		GREM AA 0 Bright A_SpawnItemEx("RocketSmoke", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		loop
+	}
+}
+
+ACTOR GoldRocket : DMRocket
+{
+	+MTHRUSPECIES
+	States
+	{
+	Spawn:
+		GOLM AA 1 Bright A_SpawnItemEx("YellowSmoke", Random(-1,1), Random(-1,1), Random(-1,1), random(-1,1), random(-1,1), random(-1,1), 0, SXF_CLIENTSIDE, 0)
+		GOLM AA 0 Bright A_SpawnItemEx("RocketSmoke", 0, 0, 0, 0, 0, 0, 0, SXF_CLIENTSIDE, 0)
+		loop
+	}
+}	
+
+actor 64DoomImpBall : DoomImpBall Replaces DoomImpBall
+{
+  speed 10
+  decal DoomImpScorch
+  renderstyle normal
+  Yscale 0.70
+  XScale 0.75
+  states
+  {
+  Spawn:
+    BAL1 ABC 4 bright
+    loop
+  Death:
+    BAL1 DEFGHI 1 bright
+    stop
+  }
+}
+
+actor 64CacodemonBall : CacodemonBall Replaces CacodemonBall
+{
+  Speed 20
+  FastSpeed 25
+  decal CacoScorch
+  Renderstyle Normal
+  Yscale 0.70
+  XScale 0.75
+  States
+  {
+  Spawn:
+    BAL2 ABC 4 bright
+    loop
+  Death:
+    BAL2 D 6 bright A_SetTranslucent (0.5)
+    BAL2 E 5 bright
+    BAL2 F 3 bright
+    BAL2 GHIJ 3 bright
+    stop
+  }
+}
+
+actor 64HellKnightBall : BaronBall Replaces BaronBall
+{
+  renderstyle Normal
+  decal BaronScorch
+  Yscale 0.70
+  XScale 0.75
+  states
+  {
+  Spawn:
+    BAL7 AB 4 bright
+    loop
+  Death:
+    BAL7 C 5 bright
+    BAL7 D 5 bright A_FadeOut (0.1667)
+    BAL7 E 4 bright A_FadeOut (0.1667)
+    BAL7 FGH 3 bright A_FadeOut (0.1667)
+    stop
+  }
+}
+
+actor 64BaronBall : 64HellKnightBall
+{
+  Renderstyle Normal
+  decal BaronScorch
+  Yscale 0.70
+  XScale 0.75
+  states
+  {
+  Spawn:
+    BAL8 AB 4 bright
+    loop
+  Death:
+    BAL8 C 5 bright
+    BAL8 D 5 bright A_FadeOut (0.1667)
+    BAL8 E 3 bright A_FadeOut (0.1667)
+    BAL8 FGH 3 bright A_FadeOut (0.1667)
+    stop
+  }
+}

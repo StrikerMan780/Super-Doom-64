@@ -1,0 +1,82 @@
+Ignite DSIGNITE
+
+HorrificScream1 DSPLSPL1
+HorrificScream2 DSPLSPL2
+HorrificScream3 DSPLSPL3
+HorrificScream4 DSPDIEHI
+$random HorrificScream { HorrificScream1 HorrificScream2 HorrificScream3 HorrificScream4 }
+
+RocketExplosion1 DSBAREX1
+RocketExplosion2 DSBAREX2
+RocketExplosion3 DSBAREX3
+
+$random weapons/rocklx	{ RocketExplosion1 RocketExplosion2 RocketExplosion3 }
+$limit weapons/rocklx 0
+$limit RocketExplosion1 0
+$limit RocketExplosion2 0
+$limit RocketExplosion3 0
+
+weapons/chngun DSCHNGN
+$limit weapons/chngun 0
+
+misc/gibbed	dsslop
+$limit misc/gibbed 0
+
+PlasmaHit1 DSPLSHT1
+PlasmaHit2 DSPLSHT2
+PlasmaHit3 DSPLSHT3
+
+$random weapons/plasmax { PlasmaHit1 PlasmaHit2 PlasmaHit3 }
+$limit weapons/plasmax 0
+$limit PlasmaHit1 0
+$limit PlasmaHit2 0
+$limit PlasmaHit3 0
+
+PlasmaIdle DSPLSIDL
+
+BFGFire DSBFGFIR
+$limit BFGFire 0
+$rolloff BFGFire 400 2400 
+
+BFGArc1 DSBFGEX1
+BFGArc2 DSBFGEX2
+BFGArc3 DSBFGEX3
+$random BFGArc { BFGArc1 BFGArc2 BFGArc3 }
+
+weapons/bfgx dsrxplod
+$limit weapons/bfgx 0
+$rolloff weapons/bfgx 400 2400 
+
+hitsound dshitsnd
+$limit hitsound 0
+
+killsound dskilsnd
+$limit killsound 0
+
+weapons/sshotf			dsdshtgn
+$limit weapons/sshotf 0
+
+Spring DSSPRING
+RottDoorOpen DSROTDOP
+RottDoorClose DSROTDCL
+
+SpinningBlade DSBLADE
+$volume SpinningBlade 0.25
+
+MP40Fire DSMP40
+
+//*******
+//Terrain
+//*******
+slime				dsmuck
+slimesmall			dsmucksm
+water				dsgloop
+watersmall			dsfloush
+burn				dsburn
+burnsmall			dsburnsm
+blood1			dssplat1
+blood2			dssplat2
+$RANDOM blood { blood1 blood2 }
+bloodsmall1			dssplat3
+bloodsmall2			dssplat4
+$RANDOM bloodsmall { bloodsmall1 bloodsmall2 }

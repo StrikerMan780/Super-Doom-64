@@ -1,0 +1,131 @@
+#include "zcommon.acs"
+#library "TEAM"
+
+script 1 ENTER
+{
+	if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 0)) 
+	{
+		GiveInventory("BlueTeam", 1);
+    } 
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 1)) 
+	{
+		GiveInventory("RedTeam", 1);
+	}
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 2))
+	{
+		GiveInventory("GreenTeam", 1);
+	}
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 3))
+	{
+		GiveInventory("GoldTeam", 1);
+	}
+}
+
+script 2 RESPAWN
+{
+	if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 0))
+	{
+		GiveInventory("BlueTeam", 1);
+	}
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 1))
+	{
+		GiveInventory("RedTeam", 1);
+	}
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 2))
+	{
+		GiveInventory("GreenTeam", 1);
+	}
+	else if ((GetPlayerInfo(PlayerNumber(), PLAYERINFO_TEAM) == 3))
+	{
+		GiveInventory("GoldTeam", 1);
+	}
+}
+
+script 3 ENTER CLIENTSIDE
+{
+	Delay(48);
+	
+	SetFont("BigFont");
+	HudMessage(s:"\cfSuper Doom 64";
+	HUDMSG_TYPEON, 0, CR_GOLD, 0.50, 0.20, 0, 0.05, 7.0);
+	
+	SetFont("SmallFont");
+	HudMessage(s:"\cfBy: \ccJordon \ck''\chStriker\cdMan\ci780\ck'' \ccMoss";
+	HUDMSG_TYPEON,0,CR_BLUE, 0.50, 0.25, 0, 0.05, 7.0);
+	
+	//SetFont("BigFont");
+	//HudMessage(n:PRINTNAME_LEVEL, s:" - ", n:PRINTNAME_LEVELNAME;
+	//HUDMSG_TYPEON,0,CR_WHITE, 0.50, 0.32, 0, 0.05, 7.0);
+	// (Not currently supported in Zandro... for fuck's sake.)
+}
+
+script 4 (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("HITCROSS");
+		
+		LocalAmbientSound("hitsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 4, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}
+
+
+script 5 (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("KILLCRSR");
+		
+		LocalAmbientSound("killsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 3, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}
+
+script 6 (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("KILLCRSB");
+		
+		LocalAmbientSound("killsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 3, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}
+
+script 7 (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("KILLCRSG");
+		
+		LocalAmbientSound("killsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 3, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}
+
+script 8 (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("KILLCRSY");
+		
+		LocalAmbientSound("killsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 3, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}

@@ -1,0 +1,227 @@
+Actor 64ExplosiveBarrel : ExplosiveBarrel Replaces ExplosiveBarrel
+{
+	Yscale 0.70
+	XScale 0.75
+	DeathSound "weapons/rocklx"
+	States
+	{
+	Spawn:
+		BAR1 A -1
+		loop
+	Death:
+		BAR1 A 0 bright A_PlaySoundEx("Ignite", "Auto", 0)
+		BAR1 AAAAABBBBBCCCCC 1 bright A_SpawnItemEx("64BarrelFire",0,0,25,random(-1,1),random(-1,1),random(-2,2), random(-180,180), SXF_CLIENTSIDE, 0)
+		BAR1 D 0 bright A_Scream
+		BAR1 DDDDD 1 bright A_SpawnItemEx("64BarrelFire",0,0,25,random(-3,3),random(-3,3),random(-2,2), random(-180,180), SXF_CLIENTSIDE, 0)
+		BAR1 E 0 bright A_Explode
+		BAR1 EEEEEEEEE 0 bright A_SpawnItemEx("RocketBlast", Random(-8,8), Random(-8,8), Random(16,24), random(-4,4), random(-4,4), random(-4,4), random(-180,180), SXF_CLIENTSIDE, 0)
+		BAR1 EEEEE 1 bright A_SpawnItemEx("RocketBlast", Random(-8,8), Random(-8,8), Random(16,24), random(-2,2), random(-2,2), random(-2,2), random(-180,180), SXF_CLIENTSIDE, 0)
+		TNT1 A 16
+		TNT1 A 1050 A_BarrelDestroy
+		TNT1 A 5 A_Respawn
+		wait
+	}
+}
+
+actor 64BarrelFire
+{
+	Projectile
+	Radius 4
+	Height 4
+	XScale 0.75
+	YScale 0.70
+	Alpha 0.5
+	RenderStyle "Add"
+	BounceType "Hexen"
+	BounceFactor 1.0
+	+FORCEXYBILLBOARD
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+		Spawn:
+			BEXP ABCDEFG 2 Bright A_Fadeout(0.08)
+			stop
+		Death:
+			TNT1 AA 1
+			stop
+	}
+}
+
+Actor BlankBarrel : ExplosiveBarrel Replaces BurningBarrel
+{
+	Health 75
+	Yscale 0.70
+	XScale 0.75
+	DeathSound "weapons/rocklx"
+	+EXTREMEDEATH
+	States
+	{
+	Spawn:
+		FCAN A -1
+		loop
+	Death:
+		FCAN A 0 bright A_Scream
+		FCAN AAAAAAA 0 bright A_SpawnItemEx("64BarrelFire",0,0,24,random(-6,6),random(-6,6),random(-6,6), random(-180,180), SXF_CLIENTSIDE, 0)
+		FCAN A 0 bright A_Explode(256, 256)
+		FCAN A 0 bright Radius_Quake(6, 35, 0, 5, 0)
+		FCAN AAAAAAAAAAAAAAAAAAAAAAAAA 0 bright A_SpawnItemEx("RocketBlast", Random(-8,8), Random(-8,8), Random(16,24), random(-10,10), random(-10,10), random(-10,10), random(-180,180), SXF_CLIENTSIDE, 0)
+		TNT1 A 16
+		TNT1 A 1050 A_BarrelDestroy
+		TNT1 A 5 A_Respawn
+		wait
+	}
+}
+
+actor 64DeadCacodemon : DeadCacodemon Replaces DeadCacodemon
+{
+  Yscale 0.70
+  XScale 0.75
+  states
+  {
+  Spawn:
+    HEAD M -1
+    stop
+  }
+}
+
+actor 64DeadDemon : DeadDemon Replaces DeadDemon
+{
+  Yscale 0.70
+  XScale 0.75
+}
+
+actor 64DeadDoomImp : DeadDoomImp Replaces DeadDoomImp
+{
+  Yscale 0.70
+  XScale 0.75
+  states
+  {
+  Spawn:
+    TROO P -1
+    stop
+  }
+}
+
+actor 64DeadShotgunGuy : DeadShotgunGuy Replaces DeadShotgunGuy
+{
+  Yscale 0.70
+  XScale 0.75
+}
+
+actor 64DeadZombieMan : DeadZombieMan Replaces DeadZombieMan
+{
+  Yscale 0.70
+  XScale 0.75
+}
+
+ACTOR Candlestick2 : Candlestick replaces Candlestick
+{
+	XScale 0.8
+	YScale 0.75
+	States
+	{
+	Spawn:
+		CAND AB 1 BRIGHT
+		loop
+	}
+}	
+
+ACTOR Column2 : Column replaces Column
+{
+	XScale 1.0
+	YScale 0.9
+}
+
+actor HangingTechLamp 9923
+{
+  Game Doom
+  YScale 0.75
+  XScale 0.80
+  Height 41
+  Radius 16
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    HGLM A -1 bright
+    stop
+  }
+}
+
+actor CeilingLight 9924
+{
+  Game Doom
+  YScale 0.75
+  XScale 0.80
+  Height 9
+  Radius 16
+  +NOGRAVITY
+  +SPAWNCEILING
+  States
+  {
+  Spawn:
+    CEIL A -1 bright
+    stop
+  }
+}
+
+actor CeilingLight2 : CeilingLight 18880 //blue
+{
+	states
+	{
+	Spawn:
+		CEI2 A -1 bright
+		stop
+	}
+}
+
+actor CeilingLight3 : CeilingLight 18881 //red
+{
+	states
+	{
+	Spawn:
+		CEI3 A -1 bright
+		stop
+	}
+}
+
+actor CeilingLight4 : CeilingLight 18882 //green
+{
+	states
+	{
+	Spawn:
+		CEI4 A -1 bright
+	}
+}
+
+actor HangingTechLamp2 : HangingTechLamp 18883 //blue
+{
+	states
+	{
+	Spawn:
+		HGL2 A -1 bright
+		stop
+	}
+}
+
+actor HangingTechLamp3 : HangingTechLamp 18884 //red
+{
+	states
+	{
+	Spawn:
+		HGL3 A -1 bright
+		stop
+	}
+}
+
+actor HangingTechLamp4 : HangingTechLamp 18885 //green
+{
+	states
+	{
+	Spawn:
+		HGL4 A -1 bright
+		stop
+	}
+}

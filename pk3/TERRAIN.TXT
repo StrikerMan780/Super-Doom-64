@@ -1,0 +1,150 @@
+splash 	nukage
+{
+ smallclass 	NukageSplashBaseSmall
+ smallclip		0
+ smallsound	slimesmall
+
+ baseclass		sludgesplash
+ chunkclass	sludgechunk
+ chunkxvelshift	8
+ chunkyvelshift	8
+ chunkzvelshift	6
+ chunkbasezvel	2
+ sound		slime
+ NoAlert
+}
+
+splash Slime
+{
+	smallclass		SlimeSplash
+	smallclip		6
+	smallsound		slimesmall
+
+	baseclass		SlimeSplash
+	chunkclass		SlimeChunk
+	chunkxvelshift	8
+	chunkyvelshift	8
+	chunkzvelshift	8
+	chunkbasezvel	2
+	sound			slime
+	NoAlert
+}
+
+splash 	water
+{
+ smallclass 	watersplashbasesmall
+ smallclip		3
+ smallsound	watersmall
+
+ baseclass		watersplashbase
+ chunkclass	watersplash
+ chunkxvelshift	8
+ chunkyvelshift	8
+ chunkzvelshift	8
+ chunkbasezvel	2
+ sound		water
+ NoAlert
+}
+
+splash 	blood
+{
+ smallclass 	bloodsplashbasesmall
+ smallclip		4
+ smallsound	bloodsmall
+
+ baseclass		bloodsplashbase
+ chunkclass	bloodsplash
+ chunkxvelshift	8
+ chunkyvelshift	8
+ chunkzvelshift	8
+ chunkbasezvel	2
+ sound		blood
+ NoAlert
+}
+
+splash 	lava
+{
+ smallclass 	lavasplash
+ smallclip		5
+ smallsound	burnsmall
+
+ baseclass		lavasplash
+ chunkclass	lavasmoke
+ chunkxvelshift	-1
+ chunkyvelshift	-1
+ chunkzvelshift	2
+ chunkbasezvel	1
+ sound		burn
+ NoAlert
+}
+
+// *****
+
+terrain	 nukage_t
+{
+ splash 	nukage
+ footclip	 10
+ liquid
+}
+
+terrain	water_t
+{
+ splash 	water
+ footclip	 8
+ liquid
+}
+
+terrain	lava_t
+{
+ splash 	lava
+ footclip	 4
+}
+
+terrain	blood_t
+{
+ footclip	 12
+ liquid
+ splash 	blood
+}
+
+terrain Slime
+{
+ footclip	 6
+ liquid
+ splash Slime
+}
+
+terrain Ice
+{
+	// A friction > 1 is actually less friction
+	friction 1.70824008138
+
+	// Ice doesn't actually do any damage. This is just so that things
+	// that freeze to death take longer to melt on this terrain.
+	damagetype ice
+}
+
+// *****
+
+floor NUKAGE1 nukage_t
+floor NUKAGE2 nukage_t
+floor NUKAGE3 nukage_t
+floor fwater1 water_t
+floor fwater2 water_t
+floor fwater3 water_t
+floor fwater4 water_t
+floor lava1 lava_t
+floor lava2 lava_t
+floor lava3 lava_t
+floor lava4 lava_t
+floor blood1 blood_t
+floor blood2 blood_t
+floor blood3 blood_t
+floor SLIME01 Slime
+floor SLIME02 Slime
+floor SLIME03 Slime
+floor SLIME04 Slime
+floor SLIME05 Slime
+floor SLIME06 Slime
+floor SLIME07 Slime
+floor SLIME08 Slime

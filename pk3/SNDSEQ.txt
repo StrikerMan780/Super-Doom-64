@@ -1,0 +1,13 @@
+:RottDoorOpen
+	play		RottDoorOpen
+	nostopcutoff
+end
+
+:RottDoorClose
+	play		RottDoorClose
+	nostopcutoff
+end
+
+:Floor
+	playrepeat	plats/pt1_mid
+end

@@ -1,0 +1,38 @@
+map DM01 "Stay Frosty - By: Striker"
+{
+	next = "DM02"
+	sky1 = "SNOWSKY1"
+	cluster = 7
+	par = 420
+	music = "d_dm01"
+}
+
+map DM02 "Poo Tis Pow - By: Gosimer"
+{
+	next = "DM03"
+	sky1 = "SKY2"
+	cluster = 7
+	par = 150
+	music = "d_dm02"
+}
+
+map DM03 "Watashi no dekamara no taito - By: Striker"
+{
+	next = "DM04"
+	sky1 = "SKYDK1A"
+	cluster = 7
+	par = 210
+	music = "d_dm03"
+	nofreelook
+	nojump
+	nocrouch
+}
+
+map DM04 "Rancid Rage Repository - By: KunaiKitsune"
+{
+	next = "DM01"
+	sky1 = "SKY2"
+	cluster = 7
+	par = 150
+	music = "d_dm04"
+}

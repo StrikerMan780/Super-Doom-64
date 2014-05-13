@@ -1,0 +1,6 @@
+clearplayerclasses
+addplayerclass SD64Player nomenu
+addplayerclass BlueMarine nomenu
+addplayerclass RedMarine nomenu
+addplayerclass GreenMarine nomenu
+addplayerclass GoldMarine nomenu
