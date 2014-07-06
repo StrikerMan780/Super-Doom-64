@@ -1,0 +1,12 @@
+Move chaingun 1px left - DONE
+Add TEXTURES entries for BFG and Chainsaw
+Fix brown pixel on player death sprite
+Make texture on UDM3 map05's stairs brighter
+Mix Doom64 Teleport Sound in with Current
+Make BFG9000 have top priority
+Mix Doom64 Gib sound into Current
+
+Add Dynamic Lights to DM01
+
+Make Operation: Doom episode
+Make The Absolution episode
