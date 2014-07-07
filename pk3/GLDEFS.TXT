@@ -541,6 +541,40 @@ object BlueArmor2
     frame ARM2B { light BLUEARMOR2 }
 }
 
+flickerlight2 PLAYERATK
+{
+    color 1.0 1.0 1.0
+    size 48
+    secondarySize 56
+    interval 1
+    offset 0 40 0
+}
+
+object SD64Player
+{
+    frame PLAYF { light PLAYERATK }
+}
+
+object RedMarine
+{
+    frame PLAYF { light PLAYERATK }
+}
+
+object BlueMarine
+{
+    frame PLAYF { light PLAYERATK }
+}
+
+object GreenMarine
+{
+    frame PLAYF { light PLAYERATK }
+}
+
+object GoldMarine
+{
+    frame PLAYF { light PLAYERATK }
+}
+
 Glow
 {
 	Flats
@@ -552,6 +586,7 @@ Glow
 		LAVA2
 		LAVA3
 		LAVA4
+		F_SKY1
 	}
 	Walls
 	{

@@ -1281,4 +1281,644 @@ Texture SFALL64, 64, 64
 	}
 }
 
+Texture BFALL01, 64, 64
+{
+	Patch BFALLT1, 0, -128
+	Patch BFALLT1, 0, -128
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL02, 64, 64
+{
+	Patch BFALLT1, 0, -127
+	Patch BFALLT1, 0, -126
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL03, 64, 64
+{
+	Patch BFALLT1, 0, -126
+	Patch BFALLT1, 0, -124
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL04, 64, 64
+{
+	Patch BFALLT1, 0, -125
+	Patch BFALLT1, 0, -122
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL05, 64, 64
+{
+	Patch BFALLT1, 0, -124
+	Patch BFALLT1, 0, -120
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL06, 64, 64
+{
+	Patch BFALLT1, 0, -123
+	Patch BFALLT1, 0, -118
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL07, 64, 64
+{
+	Patch BFALLT1, 0, -122
+	Patch BFALLT1, 0, -116
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL08, 64, 64
+{
+	Patch BFALLT1, 0, -121
+	Patch BFALLT1, 0, -114
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL09, 64, 64
+{
+	Patch BFALLT1, 0, -120
+	Patch BFALLT1, 0, -112
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL10, 64, 64
+{
+	Patch BFALLT1, 0, -119
+	Patch BFALLT1, 0, -110
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL11, 64, 64
+{
+	Patch BFALLT1, 0, -118
+	Patch BFALLT1, 0, -108
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL12, 64, 64
+{
+	Patch BFALLT1, 0, -117
+	Patch BFALLT1, 0, -106
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL13, 64, 64
+{
+	Patch BFALLT1, 0, -116
+	Patch BFALLT1, 0, -104
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL14, 64, 64
+{
+	Patch BFALLT1, 0, -115
+	Patch BFALLT1, 0, -102
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL15, 64, 64
+{
+	Patch BFALLT1, 0, -114
+	Patch BFALLT1, 0, -100
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL16, 64, 64
+{
+	Patch BFALLT1, 0, -113
+	Patch BFALLT1, 0, -98
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL17, 64, 64
+{
+	Patch BFALLT1, 0, -112
+	Patch BFALLT1, 0, -96
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL18, 64, 64
+{
+	Patch BFALLT1, 0, -111
+	Patch BFALLT1, 0, -94
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL19, 64, 64
+{
+	Patch BFALLT1, 0, -110
+	Patch BFALLT1, 0, -92
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL20, 64, 64
+{
+	Patch BFALLT1, 0, -109
+	Patch BFALLT1, 0, -90
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL21, 64, 64
+{
+	Patch BFALLT1, 0, -108
+	Patch BFALLT1, 0, -88
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL22, 64, 64
+{
+	Patch BFALLT1, 0, -107
+	Patch BFALLT1, 0, -86
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL23, 64, 64
+{
+	Patch BFALLT1, 0, -106
+	Patch BFALLT1, 0, -84
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL24, 64, 64
+{
+	Patch BFALLT1, 0, -105
+	Patch BFALLT1, 0, -82
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL25, 64, 64
+{
+	Patch BFALLT1, 0, -104
+	Patch BFALLT1, 0, -80
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL26, 64, 64
+{
+	Patch BFALLT1, 0, -103
+	Patch BFALLT1, 0, -78
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL27, 64, 64
+{
+	Patch BFALLT1, 0, -102
+	Patch BFALLT1, 0, -76
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL28, 64, 64
+{
+	Patch BFALLT1, 0, -101
+	Patch BFALLT1, 0, -74
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL29, 64, 64
+{
+	Patch BFALLT1, 0, -100
+	Patch BFALLT1, 0, -72
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL30, 64, 64
+{
+	Patch BFALLT1, 0, -99
+	Patch BFALLT1, 0, -70
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL31, 64, 64
+{
+	Patch BFALLT1, 0, -98
+	Patch BFALLT1, 0, -68
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL32, 64, 64
+{
+	Patch BFALLT1, 0, -97
+	Patch BFALLT1, 0, -66
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL33, 64, 64
+{
+	Patch BFALLT1, 0, -96
+	Patch BFALLT1, 0, -64
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL34, 64, 64
+{
+	Patch BFALLT1, 0, -95
+	Patch BFALLT1, 0, -62
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL35, 64, 64
+{
+	Patch BFALLT1, 0, -94
+	Patch BFALLT1, 0, -60
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL36, 64, 64
+{
+	Patch BFALLT1, 0, -93
+	Patch BFALLT1, 0, -58
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL37, 64, 64
+{
+	Patch BFALLT1, 0, -92
+	Patch BFALLT1, 0, -56
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL38, 64, 64
+{
+	Patch BFALLT1, 0, -91
+	Patch BFALLT1, 0, -54
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL39, 64, 64
+{
+	Patch BFALLT1, 0, -90
+	Patch BFALLT1, 0, -52
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL40, 64, 64
+{
+	Patch BFALLT1, 0, -89
+	Patch BFALLT1, 0, -50
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL41, 64, 64
+{
+	Patch BFALLT1, 0, -88
+	Patch BFALLT1, 0, -48
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL42, 64, 64
+{
+	Patch BFALLT1, 0, -87
+	Patch BFALLT1, 0, -46
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL43, 64, 64
+{
+	Patch BFALLT1, 0, -86
+	Patch BFALLT1, 0, -44
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL44, 64, 64
+{
+	Patch BFALLT1, 0, -85
+	Patch BFALLT1, 0, -42
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL45, 64, 64
+{
+	Patch BFALLT1, 0, -84
+	Patch BFALLT1, 0, -40
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL46, 64, 64
+{
+	Patch BFALLT1, 0, -83
+	Patch BFALLT1, 0, -38
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL47, 64, 64
+{
+	Patch BFALLT1, 0, -82
+	Patch BFALLT1, 0, -36
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL48, 64, 64
+{
+	Patch BFALLT1, 0, -81
+	Patch BFALLT1, 0, -34
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL49, 64, 64
+{
+	Patch BFALLT1, 0, -80
+	Patch BFALLT1, 0, -32
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL50, 64, 64
+{
+	Patch BFALLT1, 0, -79
+	Patch BFALLT1, 0, -30
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL51, 64, 64
+{
+	Patch BFALLT1, 0, -78
+	Patch BFALLT1, 0, -28
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL52, 64, 64
+{
+	Patch BFALLT1, 0, -77
+	Patch BFALLT1, 0, -26
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL53, 64, 64
+{
+	Patch BFALLT1, 0, -76
+	Patch BFALLT1, 0, -24
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL54, 64, 64
+{
+	Patch BFALLT1, 0, -75
+	Patch BFALLT1, 0, -22
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL55, 64, 64
+{
+	Patch BFALLT1, 0, -74
+	Patch BFALLT1, 0, -20
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL56, 64, 64
+{
+	Patch BFALLT1, 0, -73
+	Patch BFALLT1, 0, -18
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL57, 64, 64
+{
+	Patch BFALLT1, 0, -72
+	Patch BFALLT1, 0, -16
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL58, 64, 64
+{
+	Patch BFALLT1, 0, -71
+	Patch BFALLT1, 0, -14
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL59, 64, 64
+{
+	Patch BFALLT1, 0, -70
+	Patch BFALLT1, 0, -12
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL60, 64, 64
+{
+	Patch BFALLT1, 0, -69
+	Patch BFALLT1, 0, -10
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL61, 64, 64
+{
+	Patch BFALLT1, 0, -68
+	Patch BFALLT1, 0, -8
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL62, 64, 64
+{
+	Patch BFALLT1, 0, -67
+	Patch BFALLT1, 0, -6
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL63, 64, 64
+{
+	Patch BFALLT1, 0, -66
+	Patch BFALLT1, 0, -4
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
+Texture BFALL64, 64, 64
+{
+	Patch BFALLT1, 0, -65
+	Patch BFALLT1, 0, -2
+	{
+		Alpha 0.50
+		Style Translucent
+	}
+}
+
 // End of texture definitions
