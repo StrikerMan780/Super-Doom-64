@@ -1,6 +1,7 @@
 #Ignored File Types
 *.tmp
 *.bak
+*-DEV.pk3
 
 #############
 ## Windows detritus
