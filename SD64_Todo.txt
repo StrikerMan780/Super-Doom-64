@@ -1,8 +1,8 @@
 Move chaingun 1px left - DONE
 Add TEXTURES entries for BFG and Chainsaw - Chainsaw DONE
-Fix brown pixel on player death sprite
+Fix brown pixel on player death sprite - DONE
 Make texture on UDM3 map05's stairs brighter
-Mix Doom64 Teleport Sound in with Current
+Mix Doom64 Teleport Sound in with Current - DONE
 Make BFG9000 have top priority
 Mix Doom64 Gib sound into Current
 
