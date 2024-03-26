@@ -1,0 +1,64 @@
+#include "zcommon.acs"
+#library "SD64"
+
+
+script "TITLE" ENTER CLIENTSIDE
+{
+	Delay(48);
+	
+	SetFont("BigFont");
+	HudMessage(s:"\cfSuper Doom 64";
+	HUDMSG_TYPEON, 0, CR_GOLD, 0.50, 0.20, 0, 0.05, 7.0);
+	
+	SetFont("SmallFont");
+	HudMessage(s:"\cfBy: \ccJordon \ck''\chStriker\cdMan\ci780\ck'' \ccMoss";
+	HUDMSG_TYPEON,0,CR_BLUE, 0.50, 0.25, 0, 0.05, 7.0);
+	
+	SetFont("BigFont");
+	HudMessage(n:PRINTNAME_LEVEL, s:": ", n:PRINTNAME_LEVELNAME;
+	HUDMSG_TYPEON,0,CR_WHITE, 0.50, 0.32, 0, 0.05, 7.0);
+}
+
+script "HITMARKER" (void)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		SetFont("HITCROSS");
+		
+		LocalAmbientSound("hitsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 4, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}
+
+
+script "KILLMARKER" (int team)
+{
+	if(GameType() != GAME_SINGLE_PLAYER && GameType() != GAME_NET_COOPERATIVE)
+	{
+		SetHudSize(1024, 768, 0);
+		
+		Switch(team)
+		{
+			Case 1:
+				SetFont("KILLCRSB");
+				break;
+			Case 2:
+				SetFont("KILLCRSG");
+				break;
+			Case 3:
+				SetFont("KILLCRSY");
+				break;
+			Default:
+				SetFont("KILLCRSR");
+				break;
+		}
+		
+		LocalAmbientSound("killsound", 96);
+		
+		HudMessage(s:"A";
+		HUDMSG_FADEOUT, 3, CR_UNTRANSLATED, 512.4, 384.0, 1, 0.5);
+	}
+}

@@ -2,6 +2,7 @@ ACTOR SD64_SuperShotgun : SuperShotgun replaces SuperShotgun
 {
 	Yscale 0.70
 	XScale 0.75
+	AttackSound "weapons/sshotf"
 	States
 	{
 	Hold:
@@ -9,7 +10,7 @@ ACTOR SD64_SuperShotgun : SuperShotgun replaces SuperShotgun
 		goto Fire
 	Fire:
 		SHT2 A 3
-		SHT2 A 0 Radius_Quake(6, 3, 0, 1, 0)
+		SHT2 A 0 A_Quake(6, 3, 0, 1, "")
 		SHT2 A 0 A_FireBullets(11.2, 7.1, 20, 5, "SSGBulletPuff")
 		SHT2 A 0 A_GunFlash
 		SHT2 A 0 A_Recoil(2)
@@ -198,6 +199,7 @@ ACTOR SD64_Pistol : Pistol replaces Pistol
 {
 	-WEAPON.ALLOW_WITH_RESPAWN_INVUL
 	+WEAPON.NOAUTOFIRE
+	AttackSound "weapons/pistol"
 	States
 	{
 	Deselect:
@@ -230,6 +232,7 @@ ACTOR SD64_Shotgun : Shotgun replaces Shotgun
 {
 	Yscale 0.70
 	XScale 0.75
+	AttackSound "weapons/shotgf"
 	States
 	{
 	Ready:

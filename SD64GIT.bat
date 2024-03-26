@@ -50,7 +50,7 @@ chgcolor 07
 echo.
 CHOICE /C 1234567 /N /M "Choose Option (Number Keys):"
 IF ERRORLEVEL 3 GOTO LEAVE
-IF ERRORLEVEL 2 GOTO SVNCOREFULL
+IF ERRORLEVEL 2 GOTO GITCOREFULL
 IF ERRORLEVEL 1 GOTO DEVCORE
 
 :DEVCORE
@@ -58,17 +58,17 @@ echo Compiling Super Doom 64 Local Development Build...
 del .\builds\SD64-DEV.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=0 -mmt -x!.svn ..\builds\SD64-DEV.pk3 .\
+7za a -y -tzip -mx=0 -mmt -xr!.GIT -xr!*.dbs -xr!*.tmp ..\builds\SD64-DEV.pk3 .\
 
 pause
 goto MENU
 
-:SVNCOREFULL
+:GITCOREFULL
 echo Compiling Super Doom 64 GIT Release Rev#: %REVISIONNUMBER% (Full Compression)...
 del .\builds\SD64-r%REVISIONNUMBER%.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=9 -mmt -x!.svn ..\builds\SD64-r%REVISIONNUMBER%.pk3 .\
+7za a -y -tzip -mx=9 -mmt -xr!.GIT -xr!*.dbs -xr!*.tmp ..\builds\SD64-r%REVISIONNUMBER%.pk3 .\
 
 pause
 goto MENU

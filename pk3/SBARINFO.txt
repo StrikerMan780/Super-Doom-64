@@ -6,43 +6,6 @@ LowerHealthCap true;
 
 // DOOM 64 HUD - Credit goes to Footman/SteelPH
 
-statusbar normal, forcescaled
-{
-	AspectRatio "4:3"
-	{
-		drawimage translatable "HUDBACK", 0, 11;
-		drawbar "HEALTHBR", "HEALTHBK", health, horizontal, 57, 22;
-		drawbar "ARMORGRN", "ARMORBAK", armor, horizontal, 51, 31;
-		drawbar "AMMOBAR", "AMMOBACK", ammo1, horizontal, 1, 35;
-		drawnumber 3, HUDFONT, untranslated, health, fillzeros, 37, 18;
-		drawnumber 3, INDEXFONT, red, ammo1, fillzeros, 41, 41;
-		drawnumber 3, FRAGFONT, green, frags, fillzeros, 175, 18;
-		drawimage translatable "HUDBORDR", 0, 11;
-	}
-	AspectRatio "16:9"
-	{
-		drawimage translatable "HUDBACK",  -53, 11;
-		drawbar "HEALTHBR", "HEALTHBK", health, horizontal, 4, 22;
-		drawbar "ARMORGRN", "ARMORBAK", armor, horizontal, -2, 31;
-		drawbar "AMMOBAR", "AMMOBACK", ammo1, horizontal, -52, 35;
-		drawnumber 3, HUDFONT, untranslated, health, fillzeros, -16, 18;
-		drawnumber 3, INDEXFONT, red, ammo1, fillzeros, -12, 41;
-		drawnumber 3, FRAGFONT, green, frags, fillzeros, 122, 18;
-		drawimage translatable "HUDBORDR", -53, 11;
-	}
-	AspectRatio "16:10"
-	{
-		drawimage translatable "HUDBACK", -32, 11;
-		drawbar "HEALTHBR", "HEALTHBK", health, horizontal, 25, 22;
-		drawbar "ARMORGRN", "ARMORBAK", armor, horizontal, 19, 31;
-		drawbar "AMMOBAR", "AMMOBACK", ammo1, horizontal, -31, 35;
-		drawnumber 3, HUDFONT, untranslated, health, fillzeros, 5, 18;
-		drawnumber 3, INDEXFONT, red, ammo1, fillzeros, 9, 41;
-		drawnumber 3, FRAGFONT, green, frags, fillzeros, 143, 18;
-		drawimage translatable "HUDBORDR", -32, 11;
-	}
-}
-
 statusbar fullscreen, forcescaled, 0.4
 {
 	drawimage "HTEXA0", 30, 165;
